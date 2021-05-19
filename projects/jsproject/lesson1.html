@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Тема 1</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/lesson.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript">
+
+	</script>
+</head>
+<body>
+	<header>
+		<div onclick="window.location='index.html'" id="menu">
+			<p>Javascript підручник</p>
+		</div>
+	</header>
+	<main>
+		<div id="nav">
+			<p class="topic">Тема 1</p>
+			<ul>
+				<a  href="#"><li class="top1">Вступ</li></a>
+				<a  href="#top2"><li class="top2">Змінні і значення</li></a>
+				<a  href="#top3"><li class="top3">Синтаксис</li></a>
+				<a  href="#top4"><li class="top4">Закріплення знань</li></a>
+			</ul>
+		</div>
+		<div id="main-content">
+			<p class="main-page"><a href="index.html">Головна</a> > Тема 1</p>
+			<p class="title">Вступ</p>
+			<h4><span class="markedtextred boldtext">Javascript (скорочено JS)</span> - основна мова програмування Всесвітньої павутини, яка дозволяє визначити поведінку веб-сторінок. В JS можна взаємодіяти з користувачами, реагувати на події, отримувати і використовувати дані з Інтернету, виводити графіку і т.д.</h4>
+			<div class="important">
+				<span class="boldtext">Нагадаємо!</span><br> HTML використовується для визначення контенту сторінок та їх структури. CSS-кольори, шрифти, рамки і визначають стиль оформлення сторінок.
+			</div>
+			<p>
+				JS - родич HTML i CSS і вміє визначити поведінку веб-сторінок:
+			</p>
+			<img class="lessonsimage mimage" src="images/lessons/1_1.jpg">
+			<p class="top2" id="top2">Програміст включає код JS прямо в сторінку, а потім завантажує її в браузер. Браузер сам виконує усе необхідне для виконання коду.</p>
+			<h4>Код JS складається з команд. Кожна команда описує частину операції що буде виконуватися, а весь набір команд визначає поведінку сторінки.</h4>
+			<p class="title">Змінні і значення</p> 
+			<h4>Змінні призначені для зберігання значень.</h4>
+			<p>Розглянемо приклади:</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="purple">var</span> <span class="blue">winners</span><span class="pink"> = </span><span class="green">2</span>;				<span class="comment">// команда оголошує змінну winners і присвоює їй числове значення 2</span></span><br><span><span class="purple">var</span> <span class="blue">name</span><span class="pink"> = </span><span class="yellow	">"Rita"</span>;				<span class="comment">// зміннй надається послідовність символів(рядок)</span></span><br><span><span class="purple">var</span> <span class="blue">log</span><span class="pink"> = </span><span class="green">false</span>;				<span class="comment">// змінні що приймають значення true i false називають логічними(булевими)</span></span></code></pre>
+			</div>
+			<p>
+				Крім чисел, рядків і логічних значень змінні можуть зберігати і інші дані. Незалежно від виду даних усі змінні створюються по одним правилам:
+			</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> winners</span><span class="pink"> = </span><span class="green">2</span>;</span></code></pre>
+			</div>
+			<div class="important">
+				<p class="boldtext">Запам'ятайте!</p>
+				<ul class="tez">
+					<li>Оголошення змінної завжди починається з ключового слова <span class="boldtext markedtextred ">var</span></li>
+					<li>Після цього пишемо ім'я змінної (<a href="#varname"><span class="underlined">як правильно давати ім'я змінній?</span></a>)</li>
+					<li>При бажанні вказується значення змінної після знака <span class="boldtext markedtextred ">=</span></li>
+					<li>Команда присвоєння завжди закінчується знаком <span class="boldtext markedtextred ">;</span></li>
+				</ul>
+			</div>
+			<p>
+				Можна створити змінну без початкового значення:
+			</p>
+			<div id="varname" class="code">
+				<pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> losers</span>;</span></code></pre>
+			</div>
+			<h4>Отже, у змінної є ім'я і є значення.</h4>
+			<div class="important top3">
+				<p class="boldtext">Як правильно давати ім'я змінній?</p>
+				<ul class="tez">
+					<li>Ім'я змінної має починатися з <span class="boldtext">літери</span>, <span class="boldtext">підкреслення</span> або <span class="boldtext">знака доллара</span>.</li>
+					<li>Потім можуть йти літери, підкреслення або знаки доллара - в будь-якій кількості.</li>
+					<li><span class="boldtext">НE</span> можуть використовуватися <span class="underlined">вбудовані ключові слова</span>.</li>
+					<li>У JS регістр символів <span class="boldtext">враховується</span>.</li>
+					<li id ="top3">Ім'я змінної<span class="boldtext"> НЕ </span>має містити пробіл.</li>
+				</ul>
+			</div>
+			<p class="title">Синтаксис</p>
+			<ul class="tez">
+				<li>Кожна команда закінчується символом <span class="boldtext">";"</span>.</li>
+				<li>Однорядковий коментар починається з двох похилих рисок <span class="boldtext">(//)</span>.</li>
+				<li id="top4">Зайві пропуски дозволяються (майже всюди).</li>
+				<li>Рядки беруться в подвійні лапки (або одинарні).</li>
+			</ul>
+			
+			<p class="title top4">Закріплення знань</p>
+			<p class="task">1) Оголосити змінну road та присвоїти їй значення 20.</p>
+			<input class="answerInput realInput" type="text" placeholder="Введіть відповідь..."></input>
+			<button class="answerButton" type="submit" onclick="checkAnswer(1, 1, 1);">Перевірити</button>
+			<br>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(0);">Показати відповідь</button>
+			<div class="code-answer">
+				<div class="code">
+					<pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> road</span><span class="pink"> = </span><span class="green">20</span>;</span></code></pre>
+				</div>
+			</div>
+			<p class="task">2) У якому рядку помилка?</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="purple">var</span> <span class="blue">winners</span>;</span><br><span><span class="blue">winners</span><span class="pink"> = </span><span class="yellow">"Rita"</span>;</span><br><span><span class="purple">var</span> <span class="blue">log</span><span class="pink"> == </span><span class="green">false</span>;</span></code></pre>
+			</div>
+			<input class="answerInput" name="task" value="1" type="radio">  1
+			<br>
+			<input class="answerInput" name="task" value="2" type="radio">  2
+			<br>
+			<input class="answerInput" name="task" value="3" type="radio">  3
+			<br>
+			<input class="answerInput" name="task" value="все вірно" type="radio">  все вірно
+			<br>
+			<button class="answerButton" type="submit" onclick="checkAnswer(1, 2, 2, 'task');">Перевірити</button>
+			<br>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(1);">Показати відповідь</button>
+			<div class="code-answer">
+				<p class="semiboldtext">Правильна відповідь: 3</p>
+			</div>
+			<br>
+			<p class="task">3) Знайти 15 вбудованих ключових слів та написати їх значення.</p>
+			<p>4) Знайти помилки в змінних та синтаксі:</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="comment">// Test for jokes</span><br><span class="purple">var</span><span class="blue"> joke</span><span class="pink"> = </span><span class="yellow">"Javascript walked into a bar..."</span>;<br><span class="purple">var</span><span class="blue"> toldJoke</span><span class="pink"> = </span><span class="yellow">"false"</span>;<br><span class="purple">var</span><span class="blue"> $punchline</span><span class="pink"> = </span><br><span class="yellow">  "Better watch out for those semi-colons."</span><br><span class="purple">var</span><span class="blue"> %entage</span><span class="pink"> = </span><span class="green">20</span>;<br><span class="purple">var</span><span class="blue"> result</span><br><br><span class="pink">if</span> (<span class="blue">toldJoke</span><span class="pink"> == </span><span class="green">true</span>) {<br><span class="blue">  Alert</span>(<span class="blue">$punchline</span>);<br>}<span class="pink"> else</span><br><span class="blue">  alert</span>(<span class="blue">joke</span>);<br>}</span></code></pre>
+			</div>
+			
+			<input class="answerInput realInput" type="text" placeholder="Введіть кількість помилок..."></input>
+			<button class="answerButton" type="submit" onclick="checkAnswer(1, 6, 4);">Перевірити</button>
+			<br>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(2);">Показати відповідь</button>
+			<div class="code-answer">
+				<p class="semiboldtext">Правильна відповідь: 5 помилок.</p>
+				<p class="semiboldtext">Пояснення:</p>
+				<ol>
+					<li>Відсутній знак ";" в кінці 5го рядка</li>
+					<li>Ім'я змінної не може починатись з "%" (<a href="#varname"><span class="underlined">як правильно давати ім'я змінній?</span></a>)</li>
+					<li>Відсутній знак ";" в кінці 7го рядка</li>
+					<li>Функцію alert() треба писати з маленької літери</li>
+					<li>Відсутній знак "{" після else</li>
+				</ol>
+			</div>
+
+
+			<div class="code">
+				<pre class="code-example"><code><span><span class="comment">\\ Movie Night</span><br><span class="purple">var</span><span class="blue"> zip code</span><span class="pink"> = </span><span class="green">98104</span>;<br><span class="purple">var</span><span class="blue"> joe'sFavoriteMovie</span><span class="pink"> = </span><span class="yellow">Forbidden Planet</span>;<br><span class="purple">var</span><span class="blue"> movieTicket$</span><span class="pink">   =   </span><span class="green">9</span>;<br><br><span class="pink">if</span> (<span class="blue">movieTicket$</span><span class="pink"> &#62;= </span><span class="green">9</span>) {<br><span class="blue">  alert</span>(<span class="yellow">"Too much!"</span>);<br>}<span class="pink"> else</span> {<br><span class="blue">  alert</span>(<span class="yellow">"We're going to see"</span><span class="pink"> + </span><span class="blue">joe'sFavotiteFilm</span>);<br>}</span></code></pre>
+			</div>
+			
+			<input class="answerInput realInput" type="text" placeholder="Введіть кількість помилок..."></input>
+			<button class="answerButton" type="submit" onclick="checkAnswer(1, 7, 5);">Перевірити</button>
+			<br>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(3);">Показати відповідь</button>
+			<div class="code-answer">
+				<p class="semiboldtext">Правильна відповідь: 5 помилок.</p>
+				<p class="semiboldtext">Пояснення:</p>
+				<ol>
+					<li>Однорядковий коментар починається з "//"</li>
+					<li> Ім'я змінної не має містити пробіл (<a href="#varname"><span class="underlined">як правильно давати ім'я змінній?</span></a>)</li>
+					<li>Ім'я змінної не має містити апостроф (<a href="#varname"><span class="underlined">як правильно давати ім'я змінній?</span></a>)</li>
+					<li>Forbidden Planet потрібно взяти в лапки.</li>
+				</ol>
+			</div>
+			<div id="nav1">
+				<div>
+					<a href="index.html"><button><p>На головну</p></button></a>
+				</div>
+				<div>
+					<a href="lesson2.html"><button><p>Наступний урок</p></button></a>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer>
+		
+	</footer>
+</body>
+</html>

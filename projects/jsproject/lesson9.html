@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Тема 9</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/lesson.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+
+  </script>
+</head>
+<body>
+  <header>
+    <div onclick="window.location='index.html'" id="menu">
+      Javascript підручник
+    </div>
+  </header>
+  <main>
+    <div id="nav">
+      <p class="topic">Тема 9</p>
+      <ul>
+        <a  href="#"><li class="top1">Об’єкти</li></a>
+        <a  href="#top2"><li class="top2">Звернення до властивості</li></a>
+        <a  href="#top3"><li class="top3">Обчислення з об’єктами</li></a>
+        <a  href="#top4"><li class="top4">Як зберігається об’єкт</li></a>
+      </ul>
+    </div>
+    <div id="main-content">
+      <p class="main-page"><a href="index.html">Головна</a> > Тема 9</p>
+      <p class="title">Об’єкти</p>
+      <div class="important"><span class="boldtext">Об’єкти JS</span> являють собою набір властивостей, наприклад, у автомобіля є властивості: марка, модель, номер, пробіг і т.д.</div>
+      <img class="lessonsimage codeimage eimage" src="images/lessons/9_1.jpg">
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> chery</span><span class="pink"> = </span>{ make: <span class="yellow">"Chery"</span>, model: <span class="yellow">"Bel Air"</span>, year: <span class="green">1957</span>, color: <span class="yellow">"red"</span>, passengers: <span class="green">2</span>, convertible: <span class="green">false</span>, mileage: <span class="green">1024</span>};</span></code></pre>
+      </div>
+
+      <div class="important">
+        <span class="boldtext">Запам'ятайте!</span>
+        <ul class="tez">
+          <li>Об’єкт не може містити властивості з однаковими іменами;</li>
+          <li>Ім’я об’єкти з пробілом береться в лапки;</li>
+          <li>Після задання останнього об’єкта кома не ставиться.</li>
+        </ul>
+      </div>
+
+
+
+
+      <p>До цього моменту ми розглядали задачу як сукупність змінних, умов, циклів, викликів функцій. Це приклад <span class="underlined">процедурного підходу</span>: спочатку це, потім наступне і т.д. В <span class="underlined">об’єктно-орієнтованому</span> програмуванні задача розглядається в контексті об’єктів, що мають стан(рівень масла і бензину у машини) і поведінку( машину можна завести і припаркувати).</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> fiat</span><span class="pink"> = </span>{ make: <span class="yellow">"Fiat"</span>, model: <span class="yellow">"500"</span>, year: <span class="green">1957</span>, color: <span class="yellow">"medium blue"</span>, passengers: <span class="green">2</span>, convertible: <span class="green">false</span>, mileage: <span class="green">880000</span>};</span></code></pre>
+      </div>
+      <div class="important">
+        <span class="boldtext">Важливо!</span><br>make, model, year, color, passengers, convertible, mileage - <span class="semiboldtext">властивості об'єкта</span><br>
+        "Fiat", "500", 1957, "medium blue", 2, false, 880000 - <span id="top2" class="semiboldtext">значення властивостей об'єкта</span>
+      </div>
+      
+      <p class="title">Звернення до властивості</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="blue">fiat</span>.mileage</span></code></pre>
+      </div>
+      
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> miles</span><span class="pink"> = </span><span class="blue">fiat</span>.mileage;<br><br><span class="pink">if</span> (<span class="blue">miles</span><span class="pink"> &#60; </span><span class="green">2000</span>) {<br><span class="blue">  byIt</span>();<br>}</span></code></pre>
+      </div>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="blue">fiat</span>.mileage<span class="pink"> = </span><span class="green">10000</span>;<span class="comment">           // змінити властивість</span><br><span class="blue">fiat</span>.needsWashing<span class="pink"> = </span><span class="green">true</span>;<span id="top3" class="comment">       // додати властивість</span></span></code></pre>
+      </div>
+
+      <p class="title">Обчислення з об’єктами</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="pink">if</span> (<span class="blue">fiat</span>.year<span class="pink"> &#60; </span><span class="green">1965</span>) {<br><span class="blue">  classic</span><span class="pink"> = </span><span class="green">true</span>;<br>}</span></code></pre>
+      </div>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="pink">for</span>(<span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="green">0</span>;<span class="blue"> i</span><span class="pink"> &#60; </span><span class="blue">fiat</span>.passengers;<span class="blue"> i</span><span class="pink">++</span>) {<br><span class="blue">  AddPersonToCar</span>();<br>}</span></code></pre>
+      </div>
+      <img class="lessonsimage mimage" src="images/lessons/9_2.jpg"><br>
+
+      <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(0);">Показати відповідь</button>
+      <div class="code-answer">
+       <img class="lessonsimage mimage" src="images/lessons/9_2answer.jpg">
+     </div>
+     <div class="code">
+      <pre class="code-example"><code><span><span class="pink">delete </span><span class="blue">fido</span>.dogYears;<span class="comment">       // вилучити властивість</span></span></code></pre>
+    </div>
+    <div class="important">
+      При вилученні властивості видаляється і властивість, і значення властивості.
+      <br>Якщо після вилучення знову звернутися до цієї властивості, то результат буде <span class="boldtext">undefined</span>. 
+      <br>Delete повертає <span class="boldtext">true</span>, якщо вилучення успішне.
+      <br>Delete повертає <span class="boldtext">false</span>, лише тоді коли властивість не була вилучена (властивість входить у захищений об’єкт, що належить браузеру). 
+      <br><span class="boldtext">True</span> повертається навіть коли видаляємо властивість, якої не існує.</div>
+      <p>- Властивостей може бути скільки завгодно</p>  
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> chery</span><span class="pink"> = </span>{ };<span class="comment">       // об’єкт без властивостей</span></span></code></pre>
+      </div>
+      <p>- Якщо додаємо властивість яка вже існує це призведе до зміни поточного значення властивості.</p>
+      <p>- Результат виразу <span class="underlined">fiat.make</span> дорівнює <span class="boldtext">undefined</span> якщо об’єкт fiat не має властивості make.</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="orange">console</span>.<span class="purple">log</span>(<span id="top4" class="blue">fiat</span>);<span class="comment">       // виводить всю інформацію про об’єкт</span></span></code></pre>
+      </div>
+
+      <p class="title">Як зберігається об’єкт</p>
+      <p>- У змінних не зберігаються самі об’єкти, в них зберігаються посилання на них.</p>
+      <p>- Посилання нагадує вказівку або адресу об’єкта</p>
+      <p>- <span class="boldtext">car.color;</span> -  означає використати об’єкт на який посилається змінна car для звернення до властивості <span class="underlined">color</span> (що містить властивість після крапки).</p>
+      <img class="lessonsimage mimage" src="images/lessons/9_3.jpg">
+      <p>Напишемо функцію яка перевіряє машини. Функція отримує об’єкт car в параметрі, перевіряє його і повертає true або false.</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">function</span> prequel(<span class="blue">car</span>) {<br><span class="pink">  if</span> (<span class="blue">car</span>.mileage<span class="pink"> &#62; </span><span class="green">10000</span>) {<br><span class="pink">    return</span><span class="green"> false</span>;<br>  }<span class="pink"> else if</span> (<span class="blue">car</span>.year<span class="pink"> &#62; </span><span class="green">1960</span>) {<br><span class="pink">    return</span><span class="green"> false</span>;<br>  }<br><span class="pink">  return</span><span class="green"> true</span>;<br>}</span></code></pre>
+      </div>
+
+      <div id="nav1">
+        <div>
+          <a href="lesson8.html"><button><p>Попередній урок</p></button></a>
+        </div>
+        <div>
+          <a href="lesson10.html"><button><p>Наступний урок</p></button></a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+
+  </footer>
+</body>
+</html>

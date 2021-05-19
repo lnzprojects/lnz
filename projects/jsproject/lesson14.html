@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Тема 14</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/lesson.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+
+  </script>
+</head>
+<body>
+  <header>
+    <div onclick="window.location='index.html'" id="menu">
+      Javascript підручник
+    </div>
+  </header>
+  <main>
+    <div id="nav">
+      <p class="topic">Тема 14</p>
+      <ul>
+        <a  href="#"><li class="top1">Як ви вважаєте?</li></a>
+        <a  href="#top2"><li class="top2">Порівняння значень</li></a>
+        <a  href="#top3"><li class="top3">Строга рівність (===) (оператор тотожності)</li></a>
+        <a  href="#top4"><li class="top4">Ще більше перетворень типів</li></a>
+        <a  href="#top5"><li class="top5">Рівність об’єктів</li></a>
+        <a  href="#top6"><li class="top6">Псевдоістина та псевдохиба</li></a>
+        <a  href="#top7"><li class="top7">Рядок як примітив і як об’єкт</li></a>
+        <a  href="#top8"><li class="top8">Закріплення знань</li></a>
+      </ul>
+    </div>
+    <div id="main-content">
+      <p class="main-page"><a href="index.html">Головна</a> > Тема 14</p>
+      <p class="title">Як ви вважаєте?</p>
+      <ol>
+        <li>Якого типу значення Infinity?</li>
+        <li>Infinity - Infinity = ?</li>
+        <li>Якого типу null?</li>
+        <li>Що відбувається коли порівнюємо:<br>
+          <div class="code">
+            <pre class="code-example"><code><span>...<br><span class="pink">if</span>(<span class="yellow">"99"</span><span class="pink"> == </span><span class="green">99</span>) {<br>  ... <br>}<br><span id="top2">...</span></span></code></pre>
+          </div>
+        </li>
+      </ol>
+      <p class="title">Порівняння значень</p>
+      <ol>
+        <li>Якщо обидва значення відносяться до одного типу ми просто <span class="boldtext">порівнюємо</span> їх.</li>
+        <li>Значення відносяться до різних типів, ми перетворюємо їх <span class="boldtext">до одного типу</span>, а потім порівнюємо.
+         <ol class="listTypeA" type="a">
+          <li><span class="boldtext">Порівняння числа з рядком</span>
+           <div class="code">
+            <pre class="code-example"><code><span><span class="green">99</span><span class="pink"> == </span><span class="yellow">"99"</span><span class="comment">         // true</span><br><span class="green">99</span><span class="pink"> == </span><span class="green">99</span><span class="comment">           // true</span><br><br><span class="green">99</span><span class="pink"> == </span><span class="yellow">"vanilla"</span><span class="comment">    // false</span><br><span class="green">99</span><span class="pink"> == </span><span class="green">NaN</span><span class="comment">          // false</span></span></code></pre>
+          </div>
+        </li>
+        <li><span class="boldtext">Порівняння булевого значення з іншим типом</span>:<br>
+          в цьому випадку булеве значення перетворюється в число і два числа порівнюються (true -> 1, false -> 0):
+          <div class="code">
+            <pre class="code-example"><code><span><span class="green"> 1</span><span class="pink">  == </span><span class="yellow">true</span><span class="comment">        // true</span><br><span class="green"> 1</span><span class="pink">  == </span><span class="green">1</span><span class="comment">           // true</span><br><span class="green">"1"</span><span class="pink"> == </span><span class="yellow">true</span><span class="comment">        // true</span><br><span class="green">"1"</span><span class="pink"> == </span><span class="green">1</span><span class="comment">           // true</span></span></code></pre>
+          </div>
+        </li>
+        <li><span class="boldtext">Порівняння null з undefined.</span><br>
+          Порівняння цих значень дає результат <span class="underlined">true</span>:
+          <div class="code">
+            <pre class="code-example"><code><span><span class="green">undefined</span><span class="pink"> == </span><span class="green">null</span><span class="comment">  // true</span></span></code></pre>
+          </div>
+        </li>
+      </ol>
+    </li>
+  </ol>
+
+  <div class="important">Якщо обидва значення відносяться до одного типу ми просто <span class="boldtext">порівнюємо</span> їх.<br>Значення відносяться до різних типів, ми перетворюємо їх <span class="boldtext">до одного типу</span>, а потім порівнюємо.</div>
+
+
+  Перевірте, що буде результатом порівняння:
+  <div class="code">
+    <pre class="code-example"><code><span><span class="green">1</span><span class="pink"> == </span><span id="top3" class="yellow">" "</span></span></code></pre>
+  </div>
+
+  <p class="title">Строга рівність (===) (оператор тотожності)</span></p>
+  <div class="important">Два значення вважаються <span class="boldtext">строго рівними</span> лише в тому випадку, якщо вони відносяться <span class="underlined">до одного типу</span> і містять <span class="underlined">одне значення</span>.</div>
+
+  <h4>Це означає, що якщо два значення відносяться до одного типу, ми переходимо до <span class="underlined">їх порівняння</span>. Якщо ні — результат <span class="underlined">false</span>.</h4>
+
+  <div class="code">
+    <pre class="code-example"><code><span><span class="green">99</span><span class="pink"> == </span><span class="yellow">"ninety-nine"</span><span class="comment">  // false (правило 2а)</span></span></code></pre>
+  </div>
+  <div class="code">
+    <pre class="code-example"><code><span><span class="green">true</span><span class="pink"> == </span><span class="yellow">"true"</span><span class="comment">  // false (правило 2б)</span></span></code></pre>
+  </div>
+  <div class="code">
+    <pre class="code-example"><code><span><span class="green">99</span><span class="pink"> &#60;= </span><span class="yellow">"100"</span><span class="comment">  // true (правило 2а)</span></span></code></pre>
+  </div>
+
+
+  <p>Спробуйте виконати завдання на малюнку:</p>
+  <img class="lessonsimage codeimage eimage" src="images/lessons/14_7.jpg">
+
+  <p>Щоб визначити результат порівняння "banana" &#60; "mango", треба використати алфавітний порядок. Отже "banana" &#60; "mango", так як "b" передує "m". А  "mango" &#60; "melon" тому, що перші букви співпадають, але друга буква "a" передує "e". В той же час "Mango" &#60; "mango", бо в порядку символів Юнікода "M" іде раніше за "m".</p>
+
+  <h4 id="top4">Також існує оператор !== (строга нерівність).</h4>
+  <br>
+
+  <p class="title">Ще більше перетворень типів</p>
+
+  <p>При додаванні числа до рядка (і навпаки) Javascript перетворює число в рядок і виконане конкатенацію (поведінка протилежна тому, що відбувається у перевірці рівності):</p>
+
+  <div class="code">
+    <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> addi</span><span class="pink"> = </span><span class="green">3</span><span class="pink"> + </span><span class="yellow">"4"</span>;<span class="comment">     // "34"</span><br><span class="purple">var</span><span class="blue"> plusi</span><span class="pink"> = </span><span class="yellow">"4"</span><span class="pink"> + </span><span class="green">3</span>;<span class="comment">    // "43"</span></span></code></pre>
+  </div>
+
+  <p>Що стосується інших арифметичних операторів: множення, ділення і віднімання, — Javascript розглядає їх як арифметичні, а не рядкові операції:</p>
+
+  <div class="code">
+    <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> multi</span><span class="pink"> = </span><span class="green">3</span><span class="pink"> * </span><span class="yellow">"4"</span>;<span class="comment">   // 12</span><br><span class="purple">var</span><span class="blue"> divi</span><span class="pink"> = </span><span class="green">80</span><span class="pink"> / </span><span class="yellow">"10"</span>;<span class="comment">  // 8</span><br><span class="purple">var</span><span class="blue"> mini</span><span class="pink"> = </span><span class="yellow">"10"</span><span class="pink"> - </span><span class="green">5</span>;<span class="comment">   // 5</span></span></span></code></pre>
+  </div>
+
+  <div class="code">
+    <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> order</span><span class="pink"> = </span><span class="green">1</span><span class="pink"> + </span><span class="green">2</span><span class="pink"> + </span><span class="yellow">"pizzas"</span>;<span class="comment">   // "3 pizzas"</span></span></code></pre>
+  </div>
+  <p>Вираз опрацьовується зліва направо.</p>
+
+  <div class="code">
+    <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> order</span><span class="pink"> = </span>(<span class="green">1</span><span class="pink"> + </span><span class="green">2</span>)<span class="pink"> + </span><span class="yellow">"pizzas"</span>;<span class="comment">   // "3 pizzas"</span></span></code></pre>
+  </div>
+  <div class="code">
+    <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> order</span><span class="pink"> = </span><span class="green">1</span><span class="pink"> + </span>(<span class="green">2</span><span class="pink"> + </span><span class="yellow">"pizzas"</span>);<span  id="top5" class="comment">   // "12 pizzas"</span></span></code></pre>
+  </div>
+
+  <p class="title">Рівність об’єктів</p>
+
+  <div class="important">При порівнянні об’єктів не важливо як порівнювати (== чи ===). Порівнюються посилання на ці об’єкти.<br>Два посилання <span id="top6" class="underlined">рівні</span> лише в тому випадку, якщо вони посилаються <span class="boldtext">на один об’єкт</span>.</div>
+
+  <p class="title">Псевдоістина та псевдохиба</p>
+
+  <h4>В Javascript існують значення, які не є ні true, ні false, але при цьому інтерпретуються як true або false в умовних виразах.<br>Такі вирази називають <span class="underlined">«псевдоістиною»</span> і <span class="underlined">«псевдохибою»</span>.</h4>
+
+  <div class="important"><span class="boldtext">Правило</span>: спочатку визначте, що вважається псевдохибою, все інше буде псевдоістиною.</div>
+
+
+  <img class="lessonsimage codeimage eimage" src="images/lessons/14_2.jpg">
+
+  <p><span class="boldtext">Псевдохибні значення</span>: undefined, null, 0, " ", NaN.</p>
+  <p>Тож на малюнку всі умови хибні (псевдохибні). Всі інші значення псевдоістинні.</p>
+
+  <img class="lessonsimage codeimage eimage" src="images/lessons/14_3.jpg">
+  <p id="top7"></p><br><br>
+  <p class="title">Рядок як примітив і як об’єкт</p>
+
+  <p>В Javascript рядок виглядає і як примітив і як об’єкт (з підтримкою корисних методів опрацювання рядків).</p>
+
+  <p>Javascript створює рядки-об’єкти за нас при необхідності (коли для рядку викликається метод).</p>
+
+  <img class="lessonsimage mimage" src="images/lessons/14_6.jpg">
+
+  <img class="lessonsimage mimage" src="images/lessons/14_5.jpg">
+  <p id="top8"></p><br><br>
+  <p class="title">Закріплення знань</p>
+
+  <img class="lessonsimage codeimage eimage" src="images/lessons/14_8.jpg">
+  <div id="nav1">
+    <div>
+      <a href="lesson13.html"><button><p>Попередній урок</p></button></a>
+    </div>
+    <div>
+      <a href="lesson15.html"><button><p>Наступний урок</p></button></a>
+    </div>
+  </div>
+</div>
+</main>
+<footer>
+</footer>
+</body>
+</html>

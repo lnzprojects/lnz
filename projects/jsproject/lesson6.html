@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Тема 6</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/lesson.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+
+  </script>
+</head>
+<body>
+  <header>
+    <div onclick="window.location='index.html'" id="menu">
+      Javascript підручник
+    </div>
+  </header>
+  <main>
+    <div id="nav">
+      <p class="topic">Тема 6</p>
+      <ul>
+        <a  href="#"><li class="top1">Функції (продовження)</li></a>
+        <a  href="#top2"><li class="top2">Експерименти з функціями</li></a>
+        <a  href="#top3"><li class="top3">Глобальні і локальні змінні</li></a>
+        <a  href="#top4"><li class="top4">Закріплення знань</li></a>
+      </ul>
+    </div>
+    <div id="main-content">
+      <p class="main-page"><a href="index.html">Головна</a> > Тема 6</p>
+      <p class="title">Функції (продовження)</p>
+      <p>При виклику функції їй передаються аргументи, які співставляються з параметрами з визначення функції.</p>
+      <p>В аргументі можна передати значення Javascript: рядок, число, булеве значення:</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="blue">saveMyProfile</span>(<span class="yellow">"lady"</span>, <span class="green">1991</span>, <span class="green">3.81</span>, <span class="green">false</span>);</span></code></pre>
+      </div>
+
+      <p>Змінні також можуть передаватися як аргументи:</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> student</span><span class="pink"> = </span><span class="yellow">"krissy"</span>;<br><span class="purple">var</span><span class="blue"> year</span><span class="pink"> = </span><span class="green">1991</span>;<br><span class="purple">var</span><span class="blue"> GPA</span><span class="pink"> = </span><span class="green">381</span><span class="pink"> / </span><span class="green">100</span>;<br><span class="purple">var</span><span class="blue"> status</span><span class="pink"> = </span><span class="yellow">"existinguser"</span>;<br><span class="purple">var</span><span class="blue"> isNewUser</span><span class="pink"> = </span>(<span class="blue">status</span><span class="pink"> == </span><span class="yellow">"newuser"</span>);<br><br><span class="blue">saveMyProfile</span>(<span class="blue">student</span>, <span class="blue">year</span>, <span class="blue">GPA</span>, <span class="blue">isNewUser</span>);</span></code></pre>
+      </div>
+
+      <p>Коли викликається функція, поточні значення змінних передаються як аргументи.</p>
+
+      <p>У якості аргументів можуть використовуватися вирази:</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="blue">saveMyProfile</span>(<span class="blue">student</span>, <span class="blue">year</span>, <span class="green">381</span><span class="pink"> / </span><span class="green">100</span>, <span class="blue">status</span><span class="pink"> == </span><span class="yellow">"newuser"</span>);</span></code></pre>
+      </div>
+
+      <div class="important">Коли ми визначаємо функцію, ми визначаємо її одним або декількома <span class="underlined"><span class="boldtext">параметрами</span></span>. Коли викликаємо, ми передаємо їй <span class="underlined"><span class="boldtext">аргументи</span></span>.</div>
+      
+
+      <p><span class="boldtext">В Javascript використовується передача <span class="underlined">по значенню</span>. Тобто:</span></p>
+
+      <p>1. Оголошуємо зміну age і надаємо їй значення 7.</p>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> age</span><span class="pink"> = </span><span class="green">7</span>;</span></code></pre>
+      </div>
+      <p>2. Оголосимо функцію addOne з параметром x.</p>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">function</span> addOne(<span class="blue">x</span>) {<br><span class="blue">  x</span><span class="pink"> = </span><span class="blue">x</span><span class="pink"> + </span><span class="green">1</span>;<br>}</span></code></pre>
+      </div>
+
+      <p>3. Викличемо функцію addOne і передамо їй в аргументі зміну age. Значення age копіюється в параметр x.</p>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="blue">addOne</span>(<span class="blue">age</span>);</span></code></pre>
+      </div>
+
+      <p>4. Значення x збільшується на 1. Але потрібно пам'ятати, що x містить копію початкового значення, тому збільшується лише x, а не age.</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">function</span> addOne(<span class="blue">x</span>) {<br><span class="blue">  x</span><span class="pink"> = </span><span class="blue">x</span><span class="pink"> + </span><span class="green">1</span>;<br>}</span></code></pre>
+      </div>
+
+      <div id="top2" class="important">Отже, коли аргумент передається функції, його значення спочатку копіюється, а потім присвоюється відповідному параметру і зміни параметра у функції зачіпають лише сам параметр, а не початкову змінну.</div>  
+
+      <p class="title">Експерименти з функціями</p>
+
+      <p>Експеримент 1: що буде якщо передати замало аргументів?</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">function</span> makeTea(<span class="blue">cups</span>, <span class="blue">tea</span>) {<br><span class="orange">  console</span>.<span class="purple">log</span>(<span class="yellow">"Brewing "</span><span class="pink"> + </span><span class="blue">cups</span><span class="pink"> + </span><span class="yellow">" cups of  "</span><span class="pink"> + </span><span class="blue">tea</span>);<br>}<br><br><span class="blue">makeTea</span>(<span class="green">3</span>);</span></code></pre>
+      </div>  
+
+      <p><span class="boldtext">Параметр який не отримав аргумент набуде значення <span class="underlined">undefined</span></span>.</p>
+
+      <p>Експеримент 2: а якщо аргументів буде забагато?</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">function</span> makeTea(<span class="blue">cups</span>, <span class="blue">tea</span>) {<br><span class="orange">  console</span>.<span class="purple">log</span>(<span class="yellow">"Brewing "</span><span class="pink"> + </span><span class="blue">cups</span><span class="pink"> + </span><span class="yellow">" cups of  "</span><span class="pink"> + </span><span class="blue">tea</span>);<br>}<br><br><span class="blue">makeTea</span>(<span class="green">3</span>, <span class="yellow">"Earl Grey"</span>, <span class="yellow">"hey ma!"</span>, <span class="green">42</span>);</span></code></pre>
+      </div>
+
+      <p><span class="boldtext">Javascript просто ігнорує зайві аргументи.</span></p>
+
+      <p>Експеримент 3: а якщо у функції взагалі немає параметрів?</p>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">function</span> barkAtTheMoon() {<br><span class="orange">  console</span>.<span class="purple">log</span>(<span class="yellow">"Wooooooooo!"</span>);<br>}<br><br><span class="blue">barkAtTheMoon</span>();</span></code></pre>
+      </div>
+
+      <p><span class="boldtext">Нічого страшного, таких функцій багато.</span></p>
+
+      <p>Функція може <span class="underlined">повертати</span> значення.</p>
+
+      <p>Розглянемо малюнок 6.3.</p>
+
+      <div class="important">Команда <span class="boldtext">return</span> передає дані користувачу, вона може містити значення чи вираз який повертається як результат виклику функції.</div>
+
+      <p>Змінні які використовуються всередині функції, оголошуються в тілі функції.</p>
+
+      <div class="mark">
+        <div>
+        </div>
+        <div>
+          <ul>
+            <li>Імена функцій задаються за тими ж правилами, що і змінні.</li>
+            <li>Якщо імена аргумента і параметра співпадають, вони все одно вважаються різними змінними.</li> 
+            <li id="top3">Функція без команди return поверне undefined.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="title">Глобальні і локальні змінні</p>
+
+      <div class="important">Змінна оголошена за межами функції називається <span class="boldtext">глобальною</span>, а всередині функції <span class="boldtext">локальною</span>.<br>Місце визначення змінних задає їх <span class="boldtext">область дії</span>.</div>
+
+
+      <img class="lessonsimage codeimage eimage" src="images/lessons/6_4.jpg">
+      <p>Глобальні змінні існують поки існує сторінка. Якщо сторінку перезавантажити всі глобальні змінні будуть знищені і створені спочатку.</p>
+
+      <p>Локальні зміні зникають при завершені функції.</p>
+
+      <p>Якщо не оголосити змінну перед виконанням, то така змінна завжди буде глобальною (Навіть якщо вона вперше використовується всередині функції)</p>
+      
+      <img class="lessonsimage mimage" src="images/lessons/6_5.jpg">
+
+      <p>Якщо локальній змінній надати таке ж ім'я як вже існуючої глобальної змінної, виконається заміщення глобальної змінної.</p>
+
+      <img class="lessonsimage mimage" src="images/lessons/6_6.jpg">
+
+      <p>Усі звернення до beanCounter всередині функції відносяться до локальної змінної. Кажуть, що глобальна змінна "заміщується" локальною (тобто її не видно тому що локальна змінна її загороджує). Локальні і глобальні змінні ніяк не впливають одна на одну; Якщо змінити одну, ця зміна ніяк не відобразиться на іншій.</p>
+
+
+      <div class="important">Всі змінні вважаються <span class="boldtext">undefined</span> до моменту ініціалізації.</div>
+
+      <p id="top4">Оголошення функції можна робити де завгодно у коді. В дійсності Javascript двічі опрацьовує сторінку: при першому проході читаються всі визначення функцій, а на другому починається виконання коду.</p>
+
+      <p class="title">Закріплення знань</p>
+      <h4>Написати програми за допомогою функцій:</h4>
+      <p class="task">1) Піднести до квадрату всі натуральні числа до N.</p>
+      <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(0);">Показати відповідь</button>
+      <div class="code-answer">
+       <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> n</span><span class="pink"> = </span><span class="pink">+</span><span class="blue">prompt</span>(<span class="yellow">'Введіть число: '</span>);<br><br><span class="purple">function</span> numberQ() {<br>  <span class="pink">for</span> (<span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="green">1</span>;<span class="blue"> i</span><span class="pink"> &#60;= </span><span class="blue">n</span>; <span class="blue">i</span><span class="pink">++</span>) {<br>    <span class="orange">console</span>.<span class="purple">log</span>(<span class="blue">i</span><span class="pink"> + </span><span class="yellow">" в квадраті = "</span><span class="pink"> + </span><span class="blue">i</span><span class="pink">*</span><span class="blue">i</span>);<br>  }<br>}<br><br><span class="blue">numberQ</span>();</span></code></pre>
+      </div>
+    </div>
+    <p class="task">2) Знайти корені лінійного рівняння y=ax+b.</p>
+    <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(1);">Показати відповідь</button>
+    <div class="code-answer">
+     <div class="code">
+      <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> x</span>;<br><span class="purple">var</span><span class="blue"> y</span><span class="pink"> = </span><span class="pink">+</span><span class="blue">prompt</span>(<span class="yellow">'Введіть y: '</span>);<br><span class="purple">var</span><span class="blue"> a</span><span class="pink"> = </span><span class="pink">+</span><span class="blue">prompt</span>(<span class="yellow">'Введіть a: '</span>);<br><span class="purple">var</span><span class="blue"> b</span><span class="pink"> = </span><span class="pink">+</span><span class="blue">prompt</span>(<span class="yellow">'Введіть b: '</span>);<br><br><span class="purple">function</span> rivnyannya(<span class="blue">y</span>, <span class="blue">a</span>, <span class="blue">b</span>) {<br><span class="blue">  x</span><span class="pink"> = </span>(<span class="blue">y</span><span class="pink"> - </span><span class="blue">b</span>)<span class="pink"> / </span><span class="blue">a</span>;<br><span class="orange">  console</span>.<span class="purple">log</span>(<span class="blue">x</span>);<br>}<br><br><span class="blue">rivnyannya</span>(<span class="blue">y</span>, <span class="blue">a</span>, <span class="blue">b</span>);</span></code></pre>
+    </div>
+  </div>
+  <p class="task">3) Чи є число N числом Мерсена? (Функція перевіряє чи Мерсен). Треба використати return.</p>
+  <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(2);">Показати відповідь</button>
+  <div class="code-answer">
+    <div class="code">
+      <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> n</span><span class="pink"> = </span><span class="pink">+</span><span class="blue">prompt</span>(<span class="yellow">'Введіть число: '</span>);<br><span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="green">1</span>;<br><span class="purple">var</span><span class="blue"> result</span><span class="pink"> = </span><span class="green">1</span>;<br><br><span class="purple">function</span> numberM(<span class="blue">result</span>) {<br>  <span class="pink">while</span> (<span class="blue">result</span><span class="pink"> &#60; </span><span class="blue">n</span>) {<br>    <span class="blue">result</span><span class="pink"> = </span><span class="green">1</span>;<br>    <span class="pink">for</span> (<span class="purple">var</span><span class="blue"> j</span><span class="pink"> = </span><span class="green">1</span>;<span class="blue"> j</span><span class="pink"> &#60; </span><span class="blue">i</span>; <span class="blue">j</span><span class="pink">++</span>) {<br>      <span class="blue">result</span><span class="pink"> = </span><span class="blue">result</span><span class="pink"> * </span><span class="green">2</span>;<br>    }<br>    <span class="blue">result</span><span class="pink"> = </span><span class="blue">result</span><span class="pink"> - </span><span class="green">1</span>;<br>    <span class="blue">i</span><span class="pink">++</span>;<br>  }<br>  <span class="pink">if</span> (<span class="blue">result</span><span class="pink"> == </span><span class="blue">n</span>) {<br>    <span class="pink">return</span><span class="green"> true</span>;<br>  }<br>  <span class="pink">return</span><span class="green"> false</span>;<br>}<br><br><span class="orange">console</span>.<span class="purple">log</span>(<span class="blue">numberM</span>(<span class="blue">result</span>));</span></code></pre>
+    </div>
+  </div>
+
+  <p class="task">4) Морський бій (2 функції, наприклад влучення або не влучення і статистика)</p>
+  <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(3);">Показати відповідь</button>
+  <div class="code-answer">
+    <div class="code">
+      <pre class="code-example"><code><span><span class="purple">function</span> morskiyBiy() {<br><span class="purple">  var</span><span class="blue"> guess</span>,<br><span class="blue">      hits</span><span class="pink"> = </span><span class="green">0</span>,<br><span class="blue">      guesses</span><span class="pink"> = </span><span class="green">0</span>,<br><span class="blue">      nGuess</span><span class="pink"> = </span><span class="green">1</span>,<br><span class="blue">      text</span><span class="pink"> = </span><span class="yellow">"First guess: "</span>,<br><span class="blue">      gameResult</span><span class="pink"> = </span><span class="green">false</span>,<br><span class="blue">      randomN</span><span class="pink"> = </span><span class="orange">Math</span>.<span class="purple">floor</span>(<span class="orange">Math</span>.<span class="purple">random</span>()<span class="pink">*</span><span class="green">3</span><span class="pink">+</span><span class="green">1</span>),<br><span class="blue">      locs</span><span class="pink"> = </span>[<span class="blue">randomN</span>,<span class="blue">randomN</span><span class="pink">+</span><span class="green">1</span>,<span class="blue">randomN</span><span class="pink">+</span><span class="green">2</span>];<br><span class="pink">  while</span> (<span class="blue">gameResult</span><span class="pink"> == </span><span class="green">false</span>) {<br><span class="blue">    guess</span><span class="pink"> = </span><span class="pink">+</span><span class="blue">prompt</span>(<span class="blue">text</span>);<br><span class="pink">    if</span> (<span class="blue">guess</span><span class="pink"> &#62; </span><span class="green">0</span><span class="pink"> && </span><span class="blue">guess</span><span class="pink"> &#60; </span><span class="green">6</span>) {<br><span class="blue">      guesses</span><span class="pink">++</span>;<br><span class="blue">      nGuess</span><span class="pink">++</span>;<br><span class="pink">      for</span> (<span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="green">0</span>;<span class="blue"> i</span><span class="pink"> &#60; </span><span class="blue">locs</span>.<span class="blue">length</span>;<span class="blue"> i</span><span class="pink">++</span>) {<br><span class="pink">        if</span> (<span class="blue">guess</span><span class="pink"> == </span><span class="blue">locs</span>[<span class="blue">i</span>]) {<br><span class="blue">          text</span><span class="pink"> = </span><span class="yellow">"hit! guess №"</span><span class="pink"> + </span><span class="blue">nGuess</span><span class="pink"> + </span><span class="yellow">": "</span>;<br><span class="pink">          delete</span><span class="blue"> locs</span>[<span class="blue">i</span>];<br><span class="blue">          hits</span><span class="pink">++</span>;<br><span class="pink">          break</span>;<br>        }<span class="pink"> else</span> {<br><span class="blue">          text</span><span class="pink"> = </span><span class="yellow">"miss! guess №"</span><span class="pink"> + </span><span class="blue">nGuess</span><span class="pink"> + </span><span class="yellow">": "</span>;<br>        }<br>      }<br><span class="pink">      if</span> (<span class="blue">hits</span><span class="pink"> == </span><span class="green">3</span>) {<br><span class="blue">        gameResult</span><span class="pink"> = </span><span class="green">true</span>;<br>      }<br>    }<span class="pink"> else </span>{<br><span class="blue">      alert</span>(<span class="yellow">"Enter a valid cell number!"</span>);<br>    }<br>  }<br><span class="blue">  alert</span>(<span class="yellow">"ship is sunk!"</span>);<br><span class="blue">  alert</span>(<span class="yellow">"number of guesses = "</span><span class="pink"> + </span><span class="blue">guesses</span>);<br>}<br><br><span class="blue">morskiyBiy</span>();</span></code></pre>
+    </div>
+  </div>
+
+
+  <div id="nav1">
+    <div>
+      <a href="lesson5.html"><button><p>Попередній урок</p></button></a>
+    </div>
+    <div>
+      <a href="lesson7.html"><button><p>Наступний урок</p></button></a>
+    </div>
+  </div>
+</div>
+</main>
+<footer>
+  
+</footer>
+</body>
+</html>

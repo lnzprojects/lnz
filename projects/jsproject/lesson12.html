@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Тема 12</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/lesson.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+
+  </script>
+</head>
+<body>
+  <header>
+    <div onclick="window.location='index.html'" id="menu">
+      Javascript підручник
+    </div>
+  </header>
+  <main>
+    <div id="nav">
+      <p class="topic">Тема 12</p>
+      <ul>
+        <a  href="#"><li class="top1">Атрибути</li></a>
+        <a  href="#top2"><li class="top2">Що ще можна робити з моделлю DOM?</li></a>
+        <a  href="#top3"><li class="top3">Закріплення знань</li></a>
+      </ul>
+    </div>
+    <div id="main-content">
+      <p class="main-page"><a href="index.html">Головна</a> > Тема 12</p>
+      <p class="title">Атрибути</p>
+      <p>Зробимо текст: "Red Alert" на малюнку червоним тривожним кольором:</p>
+      <img class="lessonsimage mimage" src="images/lessons/12_1.jpg">
+      <ol>
+        <li>Визначимо для класу "redtext" правило CSS, що надає абзацу червоний колір тексту.</li>
+        <li>Додамо код, який бере елемент абзацу "greenplanet" і додає до нього клас redtext.</li>
+      </ol>
+      <div class="important">Об’єкти element містять метод <span class="boldtext">setAttribute</span>, який може викликатися для завдання атрибутів елементів HTML.<br>Метод використовується для <span class="underlined">додавання</span> чи <span class="underlined">зміни</span> вже існуючого атрибута.</div>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="blue">planet</span>.<span class="blue">setAttribute</span>(<span class="yellow">"class"</span>, <span class="yellow">"redtext"</span>);</span></code></pre>
+      </div>
+      <p></p>
+      <p>Метод отримує два аргументи: </p>
+      <ul>
+        <li>ім’я атрибута</li>
+        <li>значення атрибута</li>
+      </ul>
+
+      <p>Наприклад:</p>
+      <img class="lessonsimage codeimage eimage" src="images/lessons/12_2.jpg">
+
+      <div class="important">Значення атрибута можна читати методом <span class="boldtext">getAttribute</span>.</div>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> scoop</span><span class="pink"> = </span><span class="orange">document</span>.<span class="blue">getElementById</span>(<span class="yellow">"raspberry"</span>);<br><span class="purple">var</span><span class="blue"> altText</span><span class="pink"> = </span><span class="blue">scoop</span>.<span class="blue">getAttribute</span>(<span class="yellow">"alt"</span>);<br><span class="orange">console</span>.<span class="purple">log</span>(<span class="yellow">"I can not see the image in the console,"</span>);<br><span class="orange">console</span>.<span class="purple">log</span>(<span class="yellow">"but i'm told it looks like: "</span><span class="pink"> + </span><span class="blue">altText</span>);
+
+        </span></code></pre>
+      </div>
+
+      <div class="important">Якщо шуканий атрибут не існує в елементі то ми отримаємо <span class="boldtext">null</span>.</div>
+
+      <p>Перевірка:</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> scoop</span><span class="pink"> = </span><span class="orange">document</span>.<span class="blue">getElementById</span>(<span class="yellow">"raspberry"</span>);<br><span class="purple">var</span><span class="blue"> altText</span><span class="pink"> = </span><span class="blue">scoop</span>.<span class="blue">getAttribute</span>(<span class="yellow">"alt"</span>);<br><br><span class="pink">if</span> (<span class="blue">altText</span><span class="pink"> == </span><span class="green">null</span>) {<br>  <span class="orange">console</span>.<span class="purple">log</span>(<span class="yellow">"No here an alt attribute"</span>);<br>}<span class="pink"> else</span> {<br>  <span class="orange">console</span>.<span class="purple">log</span>(<span class="yellow">"I can not see the image in the console,"</span>);<br>  <span id="top2" class="orange">console</span>.<span class="purple">log</span>(<span class="yellow">"but i'm told it looks like: "</span><span class="pink"> + </span><span class="blue">altText</span>);<br>}</span></code></pre>
+      </div>
+      <p class="title">Що ще можна робити з моделлю DOM?</p>
+      <ul>
+        <li>Отримувати елементи (всі елементи класу "onsale", значення введені користувачем в формі).</li>
+        <li>Створювати і додавати елементи в DOM.</li>
+        <li id="top3">Вилучати елементи.</li>
+        <li>Перебирати елементи (дочірні даного, сусідні).</li>
+      </ul>
+
+      <p class="title">Закріплення знань</p>
+      <p class="task">Завдання: додати до веб-сторінки зафарбування в червоний колір (просто додати: planet.setAttribute("class", "redtext"); в функцію init + стилізацію для класа redtext.</p>
+      <p class="task">1. Вивести квадрат вмісту input (9 -> 81).</p>
+      <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(0);">Показати відповідь</button>
+      <div class="code-answer">
+        <div class="code">
+          <pre class="code-example"><code><span><span class="blue">&#60;!</span><span class="blue">DOCTYPE</span><span class="blue"> html</span><span class="blue">&#62;</span><br><span class="blue">&#60;html&#62;<br>&#60;head&#62;<br>  &#60;title&#62;</span>document<span class="blue">&#60;/title&#62;<br>&#60;/head&#62;<br>&#60;body&#62;<br>  &#60;input placeholder=</span><span class="yellow">"enter a number"</span><span class="blue"> value=</span><span class="yellow">""</span><span class="blue"> id</span><span class="blue">=</span><span class="yellow">"input"</span><span class="blue">&#62;<br>  &#60;button onclick=</span><span class="yellow">"</span><span class="blue">numberQ()</span><span class="yellow">"</span><span class="blue">&#62;</span>click<span class="blue">&#60;/button&#62;<br>  &#60;script type=</span><span class="yellow">"text/javascript"</span><span class="blue">&#62;</span><br><span class="purple">    function</span> numberQ() {<br><span class="purple">      var</span><span class="blue"> text</span><span class="pink"> = </span><span class="orange">document</span>.<span class="blue">getElementById</span>(<span class="yellow">"input"</span>).value;<br><span class="blue">      alert</span>(<span class="blue">text</span><span class="pink">*</span><span class="blue">text</span>);<br>    }<br><span class="blue">  &#60;/script&#62;<br>&#60;/body&#62;<br>&#60;/html&#62;</span></code></pre>
+        </div>
+      </div>
+      <p class="task">2. Зробити перевірку чи є значення що водиться числом.</p>
+      <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(1);">Показати відповідь</button>
+      <div class="code-answer">
+        <div class="code">
+          <pre class="code-example"><code><span><span class="blue">&#60;!</span><span class="blue">DOCTYPE</span><span class="blue"> html</span><span class="blue">&#62;</span><br><span class="blue">&#60;html&#62;<br>&#60;head&#62;<br>  &#60;title&#62;</span>document<span class="blue">&#60;/title&#62;<br>&#60;/head&#62;<br>&#60;body&#62;<br>  &#60;input placeholder=</span><span class="yellow">"enter a number"</span><span class="blue"> value=</span><span class="yellow">""</span><span class="blue"> id</span><span class="blue">=</span><span class="yellow">"input"</span><span class="blue">&#62;<br>  &#60;button onclick=</span><span class="yellow">"</span><span class="blue">isItNumber()</span><span class="yellow">"</span><span class="blue">&#62;</span>click<span class="blue">&#60;/button&#62;<br>  &#60;script type=</span><span class="yellow">"text/javascript"</span><span class="blue">&#62;</span><br><span class="purple">    function</span> isItNumber() {<br><span class="purple">      var</span><span class="blue"> text</span><span class="pink"> = </span><span class="orange">document</span>.<span class="blue">getElementById</span>(<span class="yellow">"input"</span>).value;<br><span class="pink">      if</span> (<span class="pink">!</span><span class="purple">isNaN</span>(<span class="blue">text</span>)) {<br><span class="blue">        alert</span>(<span class="yellow">"Введене значення є числом"</span>);<br>      }<span class="pink"> else</span> {<br><span class="blue">        alert</span>(<span class="yellow">"Введене значення не є числом"</span>);<br>      }<br>    }<br><span class="blue">  &#60;/script&#62;<br>&#60;/body&#62;<br>&#60;/html&#62;</span></code></pre>
+        </div>
+      </div>
+      <p class="task">3. Зміна зображення при натисканні на кнопку.</p>
+      <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(2);">Показати відповідь</button>
+      <div class="code-answer">
+        <div class="code">
+          <pre class="code-example"><code><span><span class="blue">&#60;!</span><span class="blue">DOCTYPE</span><span class="blue"> html</span><span class="blue">&#62;</span><br><span class="blue">&#60;html&#62;<br>&#60;head&#62;<br>  &#60;title&#62;</span>document<span class="blue">&#60;/title&#62;<br>&#60;/head&#62;<br>&#60;body&#62;<br>  &#60;img</span><span class="blue"> id</span><span class="blue">=</span><span class="yellow">"image"</span><span class="blue"> src=</span><span class="yellow">"image1.jpg"</span><span class="blue">&#62;<br>  &#60;button onclick=</span><span class="yellow">"</span><span class="blue">changeImg()</span><span class="yellow">"</span><span class="blue">&#62;</span>click<span class="blue">&#60;/button&#62;<br>  &#60;script type=</span><span class="yellow">"text/javascript"</span><span class="blue">&#62;</span><br><span class="purple">    function</span> changeImg() {<br><span class="orange">      document</span>.<span class="blue">getElementById</span>(<span class="yellow">"image"</span>).src<span class="pink"> = </span><span class="yellow">"image2.jpg"</span>;<br>    }<br><span class="blue">  &#60;/script&#62;<br>&#60;/body&#62;<br>&#60;/html&#62;</span></code></pre>
+        </div>
+      </div>
+      <p class="task">4. Зміна вмісту (-><-) двох input.</p>
+      <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(3);">Показати відповідь</button>
+      <div class="code-answer">
+        <div class="code">
+          <pre class="code-example"><code><span><span class="blue">&#60;!</span><span class="blue">DOCTYPE</span><span class="blue"> html</span><span class="blue">&#62;</span><br><span class="blue">&#60;html&#62;<br>&#60;head&#62;<br>  &#60;title&#62;</span>document<span class="blue">&#60;/title&#62;<br>&#60;/head&#62;<br>&#60;body&#62;<br>  &#60;input placeholder=</span><span class="yellow">"enter text"</span><span class="blue"> value=</span><span class="yellow">""</span><span class="blue"> id</span><span class="blue">=</span><span class="yellow">"input1"</span><span class="blue">&#62;<br>  &#60;input placeholder=</span><span class="yellow">"enter text"</span><span class="blue"> value=</span><span class="yellow">""</span><span class="blue"> id</span><span class="blue">=</span><span class="yellow">"input2"</span><span class="blue">&#62;<br>  &#60;button onclick=</span><span class="yellow">"</span><span class="blue">changeInput()</span><span class="yellow">"</span><span class="blue">&#62;</span>click<span class="blue">&#60;/button&#62;<br>  &#60;script type=</span><span class="yellow">"text/javascript"</span><span class="blue">&#62;</span><br><span class="purple">    function</span> changeInput() {<br><span class="purple">      var</span><span class="blue"> text</span><span class="pink"> = </span><span class="orange">document</span>.<span class="blue">getElementById</span>(<span class="yellow">"input1"</span>).value;<br><span class="orange">      document</span>.<span class="blue">getElementById</span>(<span class="yellow">"input1"</span>).value<span class="pink"> = </span><span class="orange">document</span>.<span class="blue">getElementById</span>(<span class="yellow">"input2"</span>).value;<br></span><span class="orange">      document</span>.<span class="blue">getElementById</span>(<span class="yellow">"input2"</span>).value<span class="pink"> = </span><span class="blue">text</span>;<br>    }<br><span class="blue">  &#60;/script&#62;<br>&#60;/body&#62;<br>&#60;/html&#62;</span></span></code></pre>
+        </div>
+      </div>
+      <p class="task">5. Зміна властивості float для input.</p>
+      <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(4);">Показати відповідь</button>
+      <div class="code-answer">
+        <div class="code">
+          <pre class="code-example"><code><span><span class="blue">&#60;!</span><span class="blue">DOCTYPE</span><span class="blue"> html</span><span class="blue">&#62;</span><br><span class="blue">&#60;html&#62;<br>&#60;head&#62;<br>  &#60;title&#62;</span>document<span class="blue">&#60;/title&#62;<br>&#60;/head&#62;<br>&#60;body&#62;<br>  &#60;span&#62;</span>text<span class="blue">&#60;/span&#62;<br>  &#60;input placeholder=</span><span class="yellow">"enter text"</span><span class="blue"> value=</span><span class="yellow">""</span><span class="blue"> id</span><span class="blue">=</span><span class="yellow">"input"</span><span class="blue">&#62;<br>  &#60;button onclick=</span><span class="yellow">"</span><span class="blue">floatInput()</span><span class="yellow">"</span><span class="blue">&#62;</span>click<span class="blue">&#60;/button&#62;<br>  &#60;script type=</span><span class="yellow">"text/javascript"</span><span class="blue">&#62;</span><br><span class="purple">    function</span> floatInput() {<br><span class="orange">      document</span>.<span class="blue">getElementById</span>(<span class="yellow">"input"</span>).style.float<span class="pink"> = </span><span class="yellow">"right"</span>;<br>    }<br><span class="blue">  &#60;/script&#62;<br>&#60;/body&#62;<br>&#60;/html&#62;</span></span></code></pre>
+        </div>
+      </div>
+      <div id="nav1">
+        <div>
+          <a href="lesson11.html"><button><p>Попередній урок</p></button></a>
+        </div>
+        <div>
+          <a href="lesson13.html"><button><p>Наступний урок</p></button></a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    
+  </footer>
+</body>
+</html>

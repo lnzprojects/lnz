@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Тема 2</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/lesson.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript">
+
+	</script>
+</head>
+<body>
+	<header>
+		<div onclick="window.location='index.html'" id="menu">
+			Javascript підручник
+		</div>
+	</header>
+	<main>
+		<div id="nav">
+			<p class="topic">Тема 2</p>
+			<ul>
+				<a  href="#"><li class="top1">Вирази у JS</li></a>
+				<a  href="#top2"><li class="top2">Цикл while</li></a>
+				<a  href="#top3"><li class="top3">Прийняття рішень в JS (умовний оператор if)</li></a>
+				<a  href="#top4"><li class="top4">Закріплення знань</li></a>
+
+			</ul>
+		</div>
+		<div id="main-content">
+			<p class="main-page"><a href="index.html">Головна</a> > Тема 2</p>
+			
+			<p class="title">Вирази у JS</p>
+			<p>Розглянемо вираз у наступній команді:</p>
+			<p>Чому буде дорівнювати змінна total, якщо price = 10, discount = 20?</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="pink">var</span> <span class="blue">total</span><span class="pink"> = </span><span class="blue">price</span><span class="pink"> - </span>(<span class="blue">price</span><span class="pink"> * </span><span class="blue">discount</span><span class="pink"> / </span><span class="green">100</span>);</span></code></pre>
+			</div>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(0);">Показати відповідь</button>
+			<div class="code-answer">
+				<p class="semiboldtext">Відповідь: 8.</p>
+			</div>
+			<p>Існують і рядкові вирази:</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="yellow">"Dear "</span><span class="pink"> + </span><span class="yellow">"Reader"</span><span class="pink"> + </span><span class="yellow">","</span><span class="comment"> (конкатенація)</span></span></code></pre>
+			</div>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="yellow">"super"</span><span class="pink"> + </span><span class="yellow">"cali"</span><span class="pink"> + </span><span class="blue">youKnowTheRest</span></span></code></pre>
+			</div>
+
+			<p class="boldtext">Результатом обчислення також може бути істиною чи хибою (true або false). Такі вирази називають <span class="underlined">булевими</span> (або логічними).</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="blue">age</span><span class="pink"> &#60; </span><span class="green">14</span></span></code></pre>
+			</div>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="blue">cost</span><span class="pink"> &#62;= </span><span class="green">3.99</span></span></code></pre>
+			</div>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="blue">animal</span><span class="pink"> == </span><span class="yellow">"bear"</span><span class="comment"> - істина, якщо назва тварини bear</span></span></code></pre>
+			</div>
+
+			<p>Результатом обчислення виразу буде число, рядок або логічний вираз.</p>
+
+			<div class="important">
+				<span class="boldtext">=</span>&nbsp;&nbsp;&nbsp; - &nbsp;оператор присвоювання
+				<br>
+				<span class="boldtext">==</span>&nbsp; - &nbsp;оператор перевіряє чи рівні два значення
+				<br>
+				<span id="top2" class="boldtext">!=</span>&nbsp;&nbsp; - &nbsp;оператор перевіряє що два значення НЕ рівні
+				<br>
+			</div>
+
+
+			<p class="title">Цикл while</p> 
+			<p>В програмах операції доводиться повторно виконувати. Для цього у JS використовуються конструкції <span class="boldtext">while, for, for in, for Each</span>.</p>
+			<p>Розглянемо приклад:</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="pink">while</span> (<span class="blue">scoops</span><span class="pink"> &#62; </span><span class="green">0</span>) {<br><span class="orange">  document</span>.<span class="blue">write</span>(<span class="yellow">"Another scoop!"</span>);<br><span class="blue">  scoops</span><span class="pink"> = </span><span class="blue">scoops</span><span class="pink"> - </span><span class="green">1</span>;<br>}</span></code></pre>
+			</div>
+			<p><span class="boldtext">while</span> - ключове слово</p>
+			<p id="top3"><span class="boldtext">scoops > 0</span> - умова</p>
+			<p><span class="boldtext">В дужках { }</span> - програмний блок</p>
+			
+			<p class="title">Прийняття рішень в JS (умовний оператор if)</p>
+			<p>Розглянемо приклад:</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="pink">if</span> (<span class="blue">scoops</span><span class="pink"> &#60; </span><span class="green">3</span>) {<br><span class="blue">  alert</span>(<span class="yellow">"Ice cream is running low!"</span>);<br>}</span></code></pre>
+			</div>
+			<p><span class="boldtext">if</span> - ключове слово</p>
+			<p><span class="boldtext">scoops &#60; 3</span> - умова</p>
+			<p><span class="boldtext">В дужках { }</span> - програмний блок команди if</p>
+			<div class="important">Функція <span class="boldtext">alert</span> отримує рядок і виводить його у спливаючому вікні браузера.</div>
+
+			<h4>Команда if дозволяє послідовно виконувати декілька перевірок:</h4>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="pink">if</span> (<span class="blue">scoops</span><span class="pink"> &#62;= </span><span class="green">5</span>) {<br><span class="blue">  alert</span>(<span class="yellow">"Eat faster, the ice cream is going to melt!"</span>);<br>}<span class="pink"> else if</span> (<span class="blue">scoops</span><span class="pink"> == </span><span class="green">3</span>) {<br><span class="blue">  alert</span>(<span class="yellow">"Ice cream is running low!"</span>);<br>}<span class="pink"> else if</span> (<span class="blue">scoops</span><span class="pink"> == </span><span class="green">3</span>) {<br><span class="blue">  alert</span>(<span class="yellow">"Going twice!"</span>);<br>}<span class="pink"> else if</span> (<span class="blue">scoops</span><span class="pink"> == </span><span class="green">3</span>) {<br><span class="blue">  alert</span>(<span class="yellow">"Going once!"</span>);<br>}<span class="pink"> else if</span> (<span class="blue">scoops</span><span class="pink"> == </span><span class="green">3</span>) {<br><span class="blue">  alert</span>(<span class="yellow">"Gone!"</span>);<br>}<span class="pink"> else</span> {<br><span class="blue">  alert</span>(<span class="yellow">"Still lots of ice cream left, come get it"</span>);<br>}</span></code></pre>
+			</div>
+			<div class="important">Функція <span class="boldtext">prompt</span> отримує рядок, виводить його у спливаючому вікні браузера та чекає, поки користувач введе текст, а потім повертає введене значення або null, якщо введення скасоване (Cancel/ESC). Результат роботи функції prompt є типом string, тобто рядком.</div>
+
+			<div class="code">
+				<pre class="code-example"><code><span><span class="pink">var</span><span class="blue"> age</span><span class="pink"> = </span><span class="blue">prompt</span>(<span class="yellow">"How old are you?"</span>);<br><span class="blue">alert</span>(<span class="blue">age</span>);</span></code></pre>
+			</div>
+
+			Якщо потрібен результат типу number, тобто число, необхідно використати <span class="boldtext">+prompt</span> замість <span class="boldtext">prompt</span>:
+
+			<div class="code">
+				<pre class="code-example"><code><span><span class="pink">var</span><span class="blue"> age</span><span class="pink"> = </span><span class="pink">+</span><span class="blue">prompt</span>(<span class="yellow">"How old are you?"</span>);<br><span id="top4" class="blue">alert</span>(<span class="blue">age</span>);</span></code></pre>
+			</div>
+
+			<p class="title top4">Закріплення знань</p>
+
+			
+			<p class="task">1) Яким буде результат, якщо temp дорівнює 10?</p>
+			<div class="code">
+				<pre class="code-example"><code><span>(<span class="green">9</span><span class="pink"> / </span><span class="green">5</span>)<span class="pink"> * </span><span class="blue">temp</span><span class="pink"> + </span><span class="green">32</span></span></code></pre>
+			</div>
+			<input class="answerInput realInput" type="text" placeholder="Введіть відповідь..."></input>
+			<button class="answerButton" type="submit" onclick="checkAnswer(2, 1, 1);">Перевірити</button>
+			<br>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(1);">Показати відповідь</button>
+			<div class="code-answer">
+				<p class="semiboldtext">Правильна відповідь: 50.</p>
+			</div>
+			<p class="task">2) Істиною чи хибою буде рівняння, якщо змінна color містить значення "pink"?</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="blue">color</span><span class="pink"> == </span><span class="yellow">"orange"</span></span></code></pre>
+			</div>
+			<input class="answerInput realInput" type="text" placeholder="Введіть відповідь..."></input>
+			<button class="answerButton" type="submit" onclick="checkAnswer(2, 2, 2);">Перевірити</button>
+			<br>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(2);">Показати відповідь</button>
+			<div class="code-answer">
+				<p class="semiboldtext">Правильна відповідь: хибою.</p>
+			</div>
+			<p class="task">3) Істиною чи хибою буде рівняння, якщо змінна color містить значення "orange"?</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="blue">color</span><span class="pink"> == </span><span class="yellow">"orange"</span></span></code></pre>
+			</div>
+			<input class="answerInput realInput" type="text" placeholder="Введіть відповідь..."></input>
+			<button class="answerButton" type="submit" onclick="checkAnswer(2, 3, 3);">Перевірити</button>
+			<br>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(3);">Показати відповідь</button>
+			<div class="code-answer">
+				<p class="semiboldtext">Правильна відповідь: істиною.</p>
+			</div>
+
+			<p class="task">4) Яким буде результат виразу?</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="blue">1000</span><span class="pink"> + </span><span class="yellow">"108"</span></span></code></pre>
+			</div>
+			<input class="answerInput realInput" type="text" placeholder="Введіть відповідь..."></input>
+			<button class="answerButton" type="submit" onclick="checkAnswer(2, 4, 4);">Перевірити</button>
+			<br>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(4);">Показати відповідь</button>
+			<div class="code-answer">
+				<p class="semiboldtext">Правильна відповідь: 1000108.</p>
+			</div>
+			<h4>Написати програми:</h4>
+			<p class="task">5) Знайти суму всіх двозначних чисел.</p>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(5);">Показати відповідь</button>
+			<div class="code-answer">
+				<div class="code">
+					<pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> sum</span><span class="pink"> = </span><span class="green">0</span>;<br><br><span class="pink">for</span> (<span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="green">0</span>;<span class="blue"> i</span><span class="pink"> &#60; </span><span class="green">100</span>;<span class="blue"> i</span><span class="pink">++</span>) {<br><span class="blue">  sum</span><span class="pink"> = </span><span class="blue"> sum</span><span class="pink"> + </span><span class="blue">i</span>;<br>}<br><br><span class="blue">alert</span>(<span class="yellow">"Сума всіх двозначних чисел = "</span><span class="pink"> + </span><span class="blue">sum</span>);</span></code></pre>
+				</div>
+			</div>
+			<p class="task">6) Вивести числа які кратні 7 та не перевищують 100 (7, 14, 21... 98).</p>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(6);">Показати відповідь</button>
+			<div class="code-answer">
+				<div class="code">
+					<pre class="code-example"><code><span><span class="pink">for</span> (<span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="green">1</span>;<span class="blue"> i</span><span class="pink"> &#60;= </span><span class="green">100</span>;<span class="blue"> i</span><span class="pink">++</span>) {<br><span class="pink">  if</span> (<span class="blue">i</span><span class="pink"> % </span><span class="green">7</span><span class="pink"> == </span><span class="green">0</span>) {<br><span class="blue">    alert</span>(<span class="yellow">"Число "</span><span class="pink"> + </span><span class="blue">i</span><span class="pink"> + </span><span class="yellow">" кратне 7"</span>);<br>  }<br>}</span></code></pre>
+				</div>
+			</div>
+
+			<p class="task">7) Вивести квадрати натуральних чисел, які менші або дорівнюють n.</p>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(7);">Показати відповідь</button>
+			<div class="code-answer">
+				<div class="code">
+					<pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> n</span><span class="pink"> = </span><span class="pink">+</span><span class="blue">prompt</span>(<span class="yellow">"Введіть число n: "</span>);<br><br><span class="pink">for</span> (<span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="green">0</span>;<span class="blue"> i</span><span class="pink"> &#60;= </span><span class="blue">n</span>;<span class="blue"> i</span><span class="pink">++</span>) {<br><span class="blue">  alert</span>(<span class="yellow">"Квадрат числа "</span><span class="pink"> + </span><span class="blue">i</span><span class="pink"> + </span><span class="yellow">" = "</span><span class="pink"> + </span><span class="blue">i</span><span class="pink">*</span><span class="blue">i</span>);<br>}</span></code></pre>
+				</div>
+			</div>
+			<p class="task">8) Чи існує трикутник зі сторонами a, b, c?</p>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(8);">Показати відповідь</button>
+			<div class="code-answer">
+				<div class="code">
+					<pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> a</span><span class="pink"> = </span><span class="pink">+</span><span class="blue">prompt</span>(<span class="yellow">"Введіть сторону a: "</span>);<br><span class="purple">var</span><span class="blue"> b</span><span class="pink"> = </span><span class="pink">+</span><span class="blue">prompt</span>(<span class="yellow">"Введіть сторону b: "</span>);<br><span class="purple">var</span><span class="blue"> c</span><span class="pink"> = </span><span class="pink">+</span><span class="blue">prompt</span>(<span class="yellow">"Введіть сторону c: "</span>);<br><span class="purple">var</span><span class="blue"> result</span><span class="pink"> = </span><span class="green">false</span>;<br><br><span class="pink">if</span> (<span class="blue">a</span><span class="pink"> + </span><span class="blue">b</span><span class="pink"> &#62; </span><span class="blue">c</span>) {<br><span class="pink">  if</span> (<span class="blue">a</span><span class="pink"> + </span><span class="blue">c</span><span class="pink"> &#62; </span><span class="blue">b</span>) {<br><span class="pink">    if</span> (<span class="blue">b</span><span class="pink"> + </span><span class="blue">c</span><span class="pink"> &#62; </span><span class="blue">a</span>) {<br><span class="blue">    	result</span><span class="pink"> = </span><span class="green">true</span>;<br>    }<br>  }<br>}<br><br><span class="pink">if</span> (<span class="blue">result</span>) {<br><span class="blue">  alert</span>(<span class="yellow">"Так, може існувати"</span>);<br>}<br><span class="pink">else</span> {<br><span class="blue">  alert</span>(<span class="yellow">"Ні, не може існувати"</span>);<br>}</span></code></pre>
+				</div>
+			</div>
+
+
+			<p class="task">9) Знайти найбільше з чисел a, b, c.</p>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(9);">Показати відповідь</button>
+			<div class="code-answer">
+				<div class="code">
+					<pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> a</span><span class="pink"> = </span><span class="pink">+</span><span class="blue">prompt</span>(<span class="yellow">"Введіть число a: "</span>);<br><span class="purple">var</span><span class="blue"> b</span><span class="pink"> = </span><span class="pink">+</span><span class="blue">prompt</span>(<span class="yellow">"Введіть число b: "</span>);<br><span class="purple">var</span><span class="blue"> c</span><span class="pink"> = </span><span class="pink">+</span><span class="blue">prompt</span>(<span class="yellow">"Введіть число c: "</span>);<br><br><span class="pink">if</span> (<span class="blue">a</span><span class="pink"> &#62; </span><span class="blue">c</span><span class="pink"> && </span><span class="blue">a</span><span class="pink"> &#62; </span><span class="blue">b</span>) {<br><span class="blue">  alert</span>(<span class="yellow">"Найбільше число з a, b, c - a"</span>);<br>}<span class="pink"> else if</span> (<span class="blue">b</span><span class="pink"> &#62; </span><span class="blue">a</span><span class="pink"> && </span><span class="blue">b</span><span class="pink"> &#62; </span><span class="blue">c</span>) {<br><span class="blue">  alert</span>(<span class="yellow">"Найбільше число з a, b, c - b"</span>);<br>}<span class="pink"> else if</span> (<span class="blue">c</span><span class="pink"> &#62; </span><span class="blue">b</span><span class="pink"> && </span><span class="blue">c</span><span class="pink"> &#62; </span><span class="blue">a</span>) {<br><span class="blue">  alert</span>(<span class="yellow">"Найбільше число з a, b, c - c"</span>);<br>}<span class="pink"> else</span> {<br><span class="blue">  alert</span>(<span class="yellow">"Немає найбільшого числа"</span>);<br>}</span></code></pre>
+				</div>
+			</div>
+			<p class="task">10) Дано час (години і хвилини). Скільки буде через хвилину?</p>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(10);">Показати відповідь</button>
+			<div class="code-answer">
+				<div class="code">
+					<pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> hours</span><span class="pink"> = </span><span class="pink">+</span><span class="blue">prompt</span>(<span class="yellow">"Введіть години: "</span>);<br><span class="purple">var</span><span class="blue"> minutes</span><span class="pink"> = </span><span class="pink">+</span><span class="blue">prompt</span>(<span class="yellow">"Введіть хвилини: "</span>);<br><br><span class="pink">if</span> ((<span class="blue">hours</span><span class="pink"> &#62;= </span><span class="green">0</span><span class="pink"> && </span><span class="blue">hours</span><span class="pink"> &#60; </span><span class="green">24</span>)<span class="pink"> && </span>(<span class="blue">minutes</span><span class="pink"> &#62;= </span><span class="green">0</span><span class="pink"> && </span><span class="blue">minutes</span><span class="pink"> &#60; </span><span class="green">60</span>)) {<br><span class="pink">  if</span> (<span class="blue">minutes</span><span class="pink"> == </span><span class="green">59</span>) {<br><span class="pink">    if</span> (<span class="blue">hours</span><span class="pink"> &#60; </span><span class="green">23</span>) {<br><span class="blue">      hours</span><span class="pink"> = </span><span class="blue">hours</span><span class="pink"> + </span><span class="green">1</span>;<br><span class="blue">      minutes</span><span class="pink"> = </span><span class="yellow">"00"</span>;<br>    }<span class="pink"> else</span> {<br><span class="blue">      hours</span><span class="pink"> = </span><span class="green">0</span>;<br><span class="blue">      minutes</span><span class="pink"> = </span><span class="yellow">"00"</span>;<br>    }<br>  }<span class="pink"> else </span>{<br><span class="blue">    minutes</span><span class="pink"> = <span class="blue">minutes</span></span><span class="pink"> + </span><span class="green">1</span>;<br><span class="pink">    if</span> (<span class="blue">minutes</span><span class="pink"> &#60; </span><span class="green">10</span>) {<br><span class="blue">      minutes</span><span class="pink"> = </span><span class="yellow">"0"</span><span class="pink"> + </span><span class="blue">minutes</span>;<br>    }<br>  }<br><span class="pink">  if</span> (<span class="blue">hours</span><span class="pink"> &#60; </span><span class="green">10</span>) {<br><span class="blue">    hours</span><span class="pink"> = </span><span class="yellow">"0"</span><span class="pink"> + </span><span class="blue">hours</span>;<br>  }<br><span class="blue">  alert</span>(<span class="yellow">"Буде "</span><span class="pink"> + </span><span class="blue">hours</span><span class="pink"> + </span><span class="yellow">":"</span><span class="pink"> + </span><span class="blue">minutes</span>);<br>}<span class="pink"> else</span> {<br><span class="blue">  alert</span>(<span class="yellow">"Ви ввели неправильний час!"</span>);<br>}</span></code></pre>
+				</div>
+			</div>
+
+			<div id="nav1">
+				<div>
+					<a href="lesson1.html"><button><p>Попередній урок</p></button></a>
+				</div>
+				<div>
+					<a href="lesson3.html"><button><p>Наступний урок</p></button></a>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer>
+	</footer>
+</body>
+</html>

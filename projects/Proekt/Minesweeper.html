@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<title> Minesweeper </title>
+</head>
+<body>
+<div class="bg">
+
+
+<div class="aaa">
+
+<div class="lng">
+<p>
+<input type="radio" name="lg" id="english"> En
+<input type="radio" name="lg" id="russian"> Ru
+<input type="radio" name="lg" id="ukrainian"> Ua
+<button id="chn"> Change language </button>
+</p>
+</div>
+
+<div class="tutorial"> 
+<h2 id="tut0"> Tutorial </h2> 
+
+<p id="tut1"> Click on the Tiles to reveal them. </p>
+<p id="tut2"> The number on the Tile means how many bombs there are around it (+diagonally). </p>
+<p id="tut3"> To win, you have to mark ALL Bombs with Flags (right click). </p>
+<p id="tut4"> You can Restart any time with Smile Button. </p>
+<p id="tut5"> You can see the number of Bombs remained in the left corner and your time in the 
+right one. </p>
+
+<p id="dop"> *Your Records are saved until you completely close the browser. </p>
+</div>
+
+<div class="go" id="youlost"> <p> You lost! </p> </div>
+<div class="yw" id="youwon"> <p> You won! </p> </div>
+
+<div class="vse">
+<div class="heading">
+<div id="smil" class="smile" onclick="window.location.reload();"></div>
+<div id="nb" class="numbomb"></div>
+<div class="tmbg"></div><div id="time" class="timer"> Time: 0 </div>
+</div>
+<div class="pole"></div>
+</div>
+
+<div class="records">
+<h2 id="rekords"> Records (in seconds): </h2>
+<p id="place1"> #1: - </p>
+<p id="place2"> #2: - </p>
+<p id="place3"> #3: - </p>
+<button id="reset"> RESET RECORDS </button>
+</div>
+
+<div class="other">
+<h2 id="also"> Also visit this sites! </h2>
+<p> Minesweeper player: <a href="https://davidnhill.github.io/JSMinesweeper/">https://davidnhill.github.io/JSMinesweeper/</a></p>
+<p> Minesweeper online: <a href="https://minesweeper.online/">https://minesweeper.online/</a></p>
+<p> Minesweeper Google: <a href="https://www.google.com/fbx?fbx=minesweeper">https://www.google.com/fbx?fbx=minesweeper</a></p>
+</div>
+
+</div>
+
+
+</div>
+<script src="code.js"> </script>
+</body>
+</html>

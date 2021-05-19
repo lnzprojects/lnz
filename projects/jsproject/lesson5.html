@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Тема 5</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/lesson.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<header>
+		<div onclick="window.location='index.html'" id="menu">
+			Javascript підручник
+		</div>
+	</header>
+	<main>
+		<div id="nav">
+			<p class="topic">Тема 5</p>
+			<ul>
+				<a  href="#"><li class="top1">Логічні оператори</li></a>
+				<a  href="#top2"><li class="top2">Випадкове розміщення кораблів</li></a>
+				<a  href="#top3"><li class="top3">Функції</li></a>
+				<a  href="#top4"><li class="top4">Закріплення знань</li></a>
+			</ul>
+		</div>
+		<div id="main-content">
+			<p class="main-page"><a href="index.html">Головна</a> > Тема 5</p>
+
+			<p class="title">Логічні оператори</p>
+			<p>Припустимо, потрібно перевірити чи є товар в наявності і чи продається він (змінні inStock і onSale відповідно)</p>
+			<ul>
+				<li>1 спосіб</li>
+				<div class="code">
+					<pre class="code-example"><code><span><span class="pink">if</span> (<span class="blue">inStock</span><span class="pink"> == </span><span class="green">true</span>) {<br><span class="pink">  if</span> (<span class="blue">onSale</span><span class="pink"> == </span><span class="green">true</span>) {<br><span class="blue">    alert</span>(<span class="yellow">"buy buy buy!"</span>);<br>  }<br>}</span></code></pre>
+				</div>
+				<li>2 спосіб</li>
+				<div class="code">
+					<pre class="code-example"><code><span><span class="pink">if</span> (<span class="blue">inStock</span><span class="pink"> == </span><span class="green">true</span><span class="pink"> && </span><span class="blue">onSale</span><span class="pink"> == </span><span class="green">true</span>) {<br><span class="blue">  alert</span>(<span class="yellow">"buy buy buy!"</span>);<br>}</span></code></pre>
+				</div>
+				<li>3 спосіб (скорочений)</li>
+				<div class="code">
+					<pre class="code-example"><code><span><span class="pink">if</span> (<span class="blue">inStock</span><span class="pink"> && </span><span class="blue">onSale</span>) {<br><span class="blue">  alert</span>(<span class="yellow">"buy buy buy!"</span>);<br>}</span></code></pre>
+				</div>
+			</ul>
+			<p class="boldtext">Декілька прикладів:</p>
+			<p>Чому буде дорівнювати змінна <span class="semiboldtext">humid</span>?</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> temp</span><span class="pink"> = </span><span class="green">81</span>;<br><span class="purple">var</span><span class="blue"> willRain</span><span class="pink"> = </span><span class="green">true</span>;<br><span class="purple">var</span><span class="blue"> humid</span><span class="pink"> = </span>(<span class="blue">temp</span><span class="pink"> > </span><span class="green">80</span><span class="pink"> && </span><span class="blue">willRain</span><span class="pink"> == </span><span class="green">true</span>);</span></code></pre>
+			</div>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(0);">Показати відповідь</button>
+			<div class="code-answer">
+				<p class="semiboldtext">Відповідь: true.</p>
+			</div>
+
+			<p>Чому буде дорівнювати змінна <span class="semiboldtext">isValid</span>?</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> guess</span><span class="pink"> = </span><span class="green">6</span>;<br><span class="purple">var</span><span class="blue"> isValid</span><span class="pink"> = </span>(<span class="blue">guess</span><span class="pink"> >= </span><span class="green">0</span><span class="pink"> && </span><span class="blue">guess</span><span class="pink"> <= </span><span class="green">6</span>);</span></code></pre>
+			</div>
+
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(1);">Показати відповідь</button>
+			<div class="code-answer">
+				<p class="semiboldtext">Відповідь: true.</p>
+			</div>
+
+
+			<p>Чому буде дорівнювати змінна <span class="semiboldtext">sendFile</span>?</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> kB</span><span class="pink"> = </span><span class="green">1287</span>;<br><span class="purple">var</span><span class="blue"> tooBig</span><span class="pink"> = </span>(<span class="blue">kB</span><span class="pink"> > </span><span class="green">1000</span>);<br><span class="purple">var</span><span class="blue"> urgent</span><span class="pink"> = </span><span class="green">true</span>;<br><span class="purple">var</span><span class="blue"> sendFile</span><span class="pink"> = </span>(<span class="blue">urgent</span><span class="pink"> == </span><span class="green">true</span><span class="pink"> && </span><span class="blue">tooBig</span><span class="pink"> == </span><span class="green">false</span>);</span></code></pre>
+			</div>
+
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(2);">Показати відповідь</button>
+			<div class="code-answer">
+				<p class="semiboldtext">Відповідь: false.</p>
+			</div>
+
+			<p>Чому буде дорівнювати змінна <span class="semiboldtext">level</span>?</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> keyPressed</span><span class="pink"> = </span><span class="yellow">"N"</span>;<br><span class="purple">var</span><span class="blue"> points</span><span class="pink"> = </span><span class="green">142</span>;<br><span class="purple">var</span><span class="blue"> level</span>;<br><br><span class="pink">if</span> (<span class="blue">keyPressed</span><span class="pink"> == </span><span class="yellow">"Y"</span><span class="pink"> || </span>(<span class="blue">points</span><span class="pink"> > </span><span class="green">100</span><span class="pink"> && </span><span class="blue">points</span><span class="pink"> < </span><span class="green">200</span>)) {<br><span class="blue">  level</span><span class="pink"> = </span><span class="green">2</span>;<br>}<span class="pink"> else </span>{<br><span class="blue">  level</span><span class="pink"> = </span><span class="green">1</span>;<br>}</span></code></pre>
+			</div>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(3);">Показати відповідь</button>
+			<div class="code-answer">
+				<p class="semiboldtext">Відповідь: 2.</p>
+			</div>
+			<p class="title">Випадкове розміщення кораблів</p>
+			<p>Для того щоб вірно розмістити корабель нам потрібна початкова позиція, від якої будуть відраховуватися три суміжні клітинки. Отже, початкова клітинка має належати діапазону від 0 до 4.</p>
+			<p>Якщо у нас є початкова позиція randomLoc (від 0 до 4), то:</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> location1</span><span class="pink"> = </span><span class="blue">randomLoc</span>;<br><span class="purple">var</span><span class="blue"> location2</span><span class="pink"> = </span><span class="blue">location1</span><span class="pink"> + </span><span class="green">1</span>;<br><span class="purple">var</span><span class="blue"> location3</span><span class="pink"> = </span><span class="blue">location2</span><span class="pink"> + </span><span class="green">1</span>;</span></code></pre>
+			</div>
+			<div class="important"><span class="boldtext">Math.random()</span> - функція, яка повертає випдкове число діапазону від 0 до 1 (не включаючи 1, наприклад 0,128..).</div>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> randomLoc</span><span class="pink"> = </span><span class="orange">Math</span>.<span class="purple">random</span>();<br></span></code></pre>
+			</div>
+			<p>Якщо домножимо випадкове число на 5 то отримаємо число з [0;5). Залишилось прибрати дробову частину.</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> randomLoc</span><span class="pink"> = </span><span class="orange">Math</span>.<span class="purple">floor</span>(<span class="orange">Math</span>.<span class="purple">random</span>()<span class="pink"> * </span><span class="green">5</span>);<br></span></code></pre>
+			</div>
+			<div class="important"><span class="boldtext">Math.floor()</span> - функція, яка округлює число, прибираючи дробову частину.</div>
+			<p id="top3">Є ще одна помилка – якщо тричі ввести одне й те саме число, то корабель потоне.</p>
+			<br>
+			<p class="title">Функції</p>
+			<p>В цьому коді один фрагмент повторюється знову і знову. Якщо логіку потрібно буде змінити, то доведеться це робити в декількох місцях:</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> dogName</span><span class="pink"> = </span><span class="yellow">"rover"</span>;<br><span class="purple">var</span><span class="blue"> dogWeight</span><span class="pink"> = </span><span class="green">23</span>;<br><br><span class="pink">if</span> (<span class="blue">dogWeight</span><span class="pink"> &#62; </span><span class="green">20</span>) {<br><span class="orange">  console</span>.<span class="purple">log</span>(<span class="blue">dogName</span><span class="pink"> + </span><span class="yellow">" says WOOF WOOF"</span>);<br>}<span class="pink"> else</span> {<br><span class="orange">  console</span>.<span class="purple">log</span>(<span class="blue">dogName</span><span class="pink"> + </span><span class="yellow">" says woof woof"</span>);<br>}<br><br><span class="blue">dogName</span><span class="pink"> = </span><span class="yellow">"spot"</span>;<br><span class="blue">dogWeight</span><span class="pink"> = </span><span class="green">13</span>;<br><br><span class="pink">if</span> (<span class="blue">dogWeight</span><span class="pink"> &#62; </span><span class="green">20</span>) {<br><span class="orange">  console</span>.<span class="purple">log</span>(<span class="blue">dogName</span><span class="pink"> + </span><span class="yellow">" says WOOF WOOF"</span>);<br>}<span class="pink"> else</span> {<br><span class="orange">  console</span>.<span class="purple">log</span>(<span class="blue">dogName</span><span class="pink"> + </span><span class="yellow">" says woof woof"</span>);<br>}<br><br><span class="blue">dogName</span><span class="pink"> = </span><span class="yellow">"spike"</span>;<br><span class="blue">dogWeight</span><span class="pink"> = </span><span class="green">53</span>;<br><br><span class="pink">if</span> (<span class="blue">dogWeight</span><span class="pink"> &#62; </span><span class="green">20</span>) {<br><span class="orange">  console</span>.<span class="purple">log</span>(<span class="blue">dogName</span><span class="pink"> + </span><span class="yellow">" says WOOF WOOF"</span>);<br>}<span class="pink"> else</span> {<br><span class="orange">  console</span>.<span class="purple">log</span>(<span class="blue">dogName</span><span class="pink"> + </span><span class="yellow">" says woof woof"</span>);<br>}<br><br><span class="blue">dogName</span><span class="pink"> = </span><span class="yellow">"lady"</span>;<br><span class="blue">dogWeight</span><span class="pink"> = </span><span class="green">17</span>;<br><br><span class="pink">if</span> (<span class="blue">dogWeight</span><span class="pink"> &#62; </span><span class="green">20</span>) {<br><span class="orange">  console</span>.<span class="purple">log</span>(<span class="blue">dogName</span><span class="pink"> + </span><span class="yellow">" says WOOF WOOF"</span>);<br>}<span class="pink"> else</span> {<br><span class="orange">  console</span>.<span class="purple">log</span>(<span class="blue">dogName</span><span class="pink"> + </span><span class="yellow">" says woof woof"</span>);<br>}<br>
+				</span></code></pre>
+			</div>
+			<div class="important">Ф-її JS дозволяють взяти фрагмент коду, надати йому їм’я, а потім посилання на це ім’я там де він знадобиться.</div>
+			<p>Напишемо функцію для цього фрагменту коду.</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="purple">function</span><span class="blue"> bark</span>(<span class="blue">name</span>,<span class="blue"> weight</span>) {<br><br>}</span></code></pre>
+			</div>
+			<div class="important">
+				<p class="boldtext">Запам'ятайте!</p>
+				<ul class="tez">
+					<li>Оголошення функції завжди починається з ключового слова <span class="boldtext markedtextred ">function</span></li>
+					<li>Після цього пишемо ім'я функції</li>
+					<li>Параметри функції передаються у дужках <span class="boldtext markedtextred ">(</span> <span class="boldtext markedtextred ">)</span></li>
+					<li>У дужках <span class="boldtext markedtextred ">{</span> <span class="boldtext markedtextred ">}</span> знаходиться тіло функції, тобто код, який виконується при використанні фукнції</li>
+				</ul>
+			</div>
+			<p>Напишемо код ф-її:</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="purple">function</span> bark(<span class="blue">name</span>,<span class="blue"> weight</span>) {<br><span class="pink">  if</span>(<span class="blue">weight</span><span class="pink"> &#62; </span><span class="green">20</span>) {<br><span class="orange">    console</span>.<span class="purple">log</span>(<span class="blue">name</span><span class="pink"> + </span><span class="yellow">" says WOOF WOOF"</span>);<br>  }<span class="pink"> else </span>{<br><span class="orange">    console</span>.<span class="purple">log</span>(<span class="blue">name</span><span class="pink"> + </span><span class="yellow">" says woof woof"</span>);<br>  }<br>}<br><br><span class="blue">bark</span>(<span class="yellow">"rover"</span>, <span class="green">23</span>);<br><span class="blue">bark</span>(<span class="yellow">"spot"</span>, <span class="green">13</span>);<br><span class="blue">bark</span>(<span class="yellow">"spike"</span>, <span class="green">53</span>);<br><span class="blue">bark</span>(<span class="yellow">"lady"</span>, <span class="green">17</span>);</span></code></pre>
+			</div>
+
+			<p>Що буде результатом виклику функції?</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="blue">bark</span>(<span class="yellow">"juno"</span>, <span class="green">20</span>);</span></code></pre>
+			</div>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(4);">Показати відповідь</button>
+			<div class="code-answer">
+				<p class="semiboldtext">Відповідь: juno says woof woof.</p>
+			</div>
+
+			<p>Що буде результатом виклику функції?</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="blue">bark</span>(<span class="yellow">"scottie"</span>, <span class="green">-1</span>);</span></code></pre>
+			</div>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(5);">Показати відповідь</button>
+			<div class="code-answer">
+				<p class="semiboldtext">Відповідь: scottie says woof woof.</p>
+			</div>
+			<p>Що буде результатом виклику функції?</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="blue">bark</span>(<span class="yellow">"dino"</span>, <span class="green">0</span>, <span class="green">0</span>);</span></code></pre>
+			</div>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(6);">Показати відповідь</button>
+			<div class="code-answer">
+				<p class="semiboldtext">Відповідь: dino says woof woof.</p>
+			</div>
+			<p>Що буде результатом виклику функції?</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="blue">bark</span>(<span class="yellow">"fido"</span>, <span class="yellow">"20"</span>);</span></code></pre>
+			</div>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(7);">Показати відповідь</button>
+			<div class="code-answer">
+				<p class="semiboldtext">Відповідь: fido says woof woof.</p>
+			</div>
+			<p>Що буде результатом виклику функції?</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="blue">bark</span>(<span class="yellow">"lady"</span>, <span class="green">10</span>);</span></code></pre>
+			</div>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(8);">Показати відповідь</button>
+			<div class="code-answer">
+				<p class="semiboldtext">Відповідь: lady says woof woof.</p>
+			</div>
+			<p>Що буде результатом виклику функції?</p>
+			<div class="code">
+				<pre class="code-example"><code><span><span class="blue">bark</span>(<span class="yellow">"bruno"</span>, <span class="green">21</span>);</span></code></pre>
+			</div>
+			<button id="top4" class="answerButton code-answer-button" type="submit" onclick="showAnswer(9);">Показати відповідь</button>
+			<div class="code-answer">
+				<p class="semiboldtext">Відповідь: bruno says WOOF WOOF.</p>
+			</div>
+
+			<p class="title">Закріплення знань</p>
+			<p class="task">1) На скільки треба домножити щоб отримати випадкове число від 0 до 100 включно?</p>
+			<input class="answerInput realInput" type="text" placeholder="Введіть число..."></input>
+			<button class="answerButton" type="submit" onclick="checkAnswer(5, 1, 1);">Перевірити</button>
+			<br>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(10);">Показати відповідь</button>
+			<div class="code-answer">
+				<p>Правильна відповідь: 101</p>
+			</div>
+			<h4>Написати програми використовуючи ф-її:</h4>
+			<p class="task">2) Факторіал числа n.</p>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(11);">Показати відповідь</button>
+			<div class="code-answer">
+				<div class="code">
+					<pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> inputNumber</span><span class="pink"> = </span><span class="blue">prompt</span>(<span class="yellow">'Please enter a number: '</span>);<br><span class="purple">var</span><span class="blue"> result</span><span class="pink"> = </span><span class="green">1</span>;<br><br><span class="pink">for</span>(<span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="green">0</span>; <span class="blue">i</span><span class="pink"> &#60; </span><span class="blue">inputNumber</span></span>; <span class="blue">i</span><span class="pink">++</span>) {<br>  <span class="blue">result</span><span class="pink"> = </span><span class="blue">result</span><span class="pink"> * </span>(<span class="blue">inputNumber</span><span class="pink"> - </span><span class="blue">i</span>);<br>}<br><br><span class="orange">console</span>.<span class="purple">log</span>(<span class="blue">inputNumber</span><span class="pink"> + </span><span class="yellow">'! = '</span><span class="pink"> + </span><span class="blue">result</span>);</span></code></pre>
+				</div>
+			</div>
+			<p class="task">3) Знайти n в степені m.</p>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(12);">Показати відповідь</button>
+			<div class="code-answer">
+				<div class="code">
+					<pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> n</span><span class="pink"> = </span><span class="blue">prompt</span>(<span class="yellow">'Please enter a number: '</span>);<br><span class="purple">var</span><span class="blue"> m</span><span class="pink"> = </span><span class="blue">prompt</span>(<span class="yellow">'Please enter a number: '</span>);<br><span class="purple">var</span><span class="blue"> result</span><span class="pink"> = </span><span class="blue">n</span>;<br><br><span class="pink">for</span> (<span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="green">2</span>; <span class="blue">i</span><span class="pink"> &#60;= </span><span class="blue">m</span></span>; <span class="blue">i</span><span class="pink">++</span>) {<br>  <span class="blue">result</span><span class="pink"> = </span><span class="blue">result</span><span class="pink"> * </span><span class="blue">n</span>;<br>}<br><br><span class="orange">console</span>.<span class="purple">log</span>(<span class="blue">n</span><span class="pink"> + </span><span class="yellow">' в степені '</span><span class="pink"> + </span><span class="blue">m</span><span class="pink"> + </span><span class="yellow">' = '</span><span class="pink"> + </span><span class="blue">result</span>);</span></code></pre>
+				</div>
+			</div>
+			<p class="task">4) Вивести n-ий член послідовності Фібоначчі.</p>
+			<button class="answerButton code-answer-button" type="submit" onclick="showAnswer(13);">Показати відповідь</button>
+			<div class="code-answer">
+				<div class="code">
+					<pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> n</span><span class="pink"> = </span><span class="blue">prompt</span>(<span class="yellow">'Please enter a number: '</span>);<br><span class="purple">var</span><span class="blue"> a</span><span class="pink"> = </span><span class="green">1</span>;<br><span class="purple">var</span><span class="blue"> b</span><span class="pink"> = </span><span class="green">1</span>;<br><span class="purple">var</span><span class="blue"> c</span><span class="pink"> = </span><span class="green">1</span>;<br><br><span class="pink">for</span> (<span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="green">3</span>; <span class="blue">i</span><span class="pink"> &#60;= </span><span class="blue">n</span></span>; <span class="blue">i</span><span class="pink">++</span>) {<br>  <span class="blue">a</span><span class="pink"> = </span><span class="blue">b</span>;<br>  <span class="blue">b</span><span class="pink"> = </span><span class="blue">c</span>;<br>  <span class="blue">c</span><span class="pink"> = </span><span class="blue">a</span><span class="pink"> + </span><span class="blue">b</span>;<br>}<br><br><span class="orange">console</span>.<span class="purple">log</span>(<span class="blue">n</span><span class="pink"> + </span><span class="yellow">'ий член послідовності Фібоначчі = '</span><span class="pink"> + </span><span class="blue">с</span>);</span></code></pre>
+				</div>
+			</div>
+			<div id="nav1">
+				<div>
+					<a href="lesson4.html"><button><p>Попередній урок</p></button></a>
+				</div>
+				<div>
+					<a href="lesson6.html"><button><p>Наступний урок</p></button></a>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer>
+		
+	</footer>
+</body>
+</html>

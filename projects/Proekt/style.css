@@ -1,0 +1,426 @@
+body, html{
+	height: 100%;
+	margin: 0;
+}
+
+button {
+	margin-left: 120px;
+	height: 40px;
+	width: 160px;
+}
+
+
+.lng {
+	height: 25px;
+	width: 300px;
+}
+
+.lng p {
+	font-size: 13px;
+	margin: auto;
+}
+
+.other {
+	margin-left: auto;
+	margin-right: auto;
+	height: 100px;
+	width: 400px;
+}
+
+
+#chn {
+	width: 150px;
+	height: 21px;
+	margin: auto;
+}
+
+
+.bg {
+	background-image: url(bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: 100%;
+	width: 100%;
+
+}
+
+.aaa {	
+	margin: auto;
+	max-width: 1230px;
+	height: 100%;
+}
+
+.pole, bomb {
+	height: 400px;
+	width: 400px;
+	display: flex;
+	flex-wrap: wrap;
+	background-image: url(tile.png);
+}
+
+.go {
+	float: left;
+	margin-left: 415px;
+	margin-top: 40px;
+	position: absolute;
+	height: 400px;
+	width: 400px;
+	flex-wrap: wrap;
+	text-align: center;
+	font-size: 30px;
+	font-family: Tahoma;
+	color: red;
+	background: rgba(0, 0, 0, 0.6);
+
+	display: none;
+}
+
+.yw {
+	float: left;
+	margin-left: 415px;
+	margin-top: 40px;
+	position: absolute;
+	height: 400px;
+	width: 400px;
+	flex-wrap: wrap;
+	text-align: center;
+	font-size: 30px;
+	font-family: Tahoma;
+	color: #00CF91;
+	background: rgba(0, 0, 0, 0.6);
+
+	display: none;
+}
+
+.vse {
+	float: left;
+	margin: 15px;
+	margin-top: 0px;
+}
+.tutorial {
+	height: 440px;
+	width: 400px;
+	float: left;
+	margin: auto;
+	background: rgba(255, 255, 255, 0.5);
+}
+.tutorial h2 {
+	text-align: center;
+	margin: auto;
+	margin-top: 10px;
+	font-size: 30px;
+}
+.tutorial p {
+	text-align: justify;
+	font-size: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.tutorial p#dop {
+	text-align: justify;
+	font-size: 13px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: -10px;
+}
+.records {
+	height: 440px;
+	width: 400px;
+	float: left;
+	margin: auto;
+	background: rgba(255, 255, 255, 0.5);
+}
+.records h2 {
+	margin: auto;
+	text-align: center;
+	font-size: 30px;
+	margin-top: 10px;
+}
+.records p {
+	text-align: center;
+	font-size: 25px;
+	line-height: 80px;
+}
+.pole div {
+	height: 40px;
+	width: 40px;
+}
+.heading {
+	height: 40px;
+	width: 400px;
+	background-image: url(heading.png);
+}
+.smile {
+	height: 40px;
+	width: 40px;
+	background-image: url(smile.png);
+	margin-left: auto;
+	margin-right: auto;
+}
+.smilesad {
+	height: 40px;
+	width: 40px;
+	background-image: url(smilesad.png);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.clicked {
+	background-color: green;
+	background-image: url(tile0.png);
+}
+.lost {
+	background-image: url(tilefound.png) !important;
+}
+.visible {
+	background-image: url(tilebomb.png);
+}
+.flaged {
+	background-image: url(tileflag.png);
+}
+
+.t1 {
+	background-image: url(tile1.png);
+}
+.t2 {
+	background-image: url(tile2.png);
+}
+.t3 {
+	background-image: url(tile3.png);
+}
+.t4 {
+	background-image: url(tile4.png);
+}
+.t5 {
+	background-image: url(tile5.png);
+}
+.t6 {
+	background-image: url(tile6.png);
+}
+.t7 {
+	background-image: url(tile7.png);
+}
+.t8 {
+	background-image: url(tile8.png);
+}
+
+.numbomb {
+	position: absolute;
+	background-image: url(numbg.png);
+	height: 40px;
+	width: 80px;
+	margin-left: 0px;
+	margin-right: auto;
+	margin-top: -40px;
+}
+.timer {
+	position: absolute;
+	height: 40px;
+	width: 120px;
+	margin-left: 298px;
+	margin-right: 0px;
+	margin-top: -28px;
+	text-align: center;
+	color: grey;
+	font: 15px Trebuchet MS;
+}
+.tmbg {
+	position: absolute;
+	background-image: url(timer.png);
+	height: 40px;
+	width: 80px;
+	margin-left: 320px;
+	margin-right: 0px;
+	margin-top: -40px;
+}
+
+.num20 {
+	position: absolute;
+	background-image: url(num20.png);
+	height: 40px;
+	width: 80px;
+	margin-left: 0px;
+	margin-right: auto;
+	margin-top: -40px;
+}
+.num19 {
+	position: absolute;
+	background-image: url(num19.png);
+	height: 40px;
+	width: 80px;
+	margin-left: 0px;
+	margin-right: auto;
+	margin-top: -40px;
+}
+.num18 {
+	position: absolute;
+	background-image: url(num18.png);
+	height: 40px;
+	width: 80px;
+	margin-left: 0px;
+	margin-right: auto;
+	margin-top: -40px;
+}
+.num17 {
+	position: absolute;
+	background-image: url(num17.png);
+	height: 40px;
+	width: 80px;
+	margin-left: 0px;
+	margin-right: auto;
+	margin-top: -40px;
+}
+.num16 {
+	position: absolute;
+	background-image: url(num16.png);
+	height: 40px;
+	width: 80px;
+	margin-left: 0px;
+	margin-right: auto;
+	margin-top: -40px;
+}
+.num15 {
+	position: absolute;
+	background-image: url(num15.png);
+	height: 40px;
+	width: 80px;
+	margin-left: 0px;
+	margin-right: auto;
+	margin-top: -40px;
+}
+.num14 {
+	position: absolute;
+	background-image: url(num14.png);
+	height: 40px;
+	width: 80px;
+	margin-left: 0px;
+	margin-right: auto;
+	margin-top: -40px;
+}
+.num13 {
+	position: absolute;
+	background-image: url(num13.png);
+	height: 40px;
+	width: 80px;
+	margin-left: 0px;
+	margin-right: auto;
+	margin-top: -40px;
+}
+.num12 {
+	position: absolute;
+	background-image: url(num12.png);
+	height: 40px;
+	width: 80px;
+	margin-left: 0px;
+	margin-right: auto;
+	margin-top: -40px;
+}
+.num11 {
+	position: absolute;
+	background-image: url(num11.png);
+	height: 40px;
+	width: 80px;
+	margin-left: 0px;
+	margin-right: auto;
+	margin-top: -40px;
+}
+.num10 {
+	position: absolute;
+	background-image: url(num10.png);
+	height: 40px;
+	width: 80px;
+	margin-left: 0px;
+	margin-right: auto;
+	margin-top: -40px;
+}
+.num9 {
+	position: absolute;
+	background-image: url(num9.png);
+	height: 40px;
+	width: 80px;
+	margin-left: 0px;
+	margin-right: auto;
+	margin-top: -40px;
+}
+.num8 {
+	position: absolute;
+	background-image: url(num8.png);
+	height: 40px;
+	width: 80px;
+	margin-left: 0px;
+	margin-right: auto;
+	margin-top: -40px;
+}
+.num7 {
+	position: absolute;
+	background-image: url(num7.png);
+	height: 40px;
+	width: 80px;
+	margin-left: 0px;
+	margin-right: auto;
+	margin-top: -40px;
+}
+.num6 {
+	position: absolute;
+	background-image: url(num6.png);
+	height: 40px;
+	width: 80px;
+	margin-left: 0px;
+	margin-right: auto;
+	margin-top: -40px;
+}
+.num5 {
+	position: absolute;
+	background-image: url(num5.png);
+	height: 40px;
+	width: 80px;
+	margin-left: 0px;
+	margin-right: auto;
+	margin-top: -40px;
+}
+.num4 {
+	position: absolute;
+	background-image: url(num4.png);
+	height: 40px;
+	width: 80px;
+	margin-left: 0px;
+	margin-right: auto;
+	margin-top: -40px;
+}
+.num3 {
+	position: absolute;
+	background-image: url(num3.png);
+	height: 40px;
+	width: 80px;
+	margin-left: 0px;
+	margin-right: auto;
+	margin-top: -40px;
+}
+.num2 {
+	position: absolute;
+	background-image: url(num2.png);
+	height: 40px;
+	width: 80px;
+	margin-left: 0px;
+	margin-right: auto;
+	margin-top: -40px;
+}
+.num1 {
+	position: absolute;
+	background-image: url(num1.png);
+	height: 40px;
+	width: 80px;
+	margin-left: 0px;
+	margin-right: auto;
+	margin-top: -40px;
+}
+.num0 {
+	position: absolute;
+	background-image: url(num0.png);
+	height: 40px;
+	width: 80px;
+	margin-left: 0px;
+	margin-right: auto;
+	margin-top: -40px;
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Тема 4</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/lesson.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+
+  </script>
+</head>
+<body>
+  <header>
+    <div onclick="window.location='index.html'" id="menu">
+      Javascript підручник
+    </div>
+  </header>
+  <main>
+    <div id="nav">
+      <p class="topic">Тема 4</p>
+      <ul>
+        <a  href="#"><li class="top1">Реалізація гри "Морський бій"</li></a>
+        <a  href="#top2"><li class="top2">Проектування гри</li></a>
+        <a  href="#top3"><li class="top3">Псевдокод гри</li></a>
+        <a  href="#top4"><li class="top4">Програмування гри</li></a>
+        <a  href="#top5"><li class="top5">Закріплення знань</li></a>
+      </ul>
+    </div>
+    <div id="main-content">
+      <p class="main-page"><a href="index.html">Головна</a> > Тема 4</p>
+      
+      <p class="title">Реалізація гри "Морський бій"</p>
+      <p id="top2">Браузер розміщує кораблі, а ви намагаєтеся знайти і знищити їх. Завдання: потопити кораблі браузера за найменшу кількість ходів. В залежності від того наскільки добре вдається це зробити, ви отримуєте оцінку. В майбутньому гра буде виглядати як на малюнку 4.jpg. Замість таблиці 7 на 7 як на малюнку, починаємо з таблиці 1 на 7 і корабель буде один.</p>
+      <p class="title">Проектування гри</p>
+      <ol>
+        <li>Користувач запускає гру <br>
+          А. Гра розміще корабель у випадку із позиції таблиці.
+        </li>
+        <li>Починається бій<br>
+          Повторювати наступні дії поки корабель не буде потоплений:<br>
+          --А. Запитати у користувача кординати пострілу ("2","0" і тд).<br>
+          --Б. Порівняти кординати з положенням і визначити результат: попадання, промах, корабель потоплений.
+        </li>
+        <li>Гра закінчена<br>
+          Вивести оцінку, яка визначається за кількістю спроб.
+        </li>
+      </ol>
+
+      <img class="lessonsimage imagemain" src="images/lessons/4_2.png">
+      <p>Корабель буде розташовуватися в трьох суміжних клітинках.</p>
+      <div  id="top3" class="important">Для отримання даних від користувача будемо використовувати функцію <span class="boldtext">prompt</span>.<br> Для виведення - функцію <span class="boldtext">alert</span>.</div>
+      <p class="title">Псевдокод гри</p>
+      <div class="important"><span class="boldtext">Псевдокод</span> — проміжна стадія між кодом Javascript і описанням програми на розмовній мові.</div>
+      <p>У псевдокоді спрощеного варіанта морського бою і розділ описання змінних розділ описання логіки програми.</p>
+      <ul>
+        <li>Оголосити 3 змінні для зберігання позиції кожної клітинки корабля (location1, location2, location3).</li>
+        <li>Оголосити зміну для номеру поточної спроби (guess).</li>
+        <li>Оголосити зміну для кількості влучень (hits) і ініціалізувати їй значення 0.</li>
+        <li>Оголосити зміну для кількість спроб (guesses) і ініціалізувати їй значення 0.</li>
+        <li>Оголосити зміну для зберігання інформації про те, чи є потопленим в корабель чи ні (isSunk), і ініціалізувати їй значення False.</li>
+      </ul>
+
+      <img class="lessonsimage imagemain" src="images/lessons/4_3.png">
+      <br>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="looptext">ЦИКЛ: поки корабель не потоплений</span><br><span class="looptext">-- ОТРИМАТИ кординати постріли від користувача</span><br><span class="looptext">-- ПОРІВНЯТИ дані з діапазоном вірних значень</span><br><span class="looptext">-- ЯКЩО введені дані невірні,</span><br><span class="looptext">---- ВИВЕСТИ повідомлення з пропозицію ввести вірне число</span><br><span class="looptext">-- ІНАКШЕ</span><br><span class="looptext">---- ДОДАТИ 1 до guesses</span><br><span class="looptext">---- ЯКЩО постріл влучив в корабель</span><br><span class="looptext">------ ДОДАТИ 1 до кількості влучень</span><br><span class="looptext">------ ЯКЩО Кількість влучень рівна 3</span><br><span class="looptext">-------- ПРИСВОЇТИ isSunk значення true</span><br><span class="looptext">-------- ВИВЕСТИ повідомлення "Корабель затонув!"</span><br><span class="looptext">------ КІНЕЦЬ ЯКЩО</span><br><span class="looptext">---- КІНЕЦЬ ЯКЩО</span><br><span class="looptext">-- КІНЕЦЬ ІНАКШЕ</span><br><span class="looptext">КІНЕЦЬ ЦИКЛУ</span><br></span></code></pre>
+      </div>
+      
+      <span id="top4"></span>
+      <ul>
+        <li>Вивести статистику</li>
+      </ul>
+
+
+      <p class="title">Програмування гри</p>
+      <div class="col-2-grid">
+        <div>
+          <p>Оголосити змінні</p>
+        </div>
+        <div class="code">
+          <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> location1</span><span class="pink"> = </span><span class="green"> 3</span>;<br><span class="purple">var</span><span class="blue"> location2</span><span class="pink"> = </span><span class="green"> 4</span>;<br><span class="purple">var</span><span class="blue"> location3</span><span class="pink"><span class="pink"> = </span></span><span class="green"> 5</span>;<br><span class="purple">var</span><span class="blue"> guess</span>;<br><span class="purple">var</span><span class="blue"> hits</span><span class="pink"> = </span><span class="green"> 0</span>;<br><span class="purple">var</span><span class="blue"> guesses</span><span class="pink"> = </span><span class="green"> 0</span>;<br><span class="purple">var</span><span class="blue"> isSunk</span><span class="pink"> = </span><span class="green"> false</span>;</span></code></pre>
+        </div>
+        <div>
+          <p><span class="underlined"><span class="boldtext">ЦИКЛ</span></span>: поки корабель не потонув</p>
+          <p>Отримати координати пострілу</p>
+        </div>
+        <div class="code">
+          <pre class="code-example"><code><span><span class="pink">while</span> (<span class="blue">isSunk</span><span class="pink"> == </span><span class="green">false</span>) {<br><span class="blue">  guess</span><span class="pink"> = </span><span class="blue">prompt</span>(<span class="yellow">"Ready aim fire! (enter a number 0-6):"</span>);<br>}</span></code></pre>
+        </div>
+      </div>
+
+      <img class="lessonsimage imagemain" src="images/lessons/4_4.png">
+
+      <p>Вбудована функція <span class="boldtext">prompt</span> призначена для отримання даних від користувача. Як і функція alert, prompt викликає на екран діалогове вікно з переданим рядком, але надає місце, в якому користувач може ввести відповідь. Ця відповідь у вигляді рядку повертається як результат виклику функції. Якщо користувач закрив діалогове вікно або нічого не відповів, функція повертає null ("Немає значення").</p>
+
+      <p>Виконуємо перевірку коректності введеного значення i якщо все вірно, збільшимо зміну guesses</p>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="pink">if</span> (<span class="blue">guess</span><span class="pink"> &#60; </span><span class="green">0</span><span class="pink"> || </span><span class="blue">guess</span><span class="pink"> &#62; </span><span class="green">6</span>) {<br><span class="blue">  alert</span>(<span class="yellow">"Please enter a valid cell number!"</span>);<br>}<span class="pink"> else</span> {<br><span class="blue">  guesses</span><span class="pink"> = </span><span class="blue">guesses</span><span class="pink"> + </span><span class="green">1</span>;<br>}</span></code></pre>
+      </div>
+
+
+      <p>JavaScript автоматично перетворює рядок даних введений в prompt в число щоб порівняти з 0 і 6.</p>
+
+      <p>Перевіримо влучність:</p>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="pink">if</span> (<span class="blue">guess</span><span class="pink"> == </span><span class="blue">location1</span>) {<br><span class="blue">  hits</span><span class="pink"> = </span><span class="blue">hits</span><span class="pink"> + </span><span class="green">1</span>;<br>}<span class="pink"> else if</span> (<span class="blue">guess</span><span class="pink"> == </span><span class="blue">location2</span>) {<br><span class="blue">  hits</span><span class="pink"> = </span><span class="blue">hits</span><span class="pink"> + </span><span class="green">1</span>;<br>}<span class="pink"> else if</span> (<span class="blue">guess</span><span class="pink"> == </span><span class="blue">location3</span>) {<br><span class="blue">  hits</span><span class="pink"> = </span><span class="blue">hits</span><span class="pink"> + </span><span class="green">1</span>;<br>}</span></code></pre>
+      </div>
+
+      <p>Спробувати написати спрощений варіант коду використовуючи оператор АБО.</p>
+
+      <p>Перевіримо чи досягла кількість влучень трьох</p>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="pink">if</span> (<span class="blue">hits</span><span class="pink"> == </span><span class="green">3</span>) {<br><span class="blue">  isSunk</span><span class="pink"> = </span><span class="green">true</span>;<br><span class="blue">  alert</span>(<span class="yellow">"You sank my battleship!"</span>);<br>}</span></code></pre>
+      </div>
+
+      <p>Виведення даних після гри</p>
+      <p>Коли isSunk = true, цикл while зупиниться. Залишається вивести інформацію про те, наскільки добре користувач впорався зі своєю задачею.</p>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> stats</span><span class="pink"> = </span><span class="yellow">"you took"</span><span class="pink"> + </span><span class="blue">guesses</span><span class="pink"> + </span><span class="yellow">"guesses to sink the battleship,"</span><span class="pink"> + </span><span class="yellow">"which means your shooting accuracy was "</span><span class="pink"> + </span>(<span class="green">3</span><span class="pink"> / </span><span class="blue">guesses</span>);<br><span class="blue">alert</span>(<span class="blue">stats</span>);</span></code></pre>
+      </div>
+      <p id="top5">У псевдокоді ми не повідомляємо користувачу влучив він в корабель (HIT) чи промахнувся (MISS).</p>
+      <p class="title">Закріплення знань</p>
+      <p class="task">1) Написати програму "Вгадай число".</p>
+      <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(0);">Показати відповідь</button>
+      <div class="code-answer">
+        <div class="code">
+          <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> number</span><span class="pink"> = </span><span class="green">3</span>;<br><span class="purple">var</span><span class="blue"> guess</span><span class="pink"> = </span><span class="pink">+</span><span class="blue">prompt</span>(<span class="yellow">"Введіть число: "</span>);<br><br><span class="pink">if</span> (<span class="blue">number</span><span class="pink"> == </span><span class="blue">guess</span>) {<br><span class="blue">  alert</span>(<span class="yellow">"Ви вгадали!"</span>);<br>}<span class="pink"> else</span> {<br><span class="blue">  alert</span>(<span class="yellow">"На жаль, ви не вгадали."</span>);<br>}</span></code></pre>
+        </div>
+      </div>
+
+      <div id="nav1">
+        <div>
+          <a href="lesson3.html"><button><p>Попередній урок</p></button></a>
+        </div>
+        <div>
+          <a href="lesson5.html"><button><p>Наступний урок</p></button></a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+
+  </footer>
+</body>
+</html>

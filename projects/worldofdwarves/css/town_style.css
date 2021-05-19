@@ -1,0 +1,112 @@
+body {
+	overflow: hidden;
+}
+
+#town {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+#arrow2 {
+	position: relative;
+	width: 8%;
+	left: 72%;
+	margin-bottom: 53%;
+	z-index: 2;
+}
+
+#Table {
+	position: relative;
+	width: 19%;
+	left: 80.7%;
+	margin-bottom: 60%;
+	z-index: 4;
+}
+
+#Gold {
+	position: absolute;
+	z-index: 5;
+	margin-left: 89%;
+	top: 1.5%;
+}
+
+#Rock {
+	position: absolute;
+	z-index: 5;
+	margin-left: 89%;
+	top: 7.4%;
+}
+
+#Wood {
+	position: absolute;
+	z-index: 5;
+	margin-left: 89%;
+	top: 13.7%;
+}
+
+#sawmill0 {
+	position: relative;
+	width: 18.2%;
+	left: 11.5%;
+	margin-bottom: 57%;
+	z-index: 3;
+	cursor:pointer;
+}
+
+#warehouse0 {
+	position: relative;
+	width: 38%;
+	left: -0.8%;
+	margin-bottom: 42.5%;
+	z-index: 2;
+	cursor:pointer;
+}
+
+#text2 {
+	position: absolute;
+	display: none;
+	color: #ffffff;
+	z-index: 4;
+	margin-left: 44%;
+	top: 15%;
+}
+
+#text3 {
+	position: absolute;
+	display: none;
+	color: #ffffff;
+	z-index: 4;
+	margin-left: 44%;
+	top: 15%;
+}
+
+#text4 {
+	position: absolute;
+	display: none;
+	color: #ffffff;
+	z-index: 4;
+	margin-left: 60%;
+	top: 35%;
+}
+
+#text5 {
+	position: absolute;
+	display: none;
+	color: #ffffff;
+	z-index: 4;
+	margin-left: 60%;
+	top: 35%;
+}
+
+#text6 {
+	position: absolute;
+	display: none;
+	color: #ffffff;
+	z-index: 4;
+	margin-left: 60%;
+	top: 35%;
+}
+

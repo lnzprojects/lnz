@@ -1,0 +1,154 @@
+body {
+	overflow: hidden;
+}
+
+#caves {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+#arrow {
+	position: absolute;
+	width: 8%;
+	left: 0%;
+	bottom: 88%;
+	z-index: 2;
+}
+
+#pickaxe {
+	position: relative;
+	left: 82%;
+	width: 11%;
+	margin-bottom: 13%;
+	z-index: 2;
+}
+
+#miner1 {
+	position: relative;
+	width: 9%;
+	left: 31%;
+	margin-bottom: 21%;
+	z-index: 2;
+}
+
+
+#Table {
+	position: relative;
+	width: 19%;
+	left: 60%;
+	margin-bottom: 56%;
+	z-index: 2;
+}
+
+#Gold {
+	position: absolute;
+	z-index: 3;
+	margin-left: 89%;
+	top: 1.5%;
+}
+
+#Rock {
+	position: absolute;
+	z-index: 3;
+	margin-left: 89%;
+	top: 7.4%;
+}
+
+#Wood {
+	position: absolute;
+	z-index: 3;
+	margin-left: 89%;
+	top: 13.7%;
+}
+
+#SmallRock1 {
+	position: relative;
+	width: 3.5%;
+	left: -11.5%;
+	margin-bottom: 21.3%;
+	z-index: 3;
+}
+
+#SmallRock2 {
+	position: relative;
+	width: 3.5%;
+	left: -26%;
+	margin-bottom: 29.6%;
+	z-index: 3;
+}
+
+#SmallWood1 {
+	position: relative;
+	width: 3%;
+	left: -24.5%;
+	margin-bottom: 54%;
+	z-index: 2;
+}
+
+#SmallWood2 {
+	position: relative;
+	width: 2%;
+	left: -1.5%;
+	margin-bottom: 55.5%;
+	z-index: 2;
+}
+
+#SmallWood3 {
+	position: relative;
+	width: 3%;
+	left: 25%;
+	margin-bottom: 39.2%;
+	z-index: 2;
+}
+
+#SmallWood4 {
+	position: relative;
+	width: 4%;
+	left: 34.1%;
+	margin-bottom: 41.8%;
+	z-index: 2;
+}
+
+
+#mine0 {
+	position: relative;
+	width: 19.7%;
+	left: -25.5%;
+	margin-bottom: 32.8%;
+	z-index: 3;
+	cursor:pointer;
+}
+
+.photo:hover::after {
+	position: relative;
+	content: attr(data-title);
+}
+
+#info {
+	position: relative;
+	width: 19.7%;
+	left: 10%;
+	padding-bottom: 28%;
+	z-index: 4;
+}
+
+#text {
+	position: absolute;
+	display: none;
+	color: #ffffff;
+	z-index: 4;
+	margin-left: 44%;
+	top: 45%;
+}
+
+#text1 {
+	position: absolute;
+	display: none;
+	color: #ffffff;
+	z-index: 4;
+	margin-left: 44%;
+	top: 45%;
+}

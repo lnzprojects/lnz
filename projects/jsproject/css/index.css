@@ -1,0 +1,158 @@
+body {
+  counter-reset: a;
+  background-color: #fffdf5;
+}
+
+main {
+    padding: 0;
+    width: 100%;
+}
+#info {
+    z-index: 1;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "one one"
+    "two three";
+    justify-content: space-between;
+    align-items: stretch;
+}
+#info div:nth-child(1) {
+    border-top: 5px solid #242424;
+    width: 100%;
+    margin-top: 50px;
+    background-color: #F9D673;
+    font-size: 17px;
+    padding: 5px 0 10px 0;
+    grid-area: one;
+}
+#info div:nth-child(2) {
+    grid-area: two;
+    font-size: 18px;
+    padding-top: 20px;
+    border-top: 5px solid #242424;
+    border-right: 3px dotted #F9D673;
+    border-bottom: 4px solid #F9D673;
+    padding-bottom: 10px;
+}
+#info div:nth-child(3) {
+    grid-area: three;
+    font-size: 18px;
+    padding-top: 20px;
+    border-top: 5px solid #242424;
+    border-bottom: 4px solid #F9D673;
+    padding-bottom: 10px;
+}
+#info div {
+    text-align: center;
+    border: none;
+}
+#info div:first-child p {
+    width: 97%;
+}
+#info img {
+    border: 5px solid #242424;
+    border-radius: 10px;
+}
+#info div:nth-child(2) p, #info div:nth-child(3) p {
+    padding: 25px 0 15px 0;
+}
+#info div p {
+    width: 95%;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+#info img {
+    width: 50%;
+}
+#lessonstext {
+    background-color: #F9D673;
+    margin-top: -22px;
+    width: 120px;
+    border-radius: 200px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 6px 0 10px 0;
+}
+#divlessons ol {
+    list-style-type: none;
+    counter-reset: b;
+    counter-increment: a;
+}
+#divlessons ol li::before {
+    counter-increment: b;
+    content: counter(a) "." counter(b) " ";
+}
+.tem {
+    font-size: 18px;
+    font-weight: bold;
+}
+#lessons {
+    display: flex;
+    padding-bottom: 20px;
+    flex-direction: row;
+}
+#lessons div {
+    padding-top: 15px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+}
+#lessons div:first-child {
+    width: 50%;
+    padding-right: 10px;
+    border-right: 3px dotted #F9D673;
+}
+#lessons div:last-child {
+    width: 49%;
+}
+@media screen and (max-width: 710px) {
+    #info {
+        text-align: justify;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "one"
+        "two"
+        "three";
+        border: none;
+    }
+    #info div:nth-child(1) {
+    font-size: 15px;
+    padding-top: 4px;
+    padding-bottom: 8px;
+    }
+    #info div:nth-child(2) {
+        border-right: none;
+        border-bottom: none;
+        padding-bottom: 10px;
+        padding-top: 12px;
+    }
+    #info div:nth-child(3) {
+        border-top: 3px dotted #F9D673;
+        border-bottom: 3px solid #F9D673;
+        padding-bottom: 30px;
+        padding-top: 12px;
+    }
+    #info div:nth-child(2) p, #info div:nth-child(3) p {
+    padding: 10px 0 0px 0;
+    }
+    #lessons {
+        flex-direction: column;
+        padding-top: 10px;
+    }
+    #lessons div {
+        padding-left: 20px;
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    #lessons div:first-child {
+        width: 100%;
+        border-right: none;
+    }
+    #lessons div:last-child {
+        width: 100%;
+    }
+}

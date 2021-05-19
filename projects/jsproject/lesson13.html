@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Тема 13</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/lesson.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+
+  </script>
+</head>
+<body>
+  <header>
+    <div onclick="window.location='index.html'" id="menu">
+      Javascript підручник
+    </div>
+  </header>
+  <main>
+    <div id="nav">
+      <p class="topic">Тема 13</p>
+      <ul>
+        <a  href="#"><li class="top1">Значення undefined</li></a>
+        <a  href="#top2"><li class="top2">Оператор typeof</li></a>
+        <a  href="#top3"><li class="top3">Використання null</li></a>
+        <a  href="#top4"><li class="top4">Значення NaN</li></a>
+        <a  href="#top5"><li class="top5">Робота з NaN</li></a>
+      </ul>
+    </div>
+    <div id="main-content">
+      <p class="main-page"><a href="index.html">Головна</a> > Тема 13</p>
+      <p class="title">Значення undefined</p>
+      <p>Перевірте, що виведе консоль:</p>
+      <img class="lessonsimage codeimage eimage" src="images/lessons/13_1.jpg">
+      <p class="boldtext">Кожного разу коли ви використовуєте змінну, яка ще не була оголошена, намагаєтесь отримати значення властивості, що не існує (або вилучена), звертаєтесь до елемента масиву, що не існує – ви стикаєтесь з undefined.</p>
+      <div class="important"><span class="boldtext">Undefined</span> – значення, яке не було ініціалізоване. Це дозволяє перевірити чи було задано значення змінної.</div>
+      <p>Приклади:</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> x</span>;<br><span class="pink">if</span> (<span class="blue">x</span><span class="pink"> == </span><span class="green">undefined</span>) {<br><span class="comment">  // змінна х не задана! Прийняти міри!</span><br>}<br><br><span class="purple">var</span><span class="blue"> customer</span><span class="pink"> = </span>{<br>  name: <span class="yellow">"Jenny"</span><br>};<br><span class="pink">if</span> (<span class="blue">customer</span>.phoneNumber<span class="pink"> == </span><span class="green">undefined</span>) {<br><span class="comment">  // отримати телефон клієнта</span><br>}</span></code></pre>
+      </div>
+      <p id="top2">Значення undefined відноситься до типу undefined.</p>
+      <br>
+      <p class="title">Оператор typeof</p>
+      <div class="important">Оператор <span class="boldtext">typeof</span> вбудований в Java Script. Він використовується для перевірки типу операнди (того, до чого застосовується оператор).</div>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> subject</span><span class="pink"> = </span><span class="yellow">"Just a string"</span>;<br><span class="purple">var</span><span class="blue"> probe</span><span class="pink"> = typeof</span><span class="blue"> subject</span>;<br><span class="orange">console</span>.<span class="purple">log</span>(<span class="blue">probe</span>);</span></code></pre>
+      </div>
+      <p>Установіть відповідність:</p>
+      <img class="lessonsimage codeimage eimage" src="images/lessons/13_2.jpg">
+      <p>Розробники JS з самого початку прийняли рішення: змінні, які ще не були ініціалізовані, матимуть одне значення, а інше значення будуть використовувати для позначення відсутності об’єкта. Отже, <span class="boldtext">null</span> частіше використовується там, де об’єкт ще не створений, або не знайдений, а <span class="boldtext">undefined</span> – для неініціалізованих змінних, відсутніх властивостей об’єктів, або значень в масивах.</p>
+      <p class="boldtext">Змінній також можна присвоїти null:</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> test</span><span id="top3" class="pink"> = </span><span class="green">null</span>;<span class="comment">      // це означає , що в майбутньому ми присвоїмо об’єкт цій змінній, але поки що не присвоїли</span></span></code></pre>
+      </div>
+      <p class="title">Використання null</p>
+      <p>Часто потрібно переконатися в тому, що функція чи метод повертає повноцінний об’єкт, а не null – на випадок, якщо функція не змогла знайти чи створити його:</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> header</span><span class="pink"> = </span><span class="orange">document</span>.<span class="blue">getElementById</span>(<span class="yellow">"header"</span>);<br><br><span class="pink">if</span> (<span class="blue">header</span><span class="pink"> == </span><span class="green">null</span>) {<br><span id="top4" class="comment">  // заголовку немає!</span><br>}</span></code></pre>
+      </div>
+      <p class="title">Значення NaN</p>
+      <p>Існують числові значення, які неможливо представити в JS. Для них використовують спеціальне значення: <span class="boldtext">NaN("Not a Number")</span>. Наприклад, 0/0.</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> a</span><span class="pink"> = </span><span class="green">0</span><span class="pink">/</span><span class="green">0</span>;<br><span class="purple">var</span><span class="blue"> b</span><span class="pink"> = </span><span class="yellow">"food"</span><span class="pink">*</span><span class="green">1000</span>;<br><span class="purple">var</span><span class="blue"> c</span><span class="pink"> = </span><span class="orange">Math</span>.<span class="purple">sqrt</span>(<span class="green">-9</span>);<br></span></code></pre>
+      </div>
+      <div class="important"><span class="boldtext">NaN</span> – це єдине значення в JS , не рівне самому собі.<br>NaN <span id="top5" class="boldtext">!=</span> NaN</div>
+      <p class="title">Робота з NaN</p>
+      Перевірка числа на NaN (<span class="underlined semiboldtext">помилкова</span>):
+      <div class="code">
+        <pre class="code-example"><code><span><span class="pink">if</span> (<span class="blue">myNam</span><span class="pink"> == </span><span class="green">NaN</span>) {<br><span class="blue">  myNam</span><span class="pink"> = </span><span class="green">0</span>;<br>}</span></code></pre>
+      </div>
+      <p>Не працює тощу що значення NaN не дорівнює нічому, навіть самому собі.</p>
+      <p class="boldtext">Замість цього використовують функцію <span class="underlined">isNaN</span>:</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="pink">if</span> (<span class="purple">isNaN</span>(<span class="blue">myNum</span>)) {<br><span class="blue">  myNam</span><span class="pink"> = </span><span class="green">0</span>;<br>}</span></code></pre>
+      </div>
+      
+      <p>Спробуйте перевірити тип NaN.</p>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> test</span><span class="pink"> = </span><span class="green">0</span><span class="pink">/</span><span class="green">0</span>;<br><span class="orange">console</span>.<span class="purple">log</span>(<span class="pink">typeof</span><span class="blue"> test</span>);</span></code></pre>
+      </div>
+      <p class="boldtext">Вірніше розуміти NaN як «число, що не маєпредставлення» замість «не число».</p>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> a</span><span class="pink"> = </span><span class="green">10</span><span class="pink">/</span><span class="green">0</span>;<span class="comment">      // a матиме тип Infinity</span></span></code></pre>
+      </div>
+
+      <div id="nav1">
+        <div>
+          <a href="lesson12.html"><button><p>Попередній урок</p></button></a>
+        </div>
+        <div>
+          <a href="lesson14.html"><button><p>Наступний урок</p></button></a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+
+  </footer>
+</body>
+</html>

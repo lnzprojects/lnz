@@ -1,0 +1,28 @@
+.name {
+	background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8), rgba(0,0,0,0.4));
+	background: rgba(0,0,0,0.7);
+	color: #997245;
+	text-align: center;
+	width: 100%;
+	font-size: 700%;
+	font-family: arial;
+}
+
+#button {
+	padding: 10px;
+	font-size: 500%;
+	border-radius: 10px;
+	background-color: #997245;
+	outline: 0;
+	border: 0;
+	cursor: pointer;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 80px;
+	display: flex;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+}

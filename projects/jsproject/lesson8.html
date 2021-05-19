@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Тема 8</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/lesson.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+
+  </script>
+</head>
+<body>
+  <header>
+    <div onclick="window.location='index.html'" id="menu">
+      Javascript підручник
+    </div>
+  </header>
+  <main>
+    <div id="nav">
+      <p class="topic">Тема 8</p>
+      <ul>
+        <a  href="#"><li class="top1">Масиви (продовження)</li></a>
+        <a  href="#top2"><li class="top2">Закріплення знань</li></a>
+      </ul>
+    </div>
+    <div id="main-content">
+      <p class="main-page"><a href="index.html">Головна</a> > Тема 8</p>
+      <p class="title">Масиви (продовження)</p>
+      <p>Винесемо фрагмент коду для виведення усіх результатів з обчисленням максимального результату в функцію printAndGetHighScore, а у функцію getBestResults занесемо фрагмент для обчислення кращих результатів що рівні максимуму.</p>
+
+      <p>Нехай, ми маємо ще один масив</p>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> costs</span><span class="pink"> = </span>[<span class="green">25</span>, <span class="green">27</span>, <span class="green">25</span>, ... ];</span></code></pre>
+      </div>
+
+
+      <p>Потрібно визначити зразок з максимальним результатом у якому витрати мінімальні. Масив costs повторює структуру масиву scores тобто витрати на виробництво кожного зразку зберігаються в елементі з тим самим індексом що і результат цього зразку. Таким масиви називають паралельними.</p>
+
+      <p>Напишемо псевдокод програми:</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">function</span> getMostEffectiveSolution(<span class="blue">score</span>, <span class="blue">costs</span>, <span class="blue">highscore</span>) {<br><span>  оголосити змінну <span class="blue">cost</span> та присвоїти їй <span class="green">100</span></span><br><span>  оголосити змінну <span class="blue">index</span></span><br><span>  <span class="pink">for</span>: <span class="purple">var</span> <span class="blue">i</span><span class="pink">=</span><span class="green">0</span>; <span class="pink">&#60;</span> <span class="blue">scores</span>.length; <span class="blue">i</span><span class="pink">++</span> </span><br><span>    <span class="pink">якщо</span> результат зразку в <span class="blue">scores</span>[<span class="blue">i</span>] максимальний</span><br><span>      <span class="pink">якщо</span> поточне значення витрат <span class="pink">&#60;</span> витрат зразку тоді</span><br><span>        надати <span class="blue">index</span> значення змінній <span class="blue">i</span></span><br><span>        надати витрати на виробництво змінній <span class="blue">cost</span></span><br><span>      кінець <span class="pink">якщо</span></span><br><span>    кінець <span class="pink">якщо</span></span><br><span>  кінець <span class="pink">for</span></span><br><span>  <span id="top2" class="pink">RETURN</span> <span class="blue">index</span></span><br>}</span></code></pre>
+      </div>
+
+      <p class="title">Закріплення знань</p>
+      <h4>Написати програми:</h4>
+      <p class="task">1) Знайти перший від'ємний елемент масиву.</p>
+      <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(0);">Показати відповідь</button>
+      <div class="code-answer">
+        <div class="code">
+          <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> array</span><span class="pink"> = </span>[<span class="green">23</span>,<span class="green"> -32</span>,<span class="green"> 12</span>,<span class="green"> 14</span>,<span class="green"> -1</span>,<span class="green"> 4</span>,<span class="green"> -6</span>];<br><span class="purple">var</span><span class="blue"> k</span><span class="pink"> = </span><span class="green">0</span>;<br><br><span class="orange">console</span>.<span class="purple">log</span>(<span class="blue">array</span>);<br><br><span class="pink">for</span> (<span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="green">0</span>;<span class="blue"> i</span><span class="pink"> < </span><span class="blue">array</span>.length;<span class="blue"> i</span><span class="pink">++</span>) {<br><span class="pink">  if</span> (<span class="blue">array</span>[<span class="blue">i</span>]<span class="pink"> < </span><span class="green">0</span>) {<br><span class="orange">    console</span>.<span class="purple">log</span>(<span class="yellow">"Перший від'ємний елемент масиву = "</span><span class="pink"> + </span><span class="blue">array</span>[<span class="blue">i</span>]);<br><span class="blue">    break</span>;<br>  }<br>}<br></span><br></code></pre>
+        </div>
+      </div>
+      <p class="task">2) Знайти мінімальний елемент з непарним індексом.</p>
+      <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(1);">Показати відповідь</button>
+      <div class="code-answer">
+        <div class="code">
+          <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> array</span><span class="pink"> = </span>[<span class="green">4</span>,<span class="green">5</span>,<span class="green">2</span>,<span class="green">-7</span>,<span class="green">1</span>];<br><span class="purple">var</span><span class="blue"> min</span><span class="pink"> = </span><span class="green">0</span>;<br><br><span class="pink">for</span> (<span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="green">0</span>;<span class="blue"> i</span><span class="pink"> < </span><span class="blue">array</span>.length;<span class="blue"> i</span><span class="pink">++</span>) {<br><span class="pink">  if</span> (<span class="blue">array</span>[<span class="blue">i</span>]<span class="pink"> % </span><span class="green">2</span><span class="pink"> != </span><span class="green">0</span>) {<br>    <span class="pink">if</span> (<span class="blue">min</span><span class="pink"> > </span><span class="blue">array</span>[<span class="blue">i</span>]<span class="pink"> || </span><span class="blue">min</span><span class="pink"> == </span><span class="green">0</span>) {<br><span class="blue">      min</span><span class="pink"> = </span><span class="blue">array</span>[<span class="blue">i</span>];<br>    }<br>  }<br>}<br><br><span class="pink">if</span> (<span class="blue">min</span><span class="pink"> == </span><span class="green">0</span>) {<br><span class="orange">  console</span>.<span class="purple">log</span>(<span class="yellow">"В масиві немає непарних елементів"</span>);<br>}<span class="pink"> else</span> {<br><span class="orange">  console</span>.<span class="purple">log</span>(<span class="blue">min</span><span class="pink"> + </span><span class="yellow">" є мінімальним непарним елементом в масиві"</span>);<br>}</span></code></pre>
+        </div>
+      </div>
+      <p class="task">3) Вставка елемента в масив.</p>
+      <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(2);">Показати відповідь</button>
+      <div class="code-answer">
+        <div class="code">
+          <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> array</span><span class="pink"> = </span>[<span class="green">1</span>,<span class="green">2</span>,<span class="green">3</span>,<span class="green">4</span>,<span class="green">5</span>];<br><span class="orange">console</span>.<span class="purple">log</span>(<span class="blue">array</span>);<br><span class="purple">var</span><span class="blue"> k</span><span class="pink"> = </span><span class="green">3</span>;<br><span class="purple">var</span><span class="blue"> n</span><span class="pink"> = </span><span class="green">0</span>;<br><br><span class="blue">array</span>.length<span class="pink"> = </span><span class="blue">array</span>.length<span class="pink"> + </span><span class="green">1</span>;<br><br><span class="pink">for</span> (<span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="blue">array</span>.length<span class="pink">-</span><span class="green">1</span>;<span class="blue"> i</span><span class="pink"> > </span><span class="blue">k</span>;<span class="blue"> i</span><span class="pink">--</span>) {<br><span class="blue">  array</span>[<span class="blue">i</span>]<span class="pink"> = </span><span class="blue">array</span>[<span class="blue">i</span><span class="pink">-</span><span class="green">1</span>];<br>}<br><br><span class="blue">array</span>[<span class="blue">k</span>]<span class="pink"> = </span><span class="blue">n</span>;<br><br><span class="orange">console</span>.<span class="purple">log</span>(<span class="blue">array</span>);<br></span></code></pre>
+        </div>
+      </div>
+      <p class="task">4) Вилучення елемента з масива.</p>
+      <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(3);">Показати відповідь</button>
+      <div class="code-answer">
+        <div class="code">
+          <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> array</span><span class="pink"> = </span>[<span class="green">1</span>,<span class="green">2</span>,<span class="green">3</span>,<span class="green">4</span>,<span class="green">5</span>];<br><span class="orange">console</span>.<span class="purple">log</span>(<span class="blue">array</span>);<br><span class="purple">var</span><span class="blue"> k</span><span class="pink"> = </span><span class="green">3</span>;<br><br><span class="pink">for</span> (<span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="blue">k</span>;<span class="blue"> i</span><span class="pink"> < </span><span class="blue">array</span>.length<span class="pink"> - </span><span class="green">1</span>;<span class="blue"> i</span><span class="pink">++</span>) {<br><span class="blue">  array</span>[<span class="blue">i</span>]<span class="pink"> = </span><span class="blue">array</span>[<span class="blue">i</span><span class="pink">+</span><span class="green">1</span>];<br>}<br><br><span class="blue">array</span>.length<span class="pink"> = </span><span class="blue">array</span>.length<span class="pink"> - </span><span class="green">1</span>;<br><br><span class="orange">console</span>.<span class="purple">log</span>(<span class="blue">array</span>);<br></span></code></pre>
+        </div>
+      </div>
+      <p class="task">5) Зсув елементів масиву (<-, на 1).</p>
+      <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(4);">Показати відповідь</button>
+      <div class="code-answer">
+        <div class="code">
+          <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> array</span><span class="pink"> = </span>[<span class="green">1</span>,<span class="green">2</span>,<span class="green">3</span>,<span class="green">4</span>,<span class="green">5</span>];<br><span class="purple">var</span><span class="blue"> firstElement</span><span class="pink"> = </span><span class="blue">array</span>[<span class="green">0</span>];<br><br><span class="pink">for</span> (<span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="green">1</span>;<span class="blue"> i</span><span class="pink"> < </span><span class="blue">array</span>.length;<span class="blue"> i</span><span class="pink">++</span>) {<br><span class="blue">  array</span>[<span class="blue">i</span><span class="pink">-</span><span class="green">1</span>]<span class="pink"> = </span><span class="blue">array</span>[<span class="blue">i</span>];<br>}<br><br><span class="blue">array</span>[<span class="blue">array</span>.length<span class="pink">-</span><span class="green">1</span>]<span class="pink"> = </span><span class="blue">firstElement</span>;<br><br><span class="orange">console</span>.<span class="purple">log</span>(<span class="blue">array</span>);<br></span></code></pre>
+        </div>
+      </div>
+
+      <div id="nav1">
+        <div>
+          <a href="lesson7.html"><button><p>Попередній урок</p></button></a>
+        </div>
+        <div>
+          <a href="lesson9.html"><button><p>Наступний урок</p></button></a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+
+  </footer>
+</body>
+</html>

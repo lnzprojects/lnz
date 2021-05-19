@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>Вгадай мелодію</title>
+	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div id="center">
+		<div id="center1">
+			<div id="men">
+				<h1>Вгадай мелодію</h1>
+				<h2 id="rounds">Раунд 1</h2>
+				<h2 id="points">Бали - 0</h2>
+				<h2 id="doppoints">&nbsp;</h2>
+			</div>
+			<div id="starts">
+						<p><input type="button" id="start" value="ПОЧАТИ"></p>
+						<p><input type="button" id="rules" onclick="alertrules()" value="ПРАВИЛА"></p>
+					</div>
+			<div id="centerx2">
+				<audio id="soundplayer">
+					<source src="">
+					</audio>
+					
+					<div id="GuessZ">
+						<p id="guesa2"><input id="guessPole" type="text" placeholder="виконавець - пісня">
+							<input id="knopka" type="button" value="Enter">
+						</p>
+						<div id="timer"></div>
+						<div id="skip"><input type="button" id="skiper" value="Знаю!"></div>
+						<div id="next"><input type="button" id="nextetap" value="Далі"></div>
+					</div>
+					<div id="kolonki">
+						<div id="left-kolonka"><img src="musicPlay.gif"id="kolonka1"></div>
+						<div id="right-kolonka"><img src="musicPlay.gif"id="kolonka2"></div>
+					</div>
+				</div>
+			</div>
+			<div id="popup" class="popupmenu">
+				<div class="zatemnenie"></div>
+				<div id="information">
+					<div class="close" onclick="alertrules()">&times;</div>
+					<p>Для того, щоб почати гру - натисніть кнопку "ПОЧАТИ".
+						Після цього буде лунати 13-ти секундний уривок пісні.
+						Також, ви можете пропустити, якщо ви впізнали все.
+						А далі, з'явиться поле, куди потрібно буде писати відповідь.
+						А зараз уважно! 
+						Відповідь має бути у форматі "виконавець-назва пісні".
+						Пробіли, маленькі чи великі літери - не впливають ні на що.
+						Але потрібно писати через тире, і саме в такій послідовності.
+						Щодо балів, за правильно названу пісню та співака - 2б.
+						Одне з цього - 1б. Нічого - логічно 0б.
+						Також у раунді може з'явиться бонус, за який ви отримуєте додатково 1б.
+					Приємної гри&#128512;</p></div>
+				</div>
+			</div>
+			<script src="JavaSC.js">	
+			</script>
+		</body>
+		</html>

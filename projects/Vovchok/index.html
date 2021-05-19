@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <title>Гра на швидкість письма</title>
+  </head>
+  <body>
+    <div class="settings">
+      <form id="settings-form">
+        <label for="difficulty">Рівень гри</label>
+        <select id="difficulty">
+            <option value="easy">Легко</option>
+            <option value="middle">Среднє</option>
+            <option value="hard">Складно</option>
+        </select>
+      </form>
+    </div>
+
+    <div class="container">
+      <h2 class="container-title">Гра на швидкість письма</h2>
+      <button id="startBtn">Почати гру</button>
+      <div id="game">
+        <div class="time-container">
+          <div class="time-left">Час: <span id="time">10s</span></div>
+          <div class="score-container">Бали: <span id="score">0</span></div>
+        </div>
+
+        <div class="title">Надрукуйте слово:</div>
+        <h1 id="word"></h1>
+        <input
+          type="text"
+          id="text"
+          autocomplete="off"
+          placeholder="Надрукуйте слово"
+        />
+      </div>
+
+      <div class="end-game" id="end-game"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Тема 3</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/lesson.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+
+  </script>
+</head>
+<body>
+  <header>
+   <div onclick="window.location='index.html'" id="menu">
+    Javascript підручник
+  </div>
+</div>
+</header>
+<main>
+  <div id="nav">
+    <p class="topic">Тема 3</p>
+    <ul>
+      <a  href="#"><li class="top1">Взаємодія зі сторінкою</li></a>
+      <a  href="#top2"><li class="top2">Знайомство з console.log</li></a>
+      <a  href="#top3"><li class="top3">Розміщення коду JS</li></a>
+      <a  href="#top4"><li class="top4">Закріплення знань</li></a>
+    </ul>
+  </div>
+  <div id="main-content">
+    <p class="main-page"><a href="index.html">Головна</a> > Тема 3</p>
+
+    <p class="title">Взаємодія зі сторінкою</p>
+    <p><span class="boldtext">Створення сигналу.</span> Оповіщення користувача за допомогою функції alert.</p>
+    <p><span class="boldtext">Прямий запис в документ.</span> Функція document.write дозволяє вивести довільну розмітку HTML і контент в довільній точці сторінки.</p>
+    <p><span class="boldtext">Виведення на консоль.</span> Для того щоб вивести повідомлення на консоль, викликається функція console.log і передається їй рядок, функція console.log - відмінний інструмент діагностики та відладки.</p>
+    <p id="top2"><span class="boldtext">Безпосередня модифікація документа.</span> Всі операціїї (звернення до розмітки веб-сторінки, зчитування та зміна її змісту, зміна структури і стилю) виконується через об'єктну модель документа (DOM).</p>
+
+    <p class="title">Знайомство з console.log</p>
+
+    <div class="code">
+      <pre class="code-example"><code><span><span class="purple">var</span> <span class="blue">message</span><span class="pink"> = </span><span class="yellow">"Howdy"</span><span class="pink"> + </span><span class="yellow">" "</span><span class="pink"> + </span><span class="yellow">"partner"</span>;<br><span><span class="orange">console</span>.<span class="purple">log</span>(<span class="blue">message</span>);</span></code></pre>
+    </div>
+
+    <div id="top3" class="important">
+      <span class="boldtext">Ctrl + Shift + I</span> - відкрити консоль
+    </div>
+        <p class="title">Розміщення коду JS</p>
+        <ul>
+          <li>В елементі <span class="boldtext">&#60;head&#62;</span>.</li>
+          <li>В розділі <span class="boldtext">&#60;body&#62;</span>. Сторінка швидше завантажуєтья і під час опрацювання скрипта користувач вже буде бачити сторінку.</li>
+          <li>В окремому файлі. Посиланя на файл розміщуеться в елементі <span class="boldtext">&#60;head&#62;</span> як файл CSS. <br><span class="boldtext">&#60;script src="mycode.js"&#62;</span></li>
+          <li>Посилання розмістити в тілі сторінки. Маємо окремий файл JS, посилання розміщуємо в кінці тіла сторінки і код буде завантаживатися лише після завантаження тіла сторінки:</li>
+
+          <img class="lessonsimage imagemain eimage" src="images/lessons/3_1.png">
+          <li>Створюємо файл JS та додаємо посилання.</li>
+        </ul>
+
+
+        <div id="top4" class="important">Вбудований код JS не може об'єднуватися з зовнішнім. Для цього потрібно два окремих елемента &#60;script&#62;.</div>
+
+        <p class="title">Закріплення знань</p>
+        <div class="flextask">
+          <div>
+            <p>1. document.write</p>
+          </div>
+          <div>
+            <p>A. Я негайно зупиняю те, чим займається користувач, і видаю короткий сообщеніе.чтоби рухатися далі, користувач повинен натиснути "ок"</p>
+
+          </div>
+          <div>
+            <p>2. console.log</p>
+          </div>
+          <div>
+
+            <p>Б. Я вмію вставляти невеликі фрагменти розмітки html і тексту в документ. може, я й не самі елегантний спосіб передачі інформації користувачу, але зате я працюю в усіх браузерах.</p>
+
+          </div>
+          <div>
+            <p>3. alert</p>
+          </div>
+          <div>
+            <p>В. З моєю допомогою ви зможете повністю керувати веб-сторінкою: отримувати дані, введені користувачем, змінювати розмітку html і стилі, оновлювати вміст сторінки.</p>
+
+          </div>
+          <div>
+            <p>4. Об'єктна модель документа</p>
+          </div>
+          <div>
+
+            <p>Г. Я існую виключно для вирішення простих завдань налагодження, і дозволяю виводити інформацію на спеціальну консоль, призначену для розробників.</p>
+
+          </div>
+        </div>
+        <p class="task boldtext">Оберіть правильну відповідь:</p>
+        <input class="answerInput" name="task" value="1" type="radio">  1 - A, 2 - В, 3 - Г, 4 - Б
+        <br>
+        <input class="answerInput" name="task" value="2" type="radio">  1 - В, 2 - Г, 3 - А, 4 - Б
+        <br>
+        <input class="answerInput" name="task" value="3" type="radio">  1 - Б, 2 - Г, 3 - А, 4 - В
+        <br>
+        <input class="answerInput" name="task" value="все вірно" type="radio">  1 - Г, 2 - Б, 3 - А, 4 - В
+        <br>
+        <button class="answerButton" type="submit" onclick="checkAnswer(3, 1, 1, 'task');">Перевірити</button>
+        <br>
+        <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(0);">Показати відповідь</button>
+        <div class="code-answer">
+          <p class="semiboldtext">Правильна відповідь: 3) 1 - Б, 2 - Г, 3 - А, 4 - В</p>
+        </div>
+
+        <div id="nav1">
+          <div>
+            <a href="lesson2.html"><button><p>Попередній урок</p></button></a>
+          </div>
+          <div>
+            <a href="lesson4.html"><button><p>Наступний урок</p></button></a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+
+    </footer>
+  </body>
+  </html>

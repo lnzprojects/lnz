@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Тема 11</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/lesson.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+
+  </script>
+</head>
+<body>
+  <header>
+    <div onclick="window.location='index.html'" id="menu">
+      Javascript підручник
+    </div>
+  </header>
+  <main>
+    <div id="nav">
+      <p class="topic">Тема 11</p>
+      <ul>
+        <a  href="#"><li class="top1">Властивість innerHTML</li></a>
+        <a  href="#top2"><li class="top2">Взаємодія JS зі сторінкою</li></a>
+      </ul>
+    </div>
+    <div id="main-content">
+      <p class="main-page"><a href="index.html">Головна</a> > Тема 11</p>
+      <p class="title">Властивість innerHTML</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="orange">document</span>.<span class="blue">getElementById</span>(<span class="yellow">"code9"</span>);</span></code></pre>
+      </div>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="blue">access</span>.innerHTML;<span class="comment">        // об’єкт з властивістю innerHTML</span></span></code></pre>
+      </div>
+
+      <p>Тобто на малюнку код JS звернувся до сторінки(документа), отрима елемент(з іден-м "code9"), взяв вміст цього елемента(рядок "My…at"), додав до нього рядок "midnight" і вивів результат на екран:</p>
+      <img class="lessonsimage mimage" src="images/lessons/11_1.jpg">
+      <p id="top2">Веб-сторінка являє собою живу, рухливу структуру даних, з якою може взаємодіяти код JS. Можна звертатися до елементів сторінки і читати їх вміст, або ж JS можна використовувати для зміни структури сторінки.</p>
+      
+      <p class="title">Взаємодія JS зі сторінкою</p>
+
+      <h4>HTML – розмітка, JS – код. Їх взаємодія відбувається через уявлення сторінки, що називається <span class="underlined">об’єктною моделлю документа</span> (DOM). Модель DOM створюється під час завантаження сторінки браузером.</h4>
+      <p>Як це відбувається на малюнку:</p>
+
+      <img class="lessonsimage codeimage eimage" src="images/lessons/11_2.jpg">
+
+      <img class="lessonsimage codeimage eimage" src="images/lessons/11_3.jpg">
+      <img class="lessonsimage codeimage eimage" src="images/lessons/11_4.jpg">
+
+      <p>Розглянемо малюнок:</p>
+
+      <img class="lessonsimage codeimage eimage" src="images/lessons/11_5.jpg">
+      <p>Потрібно замінити текст з id greenplanet на "Red Alert: hit by phaser fire!". Для цього знадобиться елемент з id "greenplanet":</p>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="orange">document</span>.<span class="blue">getElementById</span>(<span class="yellow">"greenplanet"</span>);</span></code></pre>
+      </div>
+      <p>Отримавши елемент від getElementById ми можемо виконати з ним певну операцію:</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> planet</span><span class="pink"> = </span><span class="orange">document</span>.<span class="blue">getElementById</span>(<span class="yellow">"planet"</span>);<br><span class="blue">planet</span>.innerHTML<span class="pink"> = </span><span class="yellow">"Red Alert:hit by phaser fire!"</span>;</span></code></pre>
+      </div>
+
+
+      <p>Виконайте завдання: </p>
+      <img class="lessonsimage codeimage eimage" src="images/lessons/11_7.jpg">
+      <p class="important">Запитуючи елемент з DOM методом <span class="boldtext">getElementById</span>, ми отримуємо об’єкт <span class="underlined">element</span>, який може використовуватися для читання зміни або заміни вмісту або атрибутів елемента.</p>
+      <p>Ми можемо виконати зі своїм елементом (елемент &#60;p&#62;) заміну вмісту "All is well" на "Red alert:hit by phaser fire!". Об’єкт element присвоєний змінній planet; скористаємося цією змінною для зміни однієї з властивостей, а саме innerHTML:</p>
+      Var planet=document.getElementById("greenplanet");
+      Planet.innerHTML="Red Alert: ...";
+      <p class="important">Властивість <span class="boldtext">innerHTML</span> використовується для <span class="underlined">зміни</span> вмісту елементу. В innerHTML повертається вміст елемента, без тегів елемента HTML.</p>
+      <p>Завдання: вивести на консоль вміст об’єкта planet, використовуючи властивість innerHTML.</p>
+      <p>Щоб змінити вміст елемента, ми надаємо його властивості innerHTML рядок "Red alert: …".</p>
+      <p>Завдання: виконати зміну.</p>
+      <h4>Коли ми виконуємо ці дії, фактично ми змінюємо вміст веб-сторінки «на ходу»:</h4>
+
+      <img class="lessonsimage codeimage eimage" src="images/lessons/11_8.jpg">
+      <ul>
+        <li>Якщо шукаємо елемент з не існуючим ідентифікатором, то виклик getElementById поверне значення null.</li>
+        <li>Шукати за классом: getElementByClassName із заданим ім’ям тега getElemenstByTagName.</li>
+        <li>В процесі завантаження і розбору файла HTML , браузер створює об’єкт element для кожного елемента сторінки і дає всі ці об’єкти в модель DOM. Таким чином модель DOM являє собою дерево об’єктів element.</li>
+        <li>Властивість innerHTML дає весь зміст елемента, включаючи вкладені елементи(наприклад &#60;em&#62;,&#60;img&#62;).</li>
+        <li>Задаючи щось innerHTML можна замінити вміст елемента, включаючи елемент &#60;body&#62;.</li>
+      </ul>
+
+      <img class="lessonsimage codeimage eimage" src="images/lessons/11_9.jpg">
+      <p>Коли ми працюємо з DOM, дуже важливо виконувати код <span class="underlined">після повного завантаження</span> сторінки (а ми шукаємо елемент, який ще не існує):</p>
+
+      <img class="lessonsimage mimage" src="images/lessons/11_10.jpg">
+      <h4>Вирішення проблеми:</h4>
+      <ol>
+        <li>Перемістити скрипт в кінець розділу &#60;body&#62;.</li>
+        <li>Наказати браузеру виконувати код скрипта, тільки після повного завантаження сторінки і побудови моделі DOM.</li>
+      </ol>
+      <br>
+      <p>Спочатку створюється функція з кодом, що має виконуватися після завантаження сторінки. Ця функція присвоюється властивості onload об’єкта window. Об’єкт window викличе фукцію, пов’язану з властивістю onload, але після того як сторінка повністю завантажиться.</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="blue">&#60;script&#62;</span><br><span class="purple">  function</span> init() {<br><span class="purple">    var</span><span class="blue"> planet</span><span class="pink"> = </span><span class="orange">document</span>.<span class="blue">getElementById</span>(<span class="yellow">"..."</span>);<br><span class="blue">    planet</span>.innerHTML<span class="pink"> = </span><span class="yellow">"..."</span>;<br>  }<br><br><span class="orange">  window</span>.onload<span class="pink"> = </script><span class="blue">init</span>;<span class="blue"><br>&#60;/script&#62;</span>
+        </span></code></pre>
+      </div>
+
+      <p id="top3">Припустимо, що має трапитися якась важлива подія і нам необхідно про неї дізнатися (наприклад «сторінка повністю завантажена»). В  таких випадках застосовується функції оберненого виклику, які ще називають обробниками подій. Робота таких функцій грунтується на тому, що ми передаємо ці функції об’єктам, які знають подію. Коли виникає подія об’єкт викликає отриману функцію, тобто оповіщює нас про настання події. Можна писати опрацювавши події для виклику функції кожні 5 секунд, або коли користувач натиснув на кнопку і тд.</p>
+
+
+
+      <div id="nav1">
+        <div>
+          <a href="lesson10.html"><button><p>Попередній урок</p></button></a>
+        </div>
+        <div>
+          <a href="lesson12.html"><button><p>Наступний урок</p></button></a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+
+  </footer>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Шибениця</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="styles.css">
+	<script type="text/javascript" src="functions.js"></script>
+	<style type="text/css">
+		body {
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div id="div-coin">
+		<p id="text-coin"></p>
+		<img id="coin" src="coin.png">
+	</div>
+	<div id="div-shop">
+		<a href="shop.html"><img class="icon-shop-rules" src="shop.png"></a>
+	</div>
+	<div id="div-rules">
+		<a href="rules.html"><img class="icon-shop-rules" src="rules.png"></a>
+	</div>
+	<div id="game-title">
+		<a href="index.html"><p>Гра "Шибениця"</p></a>
+	</div>
+	<main>
+		<div id="div-front">
+			<div>
+				<p id="p-front">Ви пройшли всі рівні!</p>
+				<button id="startgame" onclick="document.getElementById('div-front').style.display = 'none'">Розпочати гру</button>
+				<img class="front-image" id="image1" src="1.png">
+				<img class="front-image" id="image2" src="2.png">
+				<img class="front-image" id="image3" src="3.png">
+				<img class="front-image" id="image4" src="4.png">
+				<img class="front-image" id="image5" src="5.png">
+				<img class="front-image" id="image6" src="6.png">
+			</div>
+		</div>
+		<div id="div-question">
+			<div><img id="try-again" src="try-again.png"></div>
+			<div><p class="question" id="question"></p></div>
+			<div><img id="arrow" src="arrow.png"></div>
+		</div>
+		<div id="game">
+		<div id="div-game-image">
+			<img id="game-image" src="0game0.png" alt="image">
+		</div>
+		<div>
+			<table id="word-table">
+				<tr id="tr-word">
+				</tr>
+			</table>
+			<table id="letters-table">
+			<tr id="tr-1">
+				<td>а</td>
+				<td>б</td>
+				<td>в</td>
+				<td>г</td>
+				<td>ґ</td>
+				<td>д</td>
+			</tr>
+			<tr id="tr-2">
+				<td>е</td>
+				<td>є</td>
+				<td>ж</td>
+				<td>з</td>
+				<td>и</td>
+				<td>і</td>
+
+			</tr>
+			<tr id="tr-3">
+				<td>й</td>
+				<td>ї</td>
+				<td>к</td>
+				<td>л</td>
+				<td>м</td>
+				<td>н</td>
+			</tr>
+			<tr id="tr-4">
+				<td>о</td>
+				<td>п</td>
+				<td>р</td>
+				<td>с</td>
+				<td>т</td>
+				<td>у</td>
+			</tr>
+			<tr id="tr-5">
+				<td>ф</td>
+				<td>х</td>
+				<td>ц</td>
+				<td>ч</td>
+				<td>ш</td>
+				<td>щ</td>
+			</tr>
+			<tr id="tr-6">
+				<td>ь</td>
+				<td>ю</td>
+				<td>я</td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>	
+		</div>
+	</div> 
+	</main>
+	
+</body>
+</html>

@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Тема 15</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/lesson.js"></script>
+  <script src="js/test.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+
+  </script>
+</head>
+<body>
+  <header>
+    <div onclick="window.location='index.html'" id="menu">
+      Javascript підручник
+    </div>
+  </header>
+  <main>
+    <div id="nav">
+      <p class="topic">Тема 15</p>
+      <ul>
+        <a  href="#"><li class="top1">Огляд методів для рядків</li></a>
+        <a  href="#top2"><li class="top2">Закріплення знань</li></a>
+        <a  href="#top3"><li class="top3">Підсумковий тест</li></a>
+      </ul>
+    </div>
+    <div id="main-content">
+      <p class="main-page"><a href="index.html">Головна</a> > Тема 15</p>
+
+      <p class="title">Огляд методів для рядків</p>
+
+      <p>Властивість <span class="boldtext markedtextred  underlined">length</span> повертає кількість символів у рядку (зручно використовувати для перебору символів у рядку).</p>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> text</span><span class="pink"> = </span><span class="yellow">"hello"</span>;<br><span class="orange">console</span>.<span class="purple">log</span>(<span class="blue">text</span>.length);</span></code></pre>
+      </div>
+
+      <p>Метод <span class="boldtext markedtextred  underlined">charAt()</span> отримує ціле число від 0 до довжини рядку (мінус 1) і повертає рядок з одним символом, що знаходиться в заданій позиції. Рядок можна рознлядати як масив, елементами якого є окремі символи, а індекси починаються з 0. Якщо переданий індекс більше або дорівнює довжині рядку, повертаєтсья порожній рядок.</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> input</span><span class="pink"> = </span><span class="yellow">"jenny@wickedlysmart.com"</span>;<br><br><span class="pink">for</span> (<span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="green">0</span>;<span class="blue"> i</span><span class="pink"> < </span><span class="blue">input</span>.length;<span class="blue"> i</span><span class="pink">++</span>) {<br><span class="pink">  if</span> (<span class="blue">input</span>.<span class="blue">charAt</span>(<span class="blue">i</span>)<span class="pink"> == </span><span class="yellow">"@"</span>) {<br><span class="orange">    console</span>.<span class="purple">log</span>(<span class="yellow">"There's an @ sign at index"</span><span class="pink"> + </span><span class="blue">i</span>);<br>  }<br>}</span></code></pre>
+      </div>
+
+      <p>Метод <span class="boldtext markedtextred  underlined">indexOf()</span> отримує рядок-аргумент і повертає індекс першого символу першого входження аргумента в своєму рядку.</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> phrase</span><span class="pink"> = </span><span class="yellow">"The cat in the hat"</span>;<br><span class="purple">var</span><span class="blue"> index</span><span class="pink"> = </span><span class="blue">phrase</span>.<span class="blue">indexOf</span>(<span class="yellow">"cat"</span>);<br><span class="orange">console</span>.<span class="purple">log</span>(<span class="yellow">"There's a cat sitting at index "</span><span class="pink"> + </span><span class="blue">index</span>);</span></code></pre>
+      </div>
+
+      <p>Також можна передати другий аргумент - індекс початкової позиції пошуку.</p>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> phrase</span><span class="pink"> = </span><span class="yellow">"The cat in the hat"</span>;<br><span class="purple">var</span><span class="blue"> index</span><span class="pink"> = </span><span class="blue">phrase</span>.<span class="blue">indexOf</span>(<span class="yellow">"cat"</span>,<span class="green"> 5</span>);<br><span class="orange">console</span>.<span class="purple">log</span>(<span class="yellow">"There's a cat sitting at index "</span><span class="pink"> + </span><span class="blue">index</span>);</span></code></pre>
+      </div>
+
+      <p>Якщо рядок знайти не вдалось, метод повертає -1.</p>
+
+      <p>Метод <span class="boldtext markedtextred  underlined">lastIndexOf()</span> знаходить останнє входження підрядка в рядку.</p>
+      <p>Метод <span class="boldtext markedtextred  underlined">substring()</span> отримує два індекса, після чого витягує і повертає рядок між ними (не включаючи 2й індекс).</p>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> data</span><span class="pink"> = </span><span class="yellow">"name|phone|address"</span>;<br><span class="purple">var</span><span class="blue"> val</span><span class="pink"> = </span><span class="blue">data</span>.<span class="blue">substring</span>(<span class="green">5</span>,<span class="green"> 10</span>);<br><span class="orange">console</span>.<span class="purple">log</span>(<span class="yellow">"Substring is "</span><span class="pink"> + </span><span class="blue">val</span>);</span></code></pre>
+      </div>
+
+      <p>Другий індекс можна не вказувати, в цьому випадку substring дістане рядок, який починається з першого індекса і продовжується до кінця рядку.</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> data</span><span class="pink"> = </span><span class="yellow">"name|phone|address"</span>;<br><span class="purple">var</span><span class="blue"> val</span><span class="pink"> = </span><span class="blue">data</span>.<span class="blue">substring</span>(<span class="green">5</span>);<br><span class="orange">console</span>.<span class="purple">log</span>(<span class="yellow">"Substring is now "</span><span class="pink"> + </span><span class="blue">val</span>);</span></code></pre>
+      </div>
+
+      <p>Метод <span class="boldtext markedtextred  underlined">split()</span> отримує символ-обмежувач і розбиває рядок на частини по позиції обмежувача.</p>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> data</span><span class="pink"> = </span><span class="yellow">"name|phone|address"</span>;<br><span class="purple">var</span><span class="blue"> vals</span><span class="pink"> = </span><span class="blue">data</span>.<span class="blue">split</span>(<span class="yellow">"|"</span>);<br><span class="orange">console</span>.<span class="purple">log</span>(<span class="yellow">"Split array is "</span>,<span class="blue"> vals</span>);</span></code></pre>
+      </div>
+
+      <p>В цьому випадку масив vals не перетворюється в рядок перед виведенням в консоль, тому в console.log передається два аргумента, розділених комою.</p>
+
+      <p>Метод <span class="boldtext markedtextred  underlined">trim()</span> вилучає пропуски з обоx кінців рядку.</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> text</span><span class="pink"> = </span><span class="yellow">"   hello  "</span>;<br><span class="purple">var</span><span class="blue"> newtext</span><span class="pink"> = </span><span class="blue">text</span>.<span class="blue">trim</span>();<br><span class="orange">console</span>.<span class="purple">log</span>(<span id="top2" class="yellow">"New text is "</span><span class="pink"> + </span><span class="blue">newtext</span>);</span></code></pre>
+      </div>
+
+
+      <p id="top5" class="title">Закріплення знань</p>
+      <p class="task">1) Визначити кількість слів у рядку.</p>
+      <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(0);">Показати відповідь</button>
+      <div class="code-answer">
+        <div class="code">
+          <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> text</span><span class="pink"> = </span><span class="yellow">"   hello my  friend  "</span>;<br><span class="blue">text</span><span class="pink"> = </span><span class="blue">text</span>.<span class="blue">trim</span>();<br><span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="green">0</span>;<br><br><span class="pink">while</span> (<span class="blue">i</span><span class="pink"> < </span><span class="blue">text</span>.length<span class="pink"> - </span><span class="green">1</span>) {<br><span class="pink">  if</span> (<span class="blue">text</span>[<span class="blue">i</span>]<span class="pink"> == </span><span class="yellow">" "</span><span class="pink"> && </span><span class="blue">text</span>[<span class="blue">i</span><span class="pink">+</span><span class="green">1</span>]<span class="pink"> == </span><span class="yellow">" "</span>) {<br><span class="blue">    text</span><span class="pink"> = </span><span class="blue">text</span>.<span class="blue">substring</span>(<span class="green">0</span>,<span class="blue"> i</span>)<span class="pink"> + </span><span class="blue">text</span>.<span class="blue">substring</span>(<span class="blue">i</span><span class="pink">+</span><span class="green">1</span>,<span class="blue"> text</span>.length);<br><span class="blue">    i</span><span class="pink">--</span>;<br>  }<br><span class="blue">  i</span><span class="pink">++</span>;<br>}<br><br><span class="blue">text</span><span class="pink"> = </span><span class="blue">text</span>.<span class="blue">split</span>(<span class="yellow">" "</span>);<br><span class="purple">var</span><span class="blue"> n</span><span class="pink"> = </span><span class="blue">text</span>.length;<br><span class="orange">console</span>.<span class="purple">log</span>(<span class="yellow">"Кількість слів у рядку = "</span><span class="pink"> + </span><span class="blue">n</span>);</span></code></pre>
+        </div>
+
+      </div>
+
+      <p class="task">2) Зробити усі перші букви слів великими (toUpperCase).</p>
+      <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(1);">Показати відповідь</button>
+      <div class="code-answer">
+        <div class="code">
+          <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> text</span><span class="pink"> = </span><span class="yellow">"   hello  my   friend  "</span>;<br><span class="blue">text</span><span class="pink"> = </span><span class="blue">text</span>[<span class="green">0</span>].<span class="blue">toUpperCase</span>()<span class="pink"> + </span><span class="blue">text</span>.<span class="blue">substring</span>(<span class="green">1</span>, <span class="blue">text</span>.length);<br><br><span class="pink">for</span> (<span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="green">1</span>;<span class="blue"> i</span><span class="pink"> < </span><span class="blue">text</span>.length<span class="pink">-</span><span class="green">1</span>;<span class="blue"> i</span><span class="pink">++</span>) {<br><span class="pink">  if</span> (<span class="blue">text</span>[<span class="blue">i</span>]<span class="pink"> !== </span><span class="yellow">" "</span><span class="pink"> && </span><span class="blue">text</span>[<span class="blue">i</span><span class="pink">-</span><span class="green">1</span>]<span class="pink"> == </span><span class="yellow">" "</span>) {<br><span class="blue">    text</span><span class="pink"> = </span><span class="blue">text</span>.<span class="blue">substring</span>(<span class="green">0</span>, <span class="blue">i</span>)<span class="pink"> + </span><span class="blue">text</span>[<span class="blue">i</span>].<span class="blue">toUpperCase</span>()<span class="pink"> + </span><span class="blue">text</span>.<span class="blue">substring</span>(<span class="blue">i</span><span class="pink">+</span><span class="green">1</span>, <span class="blue">text</span>.length);<br>  }<br>}<br><br><span class="orange">console</span>.<span class="purple">log</span>(<span class="blue">text</span>);</span></code></pre>
+        </div>
+      </div>
+
+      <p class="task">3) Визначити довжину найдовшого слова.</p>
+      <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(2);">Показати відповідь</button>
+      <div class="code-answer">
+        <div class="code">
+          <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> text</span><span class="pink"> = </span><span class="yellow">"   hello my  friend  "</span>;<br><span class="blue">text</span><span class="pink"> = </span><span class="blue">text</span>.<span class="blue">trim</span>();<br><span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="green">0</span>;<br><br><span class="pink">while</span> (<span class="blue">i</span><span class="pink"> < </span><span class="blue">text</span>.length<span class="pink"> - </span><span class="green">1</span>) {<br><span class="pink">  if</span> (<span class="blue">text</span>[<span class="blue">i</span>]<span class="pink"> == </span><span class="yellow">" "</span><span class="pink"> && </span><span class="blue">text</span>[<span class="blue">i</span><span class="pink">+</span><span class="green">1</span>]<span class="pink"> == </span><span class="yellow">" "</span>) {<br><span class="blue">    text</span><span class="pink"> = </span><span class="blue">text</span>.<span class="blue">substring</span>(<span class="green">0</span>,<span class="blue"> i</span>)<span class="pink"> + </span><span class="blue">text</span>.<span class="blue">substring</span>(<span class="blue">i</span><span class="pink">+</span><span class="green">1</span>,<span class="blue"> text</span>.length);<br><span class="blue">    i</span><span class="pink">--</span>;<br>  }<br><span class="blue">  i</span><span class="pink">++</span>;<br>}<br><br><span class="blue">text</span><span class="pink"> = </span><span class="blue">text</span>.<span class="blue">split</span>(<span class="yellow">" "</span>);<br><span class="purple">var</span><span class="blue"> max</span><span class="pink"> = </span><span class="blue">text</span>[<span class="green">0</span>];<br><span class="purple">var</span><span class="blue"> nmax</span><span class="pink"> = </span><span class="green">0</span>;<br><br><span class="pink">for</span> (<span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="green">0</span>;<span class="blue"> i</span><span class="pink"> < </span><span class="blue">text</span>.length;<span class="blue"> i</span><span class="pink">++</span>) {<br><span class="pink">  if</span> (<span class="blue">text</span>[<span class="blue">i</span>].length<span class="pink"> > </span><span class="blue">nmax</span>) {<br><span class="blue">    max</span><span class="pink"> = </span><span class="blue">text</span>[<span class="blue">i</span>];<br><span class="blue">    nmax</span><span class="pink"> = </span><span class="blue">text</span>[<span class="blue">i</span>].length;<br>  }<br>}<br><br><span class="orange">console</span>.<span class="purple">log</span>(<span class="yellow">"Найдовше слово - "</span><span class="pink"> + </span><span class="blue">max</span>);</span></code></pre>
+        </div>
+      </div>
+      <p class="task">4) Написати програму, яка повертає ім'я файла (підрядок після останнього символа "/") з повного шляху до файлу.</p>
+      <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(3);">Показати відповідь</button>
+      <div class="code-answer">
+        <div class="code">
+          <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> text</span><span class="pink"> = </span><span class="yellow">"user/documents/project"</span>;<br><span class="purple">var</span><span class="blue"> newText</span><span class="pink"> = </span><span class="blue">text</span>.<span class="blue">substring</span>(<span class="blue">text</span>.<span class="blue">lastIndexOf</span>(<span class="yellow">"/"</span>)<span class="pink">+</span><span class="green">1</span>,<span class="blue"> text</span>.length);<br><span class="orange">console</span>.<span class="purple">log</span>(<span class="blue">newText</span>);</span></code></pre>
+        </div>
+
+      </div>
+
+      <p class="task">5) Написати програму, яка визначає, приймати номер телефону чи ні (приймати, якщо номер складається з семи цифр від 0 до 9 і після перших трьох цифр є дефіс).</p>
+      <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(4);">Показати відповідь</button>
+      <div class="code-answer">
+
+        <div class="code">
+          <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> number</span><span class="pink"> = </span><span class="yellow">"033-1949"</span>;<br><span class="purple">var</span><span class="blue"> ok</span><span class="pink"> = </span><span class="green">false</span>;<br><span class="purple">var</span><span class="blue"> k</span><span class="pink"> = </span><span class="green">0</span>;<br><br><span class="pink">if</span> (<span class="blue">number</span>.length<span class="pink"> == </span><span class="green">8</span>) {<br><span class="pink">  if</span> (<span class="blue">number</span>.<span class="blue">charAt</span>(<span class="green">3</span>)<span class="pink"> == </span><span class="yellow">"-"</span>) {<br><span class="blue">    ok</span><span class="pink"> = </span><span class="green">true</span>;<br><span class="pink">    for</span> (<span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="green">0</span>;<span class="blue"> i</span><span class="pink"> < </span><span class="blue">number</span>.length; <span class="blue">i</span><span class="pink">++</span>) {<br><span class="pink">      if</span> (<span class="pink">!</span><span class="purple">isNaN</span>(<span class="blue">number</span>[<span class="blue">i</span>])) {<br><span class="blue">        k</span><span class="pink">++</span>;<br>      }<br>    }<br>  }<br>}<br><br><span class="pink">if</span> (<span class="blue">k</span><span class="pink"> == </span><span class="green">7</span><span class="pink"> && </span><span class="blue">ok</span><span class="pink"> == </span><span class="green">true</span>) {<br><span class="orange">  console</span>.<span class="purple">log</span>(<span class="yellow">"Телефон прийнятий!"</span>);<br>}<span class="pink"> else</span> {<br><span class="orange">  console</span>.<span class="purple">log</span>(<span class="yellow">"Ви ввели неправильний номер!"</span>);<br>}</span></code></pre>
+        </div>
+
+
+
+
+
+
+      </div>
+
+      <p class="task">6) Написати програму вставки підрядку у вказану позицію рядку.</p>
+      <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(5);">Показати відповідь</button>
+      <div class="code-answer">
+
+        <div class="code">
+          <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> text</span><span class="pink"> = </span><span class="yellow">"aaaaa"</span>;<br><span class="purple">var</span><span class="blue"> text1</span><span class="pink"> = </span><span class="yellow">"A"</span>;<br><span class="purple">var</span><span class="blue"> pos</span><span class="pink"> = </span><span class="pink">+</span><span class="blue">prompt</span>(<span class="yellow">"Вкажіть позицію:"</span>);<br><span class="purple">var</span><span class="blue"> newText</span><span class="pink"> = </span><span class="blue">text</span>.<span class="blue">substring</span>(<span class="green">0</span>,<span class="blue"> pos</span>)<span class="pink"> + </span><span class="blue">text1</span><span class="pink"> + </span><span class="blue">text</span>.<span class="blue">substring</span>(<span class="blue">pos</span>,<span class="blue"> text</span>.length);<br><span class="orange">console</span>.<span class="purple">log</span>(<span class="blue">newText</span>);</span></code></pre>
+        </div>
+      </div>
+      <span id="top3"></span>
+      <p class="title">Підсумковий тест</p>
+      <p id="jtext">
+        Вітаємо! Ви пройшли всі 15 уроків та отримали достатньо знань для того, щоб вже писати свої сайти, але спочатку ми хочемо запропонувати перевірити засвоєні знання за допомогою підсумкового тесту, який складається з 12 питань.<br><br>Сподіваємось, Вам сподобався наш Javascript підручник та Ви отримаєте найвищий бал! :D
+      </p>
+      <div id="proccess">
+        <div id="teststatus">
+         <div id="status">
+           <p id="textstatus">0%</p>
+         </div>
+       </div>
+       
+       <div id="divquestion">
+         <p id="question">1, 2, 3 or 4?</p>
+         <div id="quescode">
+         </div>
+        <input type="radio" class="answer" name="1" value="1"><span class="spananswer"> 1</span><br>
+        <input type="radio" class="answer" name="1" value="2"><span class="spananswer"> 2</span><br>
+        <input type="radio" class="answer" name="1" value="3"><span class="spananswer"> 3</span><br>
+        <input type="radio" class="answer" name="1" value="4"><span class="spananswer"> 4</span><br>
+      </div>
+      <div id="nextq"><button id="next">Наступне запитання</button></div>
+    </div>
+    <div id="starttest">
+     <button id="textstarttest">Пройти тест</button>
+   </div>
+   <div id="resulttest">
+     <p>Ви пройшли підсумковий тест!</p>
+     <p id="textres">Ваш результат: </p>
+   </div>
+   <div id="nav1">
+    <div>
+      <a href="lesson14.html"><button><p>Попередній урок</p></button></a>
+    </div>
+    <div>
+      <a href="index.html"><button><p>На головну</p></button></a>
+    </div>
+  </div>
+</div>
+</main>
+<footer>
+
+</footer>
+</body>
+</html>

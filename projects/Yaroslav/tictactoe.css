@@ -1,0 +1,59 @@
+body {
+ font-family: "Poppins", sans-serif;
+ background-image: url(background.jpg);
+ background-size:cover;
+}
+section {
+ text-align: center;}
+
+.game--container {
+ display: grid;
+ grid-template-columns: repeat(3, auto);
+ width: 306px;
+ margin:75px auto auto 715px;
+}
+
+.game--title { 
+  font-size: 40px; 
+  margin-top: 30px;
+  border: 5px solid purple;
+  border-style: ridge;
+  width: 400px;
+  margin-left: 750px;
+  padding: 10px;
+ }
+
+.game--restart {
+    align-items: center;
+    font-size: 12px;
+    margin-top: -7px;
+    letter-spacing: .05em;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #904C6E;
+    background: white;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.cell {
+ font-family: "Permanent Marker", cursive;
+ font-size: 100px;
+ width: 150px;
+ height: 150px;
+ box-shadow: 0 0 0 5px #333333;
+ border: 5px solid #333333;
+ cursor: pointer;
+}
+
+#leaderboard {
+  width: 11%;
+  margin-top: 100px;
+  padding: 25px;
+  margin-left: 100px;
+  float: left;
+  border: 5px solid purple;
+  border-style: ridge;
+}

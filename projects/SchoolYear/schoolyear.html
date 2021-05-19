@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Schoolyear Game / Kubrak Anastasia 2021/ Lyceum Naukova zmina / 36-T</title>
+    <link rel="icon" href="Images/icon.png">
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        div#board {
+            background-image: url("Images/background.jpg");
+            background-color: #cccccc;
+            height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        div#author {
+            text-align: right;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            filter: drop-shadow(.05em .05em blue);
+        }
+
+        .message {
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 35px;
+            top: 28%;
+        }
+
+
+        table {
+            border-spacing: 10px;
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+
+        td {
+            width: 50px;
+            height: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25px;
+        }
+
+        #boardTable td:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+            td.selected {
+                background: rgba(255, 255, 255, 0.2);
+            }
+
+            td.regular {
+            }
+
+            td img {
+                object-fit: fill;
+                display: block;
+                margin: 0 auto;
+            }
+
+                td img.regular {
+                    width: 50px;
+                    height: 50px;
+                    transition: width 0.5s, height 0.5s;
+                }
+
+                td img.swap {
+                    width: 0px;
+                    height: 50px;
+                    transition: width 0.5s, height 0.5s;
+                }
+
+                td img.collapse {
+                    width: 0px;
+                    height: 0px;
+                    transition: width 0.5s, height 0.5s;
+                }
+
+        div#timerArea {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            width: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        div#timerProgress {
+            width: 100%;
+            background-color: white;
+            border-radius: 5px
+        }
+
+        div#myTimer {
+            width: 0%;
+            height: 15px;
+            background-color: aqua;
+            border-radius: 5px
+        }
+
+        #buttonPlayAgain {
+            position: absolute;
+            top: 79%;
+            left: 50%;
+            width: 200px;
+            height: 60px;
+            transform: translate(-50%, -50%);
+        }
+
+        div#gameOverArea {
+            display:none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="board">
+        <div id="author">Schoolyear Game / Kubrak Anastasia 2021/ Lyceum Naukova zmina / 36-T</div>
+
+        <div id="gameArea">
+            <div id="messageArea" class="message"></div>
+            <table id="boardTable"></table>
+
+            <div id="timerArea">
+                <div id="timerProgress">
+                    <div id="myTimer"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="gameOverArea">
+            <div id="gameOverMessageArea" class="message">Academic year results:</div>
+            <table id="gameOverTable"></table>
+            <img id ="buttonPlayAgain" onclick="init()" src="Images/Back-school.png">
+        </div>
+
+    </div>
+
+    <script src="schoolyear.js"></script>
+</body>
+
+</html>

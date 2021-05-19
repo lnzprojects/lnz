@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Выводим заголовок -->
+  <title>Pikadu — головна</title>
+  <!-- Подключаем normalize -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <!-- Подключаем стили -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- Создаем шапку сайта -->
+  <header class="header">
+    <div class="header-wrapper">
+      <a href="/" class="header-logo">
+        <img class="header-logo-image" src="img/logo.svg" alt="logo: Pikadu">
+      </a>
+      <nav class="header-nav">
+        <ul class="header-menu">
+          <li class="header-menu-item"><a href="#" class="header-menu-link">Головна</a></li>
+          <li class="header-menu-item"><a href="#" class="header-menu-link">Мій профіль</a></li>
+          <li class="header-menu-item"><a href="cars/index.html" class="header-menu-link">Наша гра</a></li>
+        </ul>
+        
+      </nav>
+      <!-- /.header-nav -->
+      <div class="input-group search">
+        <input type="search" class="search-input" placeholder="Пошук по сайту">
+        <button class="search-button">
+          <img src="img/search.svg" alt="icon: search" class="search-icon">
+        </button>
+      </div>
+      <!-- /.input-group -->
+      <a href="#" class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </div>
+  </header>
+
+  <div class="content">
+    <main class="posts">
+    </main>
+
+    <form action="#" class="add-post">
+      <input type="text" name="post-title" id="title" class="add-title" placeholder="Заголовок посту">
+      <textarea name="post-text" id="text" class="add-text" placeholder="Текст Вашого посту"></textarea>
+      <input type="text" name="post-tags" id="tags" class="add-tags" placeholder="Напиштіть теги через кому">
+      <div class="add-buttons">
+        <button type="submit" class="button add-button">
+          <svg class="icon icon-fire">
+            <use xlink:href="img/icons.svg#fire"></use>
+          </svg>
+          Викласти пост
+        </button>
+      </div>
+    </form>
+    <!-- /.posts -->
+    <aside class="sidebar">
+
+      <div class="login">
+        <form class="login-form">
+          <h2 class="login-title">Авторизація</h2>
+          <input type="email" name="email" class="login-input login-email"
+          minlength="3" required placeholder="Введіть email">
+
+          <input type="password" name="password" class="login-input login-password"
+          min-length="3" required placeholder="Введіть пароль">
+
+          <button type="submit" class="login-singin">Увійти</button>
+          <a href="" class="login-singup">Реєстрація</a>
+        </form>
+      </div>
+      <div class="user">
+        <div class="user-container">
+          <a href="#" class="user-info">
+            <img width="40" height="40" src="" alt="photo: user" class="user-avatar">
+            <span class="user-name"></span>
+          </a>
+          <a href="#" class="edit">
+            <img src="img/edit.png" alt="Редактировать" class="icon icon-edit">
+          </a>
+          <!-- /.user-info -->
+          <a href="#" class="exit">
+            <svg class="icon icon-exit">
+              <use xlink:href="img/icons.svg#exit"></use>
+            </svg>
+          </a>
+        </div>
+        <form class="edit-container">
+          <label class="edit-label">Ваш логін
+            <input type="text" class="edit-input edit-username " name="username" placeholder="логін" minlength="3" required>
+          </label>
+
+          <label class="edit-label">Ваше фото
+            <input type="text" class="edit-input edit-photo" name="username" placeholder="URL-photo">
+          </label>
+
+          <button class="edit-btn">Зберегти</button>
+        </form>
+        <!-- /.exit -->
+      </div>
+      <!-- /.user -->
+      <nav class="sidebar-nav">
+        <ul class="sidebar-menu">
+          <li class="sidebar-menu-item">
+            <a href="#" class="sidebar-menu-link">Коментарі</a>
+          </li>
+          <li class="sidebar-menu-item">
+            <a href="#" class="sidebar-menu-link">Збережене</a>
+          </li>
+        </ul>
+      </nav>
+      <a href="new-post.html" class="button button-new-post">
+        <svg class="icon icon-fire">
+          <use xlink:href="img/icons.svg#fire"></use>
+        </svg>
+        Викласти пост
+      </a>
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Коментар дня</h2>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <a href="#" class="card-body-title">Як обдурити банкомат, якщо ви хочете зняти більше готівки</a>
+          <p class="card-text">Таким чином зміцнення і розвиток структури вимагають від нас аналізу форм розвитку. Не слід, однак забувати, що реалізація намічених планових завдань вимагають від нас аналізу позицій, займаних учасниками щодо поставлених
+            задач. Завдання організації, особливо ж консультація ...</p>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+      <a href="#" class="ad"></a>
+    </aside>
+    <!-- /.sidebar -->
+  </div>
+  <!-- /.content -->
+</body>
+</html>

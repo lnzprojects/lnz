@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.3.1.js"></script>
+    <title>CORONA-GAMES</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+<div id="header">
+    <div id="hdiv1" class="hdiv">
+        
+        
+        <div>
+            <img src="images/covid.png" class="hdiv-img">
+            <span class="hdiv-span">
+                <h1>CORONA GAMES</h1>
+                <h2>Что это такое?</h2>
+                CORONA GAMES - проект, призванный помочь Вам пережить пандемию коронавируса 
+                и разнообразить ваши серые будни в самоизоляции. На этом сайте Вы можете занять 
+                своё время минииграми и представить себя супергероем спасающим мир от коронавируса
+            </span>
+        </div>
+    
+    </div>
+    <div id="hdiv2" class="hdiv">
+        
+        <div>
+            <img src="images/vaccine.png" class="hdiv-img">
+            <span class="hdiv-span">
+                <h1>CORONA GAMES</h1>
+                <h2>В чем особенность этого проекта?</h2>
+                В CORONA GAMES - не просто сборник игор, это целая игровая структура со своим сюжетом, игровой валютой, системой уровней и отслеживания игрового прогресса. 
+                <br><br>
+                Сюжет строится на том, чтоб добывать в минииграх инвентарь, который можно вкладывать в вакцину и вакцинировать ей жителей разных стран. С каждой выкцинированой страной игрок переходит на новый уровень. Но вакцинировать всё население будет сложнее с каждым новым уровнем. Игра будет считаться пройденой когда будут вакцинированы все страны мира. 
+            </span>
+        </div>
+    </div>
+    <div id="hdiv3" class="hdiv">
+        
+        <div>
+            <img src="images/trophy.png" class="hdiv-img">
+            <span class="hdiv-span">
+                <h1>CORONA GAMES</h1>
+                <h2>Могу ли я отслеживать свой прогресс?</h2>
+                Конечно! В каждой миниигре Вы можете увидеть Вашу статистику и рекорды по данной миниигре, а так же количество вашего инвентаря. Вы так же можете посмотреть полную стастику по всем играм на главной странице
+            </span>
+        </div>
+    </div>
+    <div id="hdiv4" class="hdiv">
+        
+        <div>
+            <img src="images/controller.png" class="hdiv-img">
+            <span class="hdiv-span">
+                <h1>CORONA GAMES</h1>
+                <h2>Во что здесь можно поиграть?</h2>
+                Мы предлагаем Вам набор беспалтных онлайн игор собственной реализации: COLOR WORDS, ROCK PAPER SCISSORS и BREAKOUT. На данный момент их всего 3, но планируются пополнения. На этой странице Вы сможете прочитать описания игр и перейти на каждую из них.
+                <br><br>
+                 В процессе игры Вы будете получать достижения и награды в игровой валюте: таулетную бумагу, маски и антисептики. Её можно использовать только в пределах этого сайта, обменивая друг на друга либо дополнительные "плюшки" в играх.
+            </span>
+        </div>
+    </div>
+</div>
+<div class="main" id="main">
+    <h1>Виберите игру</h1>
+<div class="games-menu-container">
+    <a class="games-menu-item-container" id="color-words" href="color-words/index.html" target="open-game-color-words">
+        <div class="games-menu-item"  >
+            <h2>Color Words</h2>    
+        </div>
+        <p class="games-menu-item-description" id="color-words-description" >
+        В этой игре Вам надо нажимать на кнопку того цвета, который написан сверху. 
+        Главное не перепутать цвет которым слово ОКРАШЕНО с цветом который оно ОБОЗНАЧАЕТ. Игра ограничена временем - 30 секунд
+        </p>
+    </a>
+    <a class="games-menu-item-container" id="rps" href="rock-paper-scissors/index.html" target="open-game-rps">
+        <div class="games-menu-item"  >
+            <h2>Rock Paper Scissors</h2>
+        
+        </div>
+        <p class="games-menu-item-description" id="rps-description" >
+            Классическая игра "Камень ножницы бумага", только Ваш соперник - компьютер. 
+            Игра ограничена количеством раундов, то есть заканчивается по окончанию последнего раунда.
+        </p>
+    </a>
+    <a class="games-menu-item-container" id="breakout" href="breakout/index.html" target="open-game-breakout">
+        <div class="games-menu-item"  >
+            <h2>Breakout</h2>
+        
+        </div>
+        <p class="games-menu-item-description" id="breakout-description">
+            В этой игре Вам надо двигать досточку внизу поля и отбивать шарик так, чтоб он разбивал кирпичи вверху поля и не падал на пол.
+        
+        </p>
+    </a>
+</div>
+
+<div id="stat-div">
+    <h1>Ваша статистика</h1>
+    <table class="stat-table">
+        <tr>
+            <th></th>
+            <th>Color Words</th>
+            <th>Rock Paper Scissors</th>
+            <th>Breakout</th>
+            
+        </tr>
+        <tr><th>Раз сыграно</th>
+            <td id="CWtimesPlayed"></td>
+            <td id="RPStimesPlayed"></td>
+            <td id="BOtimesPlayed"></td>
+            
+        </tr>
+        <tr>
+            <th>Рекорд</th>
+            <td id="CWbestScore"></td>
+            <td> - </td>
+            <td id="BObestScore"></td>        
+            
+        </tr>
+        <tr>
+            <th>Рекордный уровень</th>
+            <td> - </td>
+            <td> - </td>
+            <td id="BObestLevel"></td>
+
+        </tr>
+        <tr>
+            <th>Побед</th>
+            <td> - </td>
+            <td id="RPSwins"></td>
+            <td> - </td>
+
+        </tr>
+        <tr>
+            <th>Ничьих</th>
+            <td> - </td>
+            <td id="RPSdraws"></td>
+            <td> - </td>
+
+        </tr>
+        <tr>
+            <th>Поражений</th>
+            <td> - </td>
+            <td id="RPSloses"></td>
+            <td> - </td>
+
+        </tr>
+    </table>
+</div>
+<div id="stat-div">
+    <h1>Страны, которые Вы уже вакцинировали</h1>
+    <table class="stat-table" id="countriesTable">
+        <tr>
+            <th>Страна</th>
+            <th>Дата</th>
+        </tr>
+    </table>
+    <div id="vaccine-line-container" class="main-vaccine">
+        <span id="vaccine-line"></span>
+        <span class="vaccine-line-title">Вы вакцинировали <span id="vaccine-value"></span>% населения страны <span id="countrySpan"></span></span>
+    </div>
+</div>
+
+<div class="achivment-container, main-achivment">
+    <h1>Ваши запасы</h1>
+    <table class="achivment-table">
+        <tr>
+            
+            <th>В наличии</th>
+            <th>Предмет</th>
+            <th>Цена вакцины</th>
+        </tr>
+        <tr>
+            
+            <td><span id="tp"></span></td>
+            <td>
+                <img src="images/tp.png" height="50px" id="tp" class="achivment-img">
+            </td>
+            <td>5</td>
+        </tr>
+        <tr>
+            
+            <td><span id="msk"></span></td>
+            <td>
+                <img src="images/msk.png" height="50px" id="msk" class="achivment-img">
+            </td>
+            <td>3</td>
+            
+        </tr>
+        <tr>
+            
+            <td><span id="an"></span></td>
+            <td>
+                <img src="images/an.png" height="50px" id="an" class="achivment-img">
+            </td>
+            <td>1</td>
+        </tr>
+    </table>
+
+</div>
+<div class="stat-div">
+    <h1>Ваш профиль</h1>
+    <p>Никнейм: <span id="name"></span></p>
+    <p>Уровень: <span id="level"></span></p>
+    <button class="start" onclick="setName('change')">Сменить никнейм</button>
+</div>
+</div>
+
+<script type="text/javascript">
+
+    $(window).scroll(function(e){
+    
+    let windowWidth = window.innerWidth*3+20;
+    let proscrolleno = $(window).scrollTop();
+    
+    if  (proscrolleno<=windowWidth-20) { 
+             
+    //console.log('windowWidth '+windowWidth);    //(window.innerWidth*0.0012);
+        
+       // console.log('proscrolleno '+proscrolleno);
+        /*
+        console.log('hdiv1 top '+$('#hdiv1').css('top'))
+        console.log('hdiv1 height '+$('#hdiv1').css('height'));
+        */
+        let hdivs = document.querySelectorAll('.hdiv');
+        hdivs.forEach(item => {
+            //console.log(item.id, item.offsetLeft+item.clientWidth);
+            //console.log(window.innerWidth);
+            let k = 0;
+            if (window.innerWidth>720) {
+                k=300
+            } else {
+                k=120
+            }
+            if (item.offsetLeft +item.clientWidth< k) {
+                item.style.opacity = 0;
+            } else {
+                item.style.opacity = 1;
+            }
+        })
+       
+        $('#header').css({
+            'height': `calc(100vh + ${proscrolleno}px)`
+        })
+        
+        $('#hdiv1').css({
+            'left':  `-${proscrolleno}px` ,
+             //'height': `calc(100vh + ${proscrolleno*1.2}px)`,
+            
+        })
+        $('#hdiv2').css({
+           
+            'left':  `calc(100vw - ${proscrolleno}px)` ,
+           
+        })
+        $('#hdiv3').css({
+           // 'height': `calc(100vh + ${proscrolleno*1.2}px)`,
+            'left':  `calc(200vw - ${proscrolleno}px)` ,
+            
+           
+         
+        })
+        $('#hdiv4').css({
+            //'height': `calc(100vh + ${proscrolleno*1.2}px)`,
+            'left':  `calc(300vw - ${proscrolleno}px)` ,
+            'top':  0 ,
+            
+          
+        })
+        $('.main').css({
+            'top':  `calc(100vh + ${proscrolleno}px)` ,
+            'left': 0
+        })
+            
+    }  else  { 
+        $('#hdiv4').css({
+            'top':  `-${proscrolleno - windowWidth}px` ,
+            'left':  `0` ,
+        });
+        $('.main').css({
+            'left':  `0` ,
+            
+        })
+    
+    }
+    
+    })
+/*
+    $('#color-words').mouseover(()=>{
+        $('#color-words-description').fadeIn(300);
+        $('#color-words-description').css({
+            'transform':'tranlateY(0)'
+        });
+        
+    });
+   
+    $('#color-words').mouseout(()=>{
+        $('#color-words-description').fadeOut(300);
+        $('#color-words-description').css({
+            'transform':'tranlateY(-30vh)'
+        });
+        
+    }) 
+    */
+</script>
+
+<script>
+    const BObestScore = document.getElementById('BObestScore');
+const BOtimesPlayed = document.getElementById('BOtimesPlayed');
+const CWbestScore = document.getElementById('CWbestScore');
+const CWtimesPlayed = document.getElementById('CWtimesPlayed');
+const BObestLevel = document.getElementById('BObestLevel');
+const RPStimesPlayed = document.getElementById('RPStimesPlayed');
+const RPSwins = document.getElementById('RPSwins');
+const RPSdraws = document.getElementById('RPSdraws');
+const RPSloses = document.getElementById('RPSloses');
+const tp = document.getElementById('tp');
+const an = document.getElementById('an');
+const msk = document.getElementById('msk');
+const playerLevel = document.getElementById('level');
+const playerName = document.getElementById('name');
+const vaccineValSpan = document.getElementById('vaccine-value');
+const vaccineLine = document.getElementById('vaccine-line');
+const countrySpan = document.getElementById('countrySpan');
+let countries = [
+    "Абхазия",
+"Австралия",
+'Австрия' ,
+'Азербайджан' ,
+'Албания' ,
+'Алжир' ,
+'Ангола' ,
+'Андорра' ,
+'Антигуа и Барбуда' ,
+'Аргентина' ,
+'Армения' ,
+'Аруба' ,
+'Афганистан' ,
+'Багамы' ,
+'Бангладеш' ,
+'Барбадос' ,
+'Бахрейн' ,
+'Беларусь' ,
+'Белиз' ,
+'Бельгия' ,
+'Бенин' ,
+'Бермудские острова' ,
+'Болгария' ,
+'Боливия' ,
+'Босния и Герцеговина' ,
+'Ботсвана' ,
+'Бразилия' ,
+'Бруней-Даруссалам' ,
+'Буркина Фасо' ,
+'Бурунди' ,
+'Бутан' ,
+'Вануату' ,
+'Ватикан' ,
+'Великобритания',
+'Венгрия' ,
+'Венесуэла' ,
+'Вьетнам' ,
+'Габон' ,
+'Гавайские острова' ,
+'Гайана' ,
+'Гаити' ,
+'Гамбия' ,
+'Гана' ,
+'Гваделупа' ,
+'Гватемала' ,
+'Гвинея' ,
+'Гвинея-Биссау' ,
+'Германия' ,
+'Гондурас' ,
+'Гонконг',
+'Гренада' ,
+'Греция' ,
+'Грузия' ,
+'Дания' ,
+'Джибути' ,
+'Доминика'  ,
+'Доминикана' ,
+'Египет' ,
+'Замбия' ,
+'Зимбабве' ,
+'Израиль' ,
+'Индия' ,
+'Индонезия' ,
+'Иордания' ,
+'Ирак'  ,
+'Иран' ,
+'Ирландия' ,
+'Исландия' ,
+'Испания' ,
+'Италия' ,
+'Йемен' ,
+'Кабо-Верде' ,
+'Казахстан' ,
+'Каймановы острова' ,
+'Камбоджа ',
+'Камерун' ,
+'Канада' ,
+'Канарские острова'    ,
+'Катар' , 
+'Кения' ,
+'Кипр' ,
+'Киргизия' ,
+'Кирибати' ,
+'Китай' ,
+'Колумбия' ,
+'Коморы' ,
+'Конго' ,
+'Конго-Киншаса' ,
+'Коста-Рика' ,
+"Кот-д'Ивуар" ,
+'Куба' ,
+'Кувейт'  ,
+'Лаос' ,
+'Латвия' ,
+'Лесото',
+'Либерия' ,
+'Ливан' ,
+'Ливия' ,
+'Литва' ,
+'Лихтенштейн' ,
+'Люксембург' ,
+'Маврикий' ,
+'Мавритания' ,
+'Мадагаскар' ,
+'Малави' ,
+'Малайзия' ,
+'Мали' ,
+'Мальдивы ',
+'Мальта' ,
+'Марокко' ,
+'Мартиника' ,
+'Маршалловы острова' ,
+'Мексика' ,
+'Мозамбик' ,
+'Молдова' ,
+'Монако' ,
+'Монголия' ,
+'Мьянма' ,
+'Намибия' ,
+'Науру' ,
+'Непал' ,
+'Нигер' ,
+'Нигерия' ,
+'Нидерланды' ,
+'Никарагуа' ,
+'Новая Зеландия' ,
+'Норвегия' ,
+'ОАЭ' ,
+'Оман' ,
+'Остров Св. Елены' ,
+'Пакистан' ,
+'Палау' ,
+'Панама' ,
+'Папуа - Новая Гвинея' ,
+'Парагвай' ,
+'Перу' ,
+'Польша' ,
+'Португалия' ,
+'Пуэрто-Рико' ,
+'Реюньон' ,
+'Россия' ,
+'Руанда' ,
+'Румыния' ,
+'Сальвадор'  ,
+'Самоа' ,
+'Сан-Марино' ,
+'Сан-Томе и Принсипи' ,
+'Саудовская аравия' ,
+'Свазиленд ',
+'КНДР',
+'Северная Македония' ,
+'Сейшелы' ,
+'Сенегал' ,
+'Сен-Мартен ',
+'Сент-Винсент и Гренадины' ,
+'Сент-Китс и Невис' ,
+'Сент-Люсия' ,
+'Сербия' ,
+'Сингапур' ,
+'Сирия' ,
+'Словакия' ,
+'Словения' ,
+'Соломоновы острова' ,
+'Сомали' ,
+'Судан' ,
+'Суринам' ,
+'США' ,
+'Сьерра-Леоне' ,
+'Таджикистан' ,
+'Тайвань' ,
+'Тайланд' ,
+'Танзания' ,
+'Того' ,
+'Тонга' ,
+'Тринидад и Тобаго' ,
+'Тувалу' ,
+'Тунис' ,
+'Туркменистан' ,
+'Турция'  ,
+'Уганда' ,
+'Узбекистан' ,
+'Украина' ,
+'Уоллис и Футуна' ,
+'Уругвай' ,
+'Фиджи' ,
+'Филиппины' ,
+'Финляндия' ,
+'Франция' ,
+'Хорватия' ,
+'Центральноафриканская Республика' ,
+'Чад' ,
+'Черногория' ,
+'Чехия' ,
+'Чили' ,
+'Швейцария' ,
+'Швеция' ,
+'Шри-Ланка' ,
+'Эквадор' ,
+'Экваториальная Гвинея' ,
+'Эритрея' ,
+'Эстония' ,
+'Эфиопия' ,
+'ЮАР' ,
+'Южная Корея' ,
+"Ямайка" ,
+"Япония"
+]
+let completeCountries = []; 
+
+if (localStorage.tp == null) {
+    localStorage.setItem('tp', 0);
+} 
+if (localStorage.msk == null) {
+    localStorage.setItem('msk', 0);
+} 
+if (localStorage.an == null) {
+    localStorage.setItem('an', 0);
+} 
+if (localStorage.vaccine == null) {
+    localStorage.setItem('vaccine', 0);
+} 
+if (sessionStorage.RPSwinsStraight == null) {
+    sessionStorage.setItem('RPSwinsStraight',0);
+}
+if (localStorage.CWtimesPlayed == null) {
+    localStorage.setItem('CWtimesPlayed', 0);
+} 
+if (localStorage.CWbestScore== null) {
+        localStorage.setItem('CWbestScore', 0);
+} 
+if (localStorage.BOtimesPlayed == null) {
+    localStorage.setItem('BOtimesPlayed', 0);
+} 
+if (localStorage.BObestScore== null) {
+    localStorage.setItem('BObestScore', 0);
+} 
+if (localStorage.BObestLevel== null) {
+    localStorage.setItem('BObestLevel', 1);
+}
+if (localStorage.themeMax== null) {
+    localStorage.setItem('themeMax', 115);
+}
+if (localStorage.themeMin== null) {
+    localStorage.setItem('themeMin', 25);
+}  
+if (localStorage.themeBg== null) {
+    localStorage.setItem('themeBg', 'rgba(255, 255, 255, .5)');
+}
+if (localStorage.RPStimesPlayed == null) {
+    localStorage.setItem('RPStimesPlayed', 0);
+} 
+if (localStorage.RPSdraws== null) {
+    localStorage.setItem('RPSdraws', 0);
+} 
+if (localStorage.RPSwins == null) {
+    localStorage.setItem('RPSwins', 0);
+} 
+if (localStorage.RPSloses== null) {
+    localStorage.setItem('RPSloses', 0);
+} 
+if (localStorage.playerLevel == null) {
+    localStorage.setItem('playerLevel',1);
+}
+
+if (localStorage.countries == null) {
+    localStorage.setItem('countries', '[]');    
+}
+if (localStorage.curCountry == null) {
+    localStorage.setItem('curCountry', decideRandomCounty(countries));  
+}
+if (localStorage.allCountries == null) {
+    localStorage.setItem('allCountries', JSON.stringify(countries));    
+}
+
+if (localStorage.playerName == null || localStorage.playerName == undefined) {
+    setName('first');
+}
+function random(arr){
+    let n = Math.floor(Math.random()*(arr.length));
+    return arr[n]
+}
+
+
+//let date = new Date();
+
+function decideRandomCounty(arr) {
+    let randomCountry = random(arr); 
+    arr.splice(arr.indexOf(randomCountry), 1);
+    return randomCountry
+} 
+
+function setName(reason) {
+    let name = "Игрок";
+    if (reason=="first") {
+        name = prompt(`Добро пожаловать в CORONA GAMES! Вижу, Вы тут впервые? Введите Ваш никнейм, перед тем как начать играть. По умолчанию установлено имя "Игрок", но Вы можете поменять его в любое время на главной странице.`);
+        if (name===null || name==" "|| name=="") {
+            name="Игрок"
+        }
+        localStorage.setItem('playerName', name)
+    } else {
+        let prevName = localStorage.playerName;
+        name = prompt(`Введите никнейм который хотите установить`);
+        if (name===null || name==" "|| name=="") {
+            name=prevName;
+        }
+        localStorage.playerName = name;
+    }
+    updateStatTableInners()
+}
+function updateStatTableInners(){
+    fillCountriesTable();
+    CWbestScore.innerHTML = localStorage.CWbestScore; 
+    CWtimesPlayed.innerHTML = localStorage.CWtimesPlayed; 
+    RPStimesPlayed.innerHTML = localStorage.RPStimesPlayed; 
+    RPSwins.innerHTML = localStorage.RPSwins;
+    RPSdraws.innerHTML = localStorage.RPSdraws; 
+    RPSloses.innerHTML = localStorage.RPSloses;
+    BObestScore.innerHTML = localStorage.BObestScore; 
+    BObestLevel.innerHTML = localStorage.BObestLevel;
+    BOtimesPlayed.innerHTML = localStorage.BOtimesPlayed; 
+    tp.innerHTML = localStorage.tp;
+    msk.innerHTML = localStorage.msk;
+    an.innerHTML = localStorage.an;
+    playerLevel.innerHTML = localStorage.playerLevel+' ур.';
+    playerName.innerHTML = localStorage.playerName;
+    vaccineValSpan.innerHTML= localStorage.vaccine;
+    vaccineLine.style.width = `${localStorage.vaccine}%`;
+    countrySpan.innerHTML = localStorage.curCountry;
+}
+
+
+function fillCountriesTable() {
+    let countries = JSON.parse(localStorage.countries);
+    let tbody = document.querySelector('#countriesTable');
+    
+    countries.forEach(item => {
+        let tr = document.createElement('tr');
+        let td1 = document.createElement('td');
+        td1.innerHTML = item.country;
+        let td2 = document.createElement('td');
+        td2.innerHTML = item.date;
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tbody.appendChild(tr)
+    })
+}
+
+window.onload = updateStatTableInners;
+
+</script>
+
+</body>
+</html>

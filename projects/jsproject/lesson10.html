@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Тема 10</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/lesson.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+
+  </script>
+</head>
+<body>
+  <header>
+    <div onclick="window.location='index.html'" id="menu">
+      Javascript підручник
+    </div>
+  </header>
+  <main>
+    <div id="nav">
+      <p class="topic">Тема 10</p>
+      <ul>
+        <a href="#"><li class="top1">Передача об'єктів функціям</li></a>
+        <a href="#top2"><li class="top2">Поведінка об'єктів</li></a>
+        <a href="#top3"><li class="top3">Вдосконалення метода drive</li></a>
+        <a href="#top4"><li class="top4">Цикл for in</li></a>
+        <a href="#top5"><li class="top5">Як поведінка впливає на стан</li></a>
+        <a href="#top6"><li class="top6">Закріплення знань</li></a>
+      </ul>
+    </div>
+    <div id="main-content">
+      <p class="main-page"><a href="index.html">Головна</a> > Тема 10</p>
+      <p class="title">Передача об'єктів функціям</p>
+
+      <div class="important">
+        Коли ми викликаємо функцію і передаємо їй об'єкт, ми передаємо не сам об'єкт, а <span class="underlined">посилання</span> на нього.</div> <p>Виходить що при передачі по значенню в параметрі передається копія посилання (не копія об'єкта), яка теж вказує на об'єкт. Це означає що при зміні властивості об'єкта в функції змінюється властивість початкового об'єкта.</p>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">function</span> loseWeight(<span class="blue">dog</span>, <span class="blue">amount</span>) {<br>  <span class="blue">dog</span>.weight<span class="pink"> = </span><span class="blue">dog</span>.weight<span class="pink"> - </span><span class="blue">amount</span>;<br>}<br><br><span class="blue">alert</span>(<span class="blue">fido</span>.name<span class="pink"> + </span><span class="yellow">" now weighs "</span><span class="pink"> + </span><span class="blue">fido</span>.weight);</span></code></pre>
+      </div>
+      <p id="top2">У генераторі фраз ми будували рядок за допомогою конкатенації, а тут створюємо новий об'єкт.</p>
+      <br>
+      <p class="title">Поведінка об'єктів</p>
+
+      <div class="important">Об'єкти можуть виконувати операції.</div> 
+      <p> Наприклад, собака гавкає, бігає, приносить палку і так далі</p>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> fiat</span><span class="pink"> = </span>{<br>  make: <span class="yellow">"Fiat"</span>,<br>  model: <span class="yellow">"500"</span>,<br>  year: <span class="green">1957</span>,<br>  color: <span class="yellow">"Medium Blue"</span>,<br>  passengers: <span class="green">2</span>,<br>  convertible: <span class="green">false</span>,<br>  mileage: <span class="green">8800</span>,<br>  drive: <span class="purple">function</span>() {<br><span class="blue">    alert</span>(<span class="yellow">"Zoom zoom!"</span>);<br>  }<br>}</span></code></pre>
+      </div>
+
+      <p>Функція додається в об'єкт; її властивості можуть бути функціями.<br>Ім'я функції не вказуємо, воно співпадає з іменем властивості.</p>
+
+      <div class="important">Функції, що визначаються в об'єктах називаються <span class="boldtext">методами</span>.</div>
+      <p>Коли викликаємо метод drive також використовуємо точковий запис, але з іменем об'єкта fiat і ім'ям властивості drive як у виклику будь-якої функції далі ідуть круглі дужки.</p>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="blue">fiat</span>.<span class="blue">drive</span>();</span></code></pre>
+      </div>  
+
+      <p id="top3">Виклик метода drive об'єкта fiat.</p>
+      <br>
+
+      <p class="title">Вдосконалення метода drive</p>
+
+      <p>Зазвичай машиною можна керувати коли ввімкнено двигун, змоделюємо цю поведінку:</p>
+      <ul>
+        <li>Додаємо булеву властивість для зберігання стану двигуна (Ввімкнений чи вимкнений)</li>
+        <li>Два метода для ввімкнення і зупинки двигуна</li>
+        <li>Перевірку в метод drive, яка встановлює (впевнюється) що двигун ввімкнено, перед тим як ми зможемо керувати машиною.</li>
+      </ul>
+
+      <img class="lessonsimage codeimage eimage" src="images/lessons/10_2.jpg">
+
+      <p>В методі drive змінна started не є локальною, глобальною і параметром. Вона є властивістю об'єкта fiat. JS не розуміє якого саме об'єкта. В JS існує ключове слово this, яке призначене для позначення поточного об'єкта з яким ми працюємо.</p>
+
+      <p>Треба додати "this." перед кожним зверненням до властивості started.</p>
+
+      <div class="mark">
+        <div>
+        </div>
+        <div>
+          Коли ми викликаємо будь-який метод ми можемо розраховувати на те що this в тілі цього метода буде вказувати на об'єкт, метод якого було викликано.
+        </div>
+      </div>
+
+      <p><span class="boldtext">Метод - це функція присвоєна імені властивості в об'єкті. Функція викликається по іменам, а методи - крапковим записом.</span></p>
+      <p>Метод можна додати в об'єкт після того як він вже створений (за аналогією з додаванням властивості в об'єкт).</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="orange">car</span>.<span class="blue">engageTurbo</span><span class="pink"> = </span><span class="purple">function</span>() { ... };</span></code></pre>
+      </div>
+
+      <img class="codeimage eimage" src="images/lessons/10_4.jpg">
+
+      <p id="top4">Копіювання методів start, stop, і drive в кожний об'єкт призводить до дублювання коду. Вирішення проблеми розбирається пізніше.</p>
+      <br>
+
+      <p class="title">Цикл for in</p>
+
+      <p>Цикл for in перебирає властивості об'єкта в довільному порядку.</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="pink">for</span> (<span class="purple">var</span><span class="blue"> prop</span><span class="pink"> in</span><span class="blue"> chevy</span>) {<br><span class="orange">  console</span>.<span class="purple">log</span>(<span class="blue">prop</span><span class="pink"> + </span><span class="yellow">": "</span><span class="pink"> + </span><span class="blue">chevy</span>[<span class="blue">prop</span>]);<br>}</span></code></pre>
+      </div>
+
+      <p>Може бути інша змінна.</p>
+
+      <h4>Виходить в Javascript є інший спосіб звернення до властивостей:</h4>
+      <ul>
+        <li><p>Перший спосіб:</p>
+          <div class="code">
+            <pre class="code-example"><code><span><span class="blue">chevy</span>.color;</span></code></pre>
+          </div>
+        </li>
+        <li><p>Другий спосіб:</p>
+          <div class="code">
+            <pre class="code-example"><code><span><span class="blue">chevy</span>[<span class="blue">color</span>];<span class="comment">         // схоже на звернення до елементів масиву</span><br><span class="blue">chevy</span>[<span class="yellow">"co"</span><span id="top5" class="pink"> + </span><span class="yellow">"lor"</span>];</span></code></pre>
+          </div>
+        </li>
+      </ul>
+      <p class="title">Як поведінка впливає на стан</p>
+
+      <h4>Об'єкти мають стан і поведінку.</h4>
+      <p>Властивості об'єкта дозволяють зберігати дані поточного стану — рівень бензину, поточну температуру, тощо. Методи об'єкта можуть наділяти об'єкти поведінкою — запустити двигун, ввімкнути обігрів і так далі. Тобто стан і поведінка пов'язані. Не можна завести машину, якщо у баці немає бензину.</p>
+
+      <p>Додамо в автомобіль датчик бензину — властивість fuel, а заправку буде виконувати метод addFuel, де параметр amount використовується як приріст палива в властивості fuel.</p>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> fiat</span><span class="pink"> = </span>{<br>  fuel: <span class="green">0</span>,<br>  addFuel: <span class="purple">function</span>(<span class="blue">amount</span>) {<br><span class="blue">    this</span>.fuel<span class="pink"> = </span><span class="blue">this</span>.fuel<span class="pink"> + </span><span class="blue">amount</span><br>  }<br>}</span></code></pre>
+      </div>
+      <p>Якщо палива нема машина не поїде, тож треба додати перевірку рівня палива, а потім зменшувати fuel на 1 при кожному виклику drive.</p>
+
+      <p>Але ж на поточний момент ми можемо завести машину без палива. Спробуйте виправити це.</p>
+
+      <h4>Javascript надає багато готових об'єктів:</h4>
+      <ul>
+        <li><span class="boldtext">Date</span> - Для роботи з датою і часом;</li>
+        <li><span class="boldtext">Math</span> - Генерація випадкових чисел і не тільки;</li>
+        <li><span class="boldtext">RegExp</span> - Дозволяє шукати текст в рядках по заданому шаблону;</li>
+        <li><span class="boldtext">JSON</span> - Дозволяє передавати об'єкти в інші додатки;</li>
+        <li><span class="boldtext">Document</span> - Для запису у веб-сторінку коду;</li>
+        <li><span class="boldtext">Window</span> - Надає властивості і методи що відносяться до браузера;</li>
+        <li><span class="boldtext">Console</span> - Метод log використовується де ведення повідомлень в консоль</li>
+      </ul>
+
+      <div class="important"><span class="boldtext">Функція</span> — теж значення властивості.</div>
+
+      <p id="top6">Наступний крок — навчитися створювати об'єкти, які будуть схожими і будуть використовувати код, що знаходиться в одному місці.</p>
+      <br>
+
+      <p class="title">Закріплення знань</p>
+      <p class="task">Напишіть код для кожної машини:</p>
+      <img class="lessonsimage mimage" src="images/lessons/10_6.jpg">
+
+      <div id="nav1">
+        <div>
+          <a href="lesson9.html"><button><p>Попередній урок</p></button></a>
+        </div>
+        <div>
+          <a href="lesson11.html"><button><p>Наступний урок</p></button></a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <footer>
+    
+  </footer>
+</body>
+</html>

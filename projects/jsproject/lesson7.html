@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Тема 7</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/lesson.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+
+  </script>
+</head>
+<body>
+  <header>
+    <div onclick="window.location='index.html'" id="menu">
+      Javascript підручник
+    </div>
+  </header>
+  <main>
+    <div id="nav">
+      <p class="topic">Тема 7</p>
+      <ul>
+        <a  href="#"><li class="top1">Масиви</li></a>
+        <a  href="#top2"><li class="top2">Цикл for</li></a>
+        <a  href="#top3"><li class="top3">Закріплення знань</li></a>
+      </ul>
+    </div>
+    <div id="main-content">
+      <p class="main-page"><a href="index.html">Головна</a> > Тема 7</p>
+      <p class="title">Масиви</p>
+      <img class="lessonsimage codeimage mimage" src="images/lessons/7_2.jpg">
+      <p>Розглянемо малюнок. Відома компанія перевіряє скільки бульбашок дає кожен з різновидів розчинів. Як же зберегти ці дані? Використаємо масиви.</p>
+      <div class="important"><span class="boldtext">Масив</span> – тип JS, здатний зберігати декілька однотипних значень.</div>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> scores</span><span class="pink"> = </span>[<span class="green">60</span>, <span class="green">50</span>, <span class="green">60</span>, <span class="green">58</span>, <span class="green">54</span>, <span class="green">54</span>, <span class="green">58</span>, <span class="green">50</span>, <span class="green">52</span>, <span class="green">54</span>];</span></code></pre>
+      </div>
+      <p>Звернення до елементу масиву:</p>
+
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> solution2</span><span class="pink"> = </span><span class="blue">scores</span>[<span class="green">2</span>];<br><span class="blue">alert</span>(<span class="yellow">"Solution 2 prodeced"</span><span class="pink"> + </span><span class="blue">solution2</span><span class="pink"> + </span><span class="yellow">"bubbles"</span>);</span></code></pre>
+      </div>
+      <p>Створимо масив для зберігання сортів морозива:</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> flavors</span><span class="pink"> = </span>[<span class="yellow">"vanilla"</span>, <span class="yellow">"butterscotch"</span>, <span class="yellow">"lavender"</span>];</span></code></pre>
+      </div>
+      <img class="lessonsimage codeimage eimage" src="images/lessons/7_3.jpg">
+      <img class="lessonsimage codeimage eimage" src="images/lessons/7_4.jpg">
+      <p>Індекс також використовується для зміни значень, що зберігаються в масиві.</p>
+      <p>Щоб знайти довжину масиву, використовується властивість <span class="boldtext">length</span>:</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> numFlavors</span><span class="pink"> = </span><span class="blue">flavors</span>.length;</span></code></pre>
+      </div>
+
+      <p>- Порожній масив:</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> emptyArray</span><span class="pink"> = </span>[];</span></code></pre>
+      </div>
+      <p>- Не обов’язково зберігати всі дані одного типу:</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> mas</span><span class="pink"> = </span>[<span class="green">1</span>, <span class="green">2</span>, <span class="yellow">"test"</span>, <span class="green">4</span>, <span class="green">5</span>];</span></code></pre>
+      </div>
+      <p>- Що буде якщо звернутися до завеликого або замалого індексу масиву? Отримаєте результат <span class="boldtext">undefined</span>.</p>
+      <p>- Length завжди на 1 більше останнього індекс. Тож щоб отримати останній елемент:</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> lastElement</span><span class="pink"> = </span><span class="blue">myArray</span>[<span class="blue">myArray</span>.length<span class="pink"> - </span><span class="green">1</span>];</span></code></pre>
+      </div>
+      <img class="lessonsimage mimage" src="images/lessons/7_5.jpg">
+      <p>Розглянемо малюнок. Треба вивести список усіх зразків і результатів по кожному зразку. Загальну кількість зразківі, max результат i N  зразків де він досягнутий.</p>
+      <p>Через цикл while:</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> scores</span><span class="pink"> = </span>[<span class="green">60</span>, <span class="green">50</span>, <span class="green">60</span>, <span class="green">58</span>, <span class="green">54</span>, <span class="green">54</span>, <span class="green">58</span>, <span class="green">50</span>, <span class="green">52</span>, <span class="green">54</span>];<br><span class="purple">var</span><span class="blue"> output</span>;<br><span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="green">0</span>;<br><span class="pink">while</span> (<span class="blue">i</span> <span class="pink">&#60;</span> <span class="blue">scores</span>.length) {<br>  <span class="blue">output</span><span class="pink"> = </span><span class="yellow">"Bubble solution #"</span><span class="pink"> + </span><span class="blue">i</span><span class="pink"> + </span><span class="yellow">"score: "</span><span class="pink"> + </span><span class="blue">scores</span>[<span class="blue">i</span>];<br>  <span class="orange">console</span>.<span class="purple">log</span>(<span class="blue">output</span>);<br>  <span class="blue">i</span><span class="pink"> = </span><span class="blue">i</span><span id="top2" class="pink"> + </span><span class="blue">1</span>;<br>}</span></code></pre>
+      </div>
+
+      <p class="title">Цикл for</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="pink">for</span> (<span class="purple">var</span> <span class="blue">i</span><span class="pink"> = </span><span class="green">0</span>; <span class="purple">i</span><span class="pink"> &#60; </span><span class="blue">scores</span>.length; <span class="blue">i</span> <span class="pink">=</span> <span class="blue">i</span> <span class="pink">+</span> <span class="green">1</span>) {<br><span class="blue">  output</span><span class="pink"> = </span><span class="yellow">"–||–||–"</span>;<br><span class="orange">  console</span>.<span class="purple">log</span>(<span class="blue">output</span>);<br>}</span></code></pre>
+      </div>
+      <p>- Можна використовивати цикл for без лічильника:</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="pink">for</span> (; <span class="blue">answer</span><span class="pink"> != </span><span class="yellow">"forty-two"</span>;) { }</span></code></pre>
+      </div>
+      <p>- i=i+1; &asymp; i++; </p> 
+      <p>- i=i-1; &asymp; i--;</p>
+
+
+      <p>Завдання: написати програму знаходження max. Елементи з максимальним рзультатом будемо заносити в масив, який потім виведемо.</p>
+      <p>І спосіб</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> genres</span><span class="pink"> = </span>[];<span class="comment">  // порожній масив</span><br><span class="blue">genres</span>[<span class="green">0</span>]<span class="pink"> = </span><span class="yellow">"Rockabilly"</span>;<br><span class="blue">genres</span>[<span class="green">1</span>]<span class="pink"> = </span><span class="yellow">"Ambient"</span>;<br><span class="purple">var</span><span class="blue"> size</span><span class="pink"> = </span><span class="blue">genres</span>.length;</span></code></pre>
+      </div>
+      <p>II спосіб</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> genres</span><span class="pink"> = </span>[];<span class="comment">  // порожній масив</span><br><span class="blue">genres</span>.<span class="blue">push</span>(<span class="yellow">"Rockabilly"</span>);<br><span class="blue">genres</span>[<span class="green">1</span>]<span class="pink"> = </span><span class="yellow">"Ambient"</span>;<br><span class="purple">var</span><span class="blue"> size</span><span class="pink"> = </span><span class="blue">genres</span>.length;</span></code></pre>
+      </div>
+      <div class="important">Метод <span class="boldtext">push</span> створює новий елемент по наступному доступньому індексу.</div>
+      <p>- Не заповнені елементи масиву мають значення <span class="boldtext">undefined</span>. Перевірка масиву на undefined:</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="pink">if</span> (<span class="blue">myarray</span>[<span class="blue">i</span>]<span class="pink"> == </span><span class="green">undefined</span>) { ... }</span></code></pre>
+      </div>
+      <p>- Масив з 3 порожніми позиціями:</p>
+      <div class="code">
+        <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> myarray</span><span class="pink"> = </span><span class="pink">new </span><span class="blue">Array</span>(<span class="green">3</span>);</span></code></pre>
+      </div>
+      <p>Код виведення списку зразків з максимальним значенням:</p>
+      <div class="code">
+        <pre class="code-example"><code><p><span class="purple">var</span><span class="blue"> bestSolutions</span><span class="pink"> = </span>[];<br><span class="pink">for</span> (<span class="purple">var</span> <span class="blue">i</span> <span class="pink">=</span> <span class="green">0</span>; <span class="blue">i</span> <span class="pink">&#60</span> <span class="blue">scores</span>.length; <span class="blue">i</span> <span class="pink">=</span> <span class="blue">i</span><span class="pink">++</span>) {<br><span class="pink">  if</span> (<span class="blue">scores</span>[<span class="blue">i</span>]<span class="pink"> == </span><span class="blue">highScore</span>) {<br><span class="blue">    bestSolutions</span>.<span class="blue">push</span>(<span class="blue">i</span>);<br>  }<br>}<br><span class="orange">console</span>.<span class="purple">log</span>(<span class="yellow">"Solutions with the highest score: "</span><span class="pink"> + </span><span class="blue">bestSolutions</span>);</span></code></pre>
+        </div>
+
+        <p id="top3" class="boldtext"><span class="underlined">console.log</span> передбачає виведення елементів масиву не використовуючи цикл, через кому.</p>
+        <br>
+
+        <p class="title">Закріплення знань</p>
+        <h4>Написати програми:</h4>
+        <p class="task">1) Поміняти місцями max i min елементи масиву.</p>
+        <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(0);">Показати відповідь</button>
+        <div class="code-answer">
+          <div class="code">
+            <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> array</span><span class="pink"> = </span>[<span class="green">23</span>,<span class="green"> 32</span>,<span class="green"> 12</span>,<span class="green"> 14</span>,<span class="green"> 1</span>,<span class="green"> 4</span>,<span class="green"> 6</span>];<br><span class="purple">var</span><span class="blue"> max</span><span class="pink"> = </span><span class="blue">array</span>[<span class="green">0</span>];<br><span class="blue">imax</span><span class="pink"> = </span><span class="green">0</span>;<br><span class="purple">var</span><span class="blue"> min</span><span class="pink"> = </span><span class="blue">array</span>[<span class="green">0</span>];<br><span class="blue">imin</span><span class="pink"> = </span><span class="green">0</span>;<br><br><span class="orange">console</span>.<span class="purple">log</span>(<span class="blue">array</span>);<br><br><span class="pink">for</span> (<span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="green">0</span>;<span class="blue"> i</span><span class="pink"> < </span><span class="blue">array</span>.length;<span class="blue"> i</span><span class="pink">++</span>) {<br><span class="pink">  if</span> (<span class="blue">max</span><span class="pink"> < </span><span class="blue">array</span>[<span class="blue">i</span>]) {<br><span class="blue">    max</span><span class="pink"> = </span><span class="blue">array</span>[<span class="blue">i</span>];<br><span class="blue">    imax</span><span class="pink"> = </span><span class="blue">i</span>;<br>}<br><span class="pink">  if</span> (<span class="blue">min</span><span class="pink"> > </span><span class="blue">array</span>[<span class="blue">i</span>]) {<br><span class="blue">    min</span><span class="pink"> = </span><span class="blue">array</span>[<span class="blue">i</span>];<br><span class="blue">    imin</span><span class="pink"> = </span><span class="blue">i</span>;<br>  }<br>}<br><br><span class="blue">array</span>[<span class="blue">imax</span>]<span class="pink"> = </span><span class="blue">min</span>;<br><span class="blue">array</span>[<span class="blue">imin</span>]<span class="pink"> = </span><span class="blue">max</span>;<br><br><span class="orange">console</span>.<span class="purple">log</span>(<span class="blue">array</span>);</span><br></code></pre>
+          </div>
+        </div>
+        <p class="task">2) Вивести елементи масиву більші попереднього.</p>
+        <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(1);">Показати відповідь</button>
+        <div class="code-answer">
+          <div class="code">
+            <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> array</span><span class="pink"> = </span>[<span class="green">3</span>,<span class="green">1</span>,<span class="green">2</span>,<span class="green">3</span>,<span class="green">3</span>,<span class="green">5</span>,<span class="green">6</span>,<span class="green">7</span>,<span class="green">8</span>,<span class="green">4</span>];<br><br><span class="pink">for</span> (<span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="green">1</span>;<span class="blue"> i</span><span class="pink"> < </span><span class="blue">array</span>.length;<span class="blue"> i</span><span class="pink">++</span>) {<br><span class="pink">  if</span> (<span class="blue">array</span>[<span class="blue">i</span>]<span class="pink"> > </span><span class="blue">array</span>[<span class="blue">i</span><span class="pink">-</span><span class="green">1</span>]) {<br><span class="orange">    console</span>.<span class="purple">log</span>(<span class="blue">array</span>[<span class="blue">i</span>]<span class="pink"> + </span><span class="yellow">" більше попереднього елементу"</span>);<br>  }<br>}</span></code></pre>
+          </div>
+        </div>
+        <p class="task">3) Знайти кількість додатніх елементів масиву.</p>
+        <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(2);">Показати відповідь</button>
+        <div class="code-answer">
+          <div class="code">
+            <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> array</span><span class="pink"> = </span>[<span class="green">23</span>,<span class="green"> -32</span>,<span class="green"> 12</span>,<span class="green"> 14</span>,<span class="green"> -1</span>,<span class="green"> 4</span>,<span class="green"> -6</span>];<br><span class="purple">var</span><span class="blue"> k</span><span class="pink"> = </span><span class="green">0</span>;<br><br><span class="orange">console</span>.<span class="purple">log</span>(<span class="blue">array</span>);<br><br><span class="pink">for</span> (<span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="green">0</span>;<span class="blue"> i</span><span class="pink"> < </span><span class="blue">array</span>.length;<span class="blue"> i</span><span class="pink">++</span>) {<br><span class="pink">  if</span> (<span class="blue">array</span>[<span class="blue">i</span>]<span class="pink"> > </span><span class="green">0</span>) {<br><span class="blue">    k</span><span class="pink"> = </span><span class="blue">k</span><span class="pink"> + </span><span class="green">1</span>;<br>  }<br>}<br><br><span class="orange">console</span>.<span class="purple">log</span>(<span class="yellow">"Кількість додатніх елементів масиву = "</span><span class="pink"> + </span><span class="blue">k</span>);</span><br></code></pre>
+          </div>
+        </div>
+        <p class="task">4) Знайти суму додатніх двозначних елементів масиву.</p>
+        <button class="answerButton code-answer-button" type="submit" onclick="showAnswer(3);">Показати відповідь</button>
+        <div class="code-answer">
+          <div class="code">
+            <pre class="code-example"><code><span><span class="purple">var</span><span class="blue"> array</span><span class="pink"> = </span>[<span class="green">23</span>,<span class="green"> -32</span>,<span class="green"> 12</span>,<span class="green"> 14</span>,<span class="green"> -1</span>,<span class="green"> 4</span>,<span class="green"> -6</span>];<br><span class="purple">var</span><span class="blue"> n</span><span class="pink"> = </span><span class="green">0</span>;<br><br><span class="orange">console</span>.<span class="purple">log</span>(<span class="blue">array</span>);<br><br><span class="pink">for</span> (<span class="purple">var</span><span class="blue"> i</span><span class="pink"> = </span><span class="green">0</span>;<span class="blue"> i</span><span class="pink"> < </span><span class="blue">array</span>.length;<span class="blue"> i</span><span class="pink">++</span>) {<br><span class="pink">  if</span> (<span class="blue">array</span>[<span class="blue">i</span>]<span class="pink"> > </span><span class="green">0</span><span class="pink"> && </span><span class="blue">array</span>[<span class="blue">i</span>]<span class="pink"> > </span><span class="green">9</span><span class="pink"> && </span><span class="blue">array</span>[<span class="blue">i</span>]<span class="pink"> < </span><span class="green">100</span>) {<br><span class="blue">    n</span><span class="pink"> = </span><span class="blue">n</span><span class="pink"> + </span><span class="blue">array</span>[<span class="blue">i</span>];<br>  }<br>}<br><br><span class="orange">console</span>.<span class="purple">log</span>(<span class="yellow">"Сума додатніх двозначних елементів масиву = "</span><span class="pink"> + </span><span class="blue">n</span>);</span><br></code></pre>
+          </div>
+        </div>
+        <div id="nav1">
+          <div>
+            <a href="lesson6.html"><button><p>Попередній урок</p></button></a>
+          </div>
+          <div>
+            <a href="lesson8.html"><button><p>Наступний урок</p></button></a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+
+    </footer>
+  </body>
+  </html>
